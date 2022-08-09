@@ -8,6 +8,8 @@ public class Main {
         Sum s = new Sum();
         Kata reversestring = new Kata();
         StringToNumber stringToNumber = new StringToNumber();
+        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
+
 
         System.out.println(s.GetSum(0, -1));
         System.out.println(s.GetSum(0, 1));
@@ -16,6 +18,7 @@ public class Main {
         System.out.println(Kata.solution("world"));
         System.out.println(StringToNumber.stringToNumber("1234"));
         System.out.println(Kata.numberToString(67));
+        System.out.println(AbbreviateTwoWords.abbrevName("Sam Harris"));
     }
 }
 
@@ -62,5 +65,19 @@ class StringToNumber {
     //Convert a String to a Number!
     public static int stringToNumber(String str) {
         return Integer.parseInt(str);
+    }
+}
+
+class AbbreviateTwoWords {
+
+    public static String abbrevName(String name) {
+        String firstLetters = "";
+
+        name = name.replaceAll("[.]", ""); // Replace dots, etc (optional)
+        for(String s : name.split(" "))
+        {
+            firstLetters += s.charAt(0);
+        }
+        return firstLetters.substring(0,1).toUpperCase() + "." + firstLetters.substring(1).toUpperCase();
     }
 }
