@@ -19,6 +19,7 @@ public class Main {
         System.out.println(StringToNumber.stringToNumber("1234"));
         System.out.println(Kata.numberToString(67));
         System.out.println(AbbreviateTwoWords.abbrevName("Sam Harris"));
+        System.out.println(Kata.highAndLow("1 2 -3 4 5"));
     }
 }
 
@@ -59,6 +60,31 @@ class Kata {
     public static String numberToString(int num) {
         return String.valueOf(num);
     }
+
+    //Highest and Lowest
+    public static String highAndLow(String numbers) {
+        String strArr[] = numbers.split(" ");
+
+        int numArr[] = new int[strArr.length];
+
+        for (int i = 0; i < strArr.length; i++) {
+            numArr[i] = Integer.parseInt(strArr[i]);
+        }
+        int min = numArr[0];
+        for (int i = 0; i < numArr.length; i++) {
+            if(min > numArr[i]){
+                min = numArr[i];
+            }
+        }
+
+        int max = numArr[0];
+        for (int i = 0; i < numArr.length; i++) {
+            if(max < numArr[i]){
+                max = numArr[i];
+            }
+        }
+        return String.valueOf(max)+ " " + String.valueOf(min);
+    }
 }
 
 class StringToNumber {
@@ -74,10 +100,9 @@ class AbbreviateTwoWords {
         String firstLetters = "";
 
         name = name.replaceAll("[.]", ""); // Replace dots, etc (optional)
-        for(String s : name.split(" "))
-        {
+        for (String s : name.split(" ")) {
             firstLetters += s.charAt(0);
         }
-        return firstLetters.substring(0,1).toUpperCase() + "." + firstLetters.substring(1).toUpperCase();
+        return firstLetters.substring(0, 1).toUpperCase() + "." + firstLetters.substring(1).toUpperCase();
     }
 }
