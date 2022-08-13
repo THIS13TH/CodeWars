@@ -23,7 +23,8 @@ public class Main {
 //        System.out.println(AbbreviateTwoWords.abbrevName("Sam Harris"));
 //        System.out.println(Kata.highAndLow("1 2 -3 4 5"));
 //        System.out.println(Kata.findNeedle(haystack3));
-        System.out.println(Solution.repeatStr(3, "Hello"));
+//        System.out.println(Solution.repeatStr(3, "Hello"));
+        System.out.println(Kata.squareSum(new int[] {1,2,2}));
     }
 }
 
@@ -98,6 +99,14 @@ class Kata {
             }
         }
         return "found the needle at position " + index;
+    }
+    public static int squareSum(int[] n)
+    {
+        int result = 0;
+        for (int i = 0; i < n.length; i++) {
+            result += Math.pow(n[i], 2);
+        }
+        return result;
     }
 }
 
