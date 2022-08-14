@@ -151,5 +151,6 @@ class SmashWords {
             str += " " + words[i];
         }
         return str.trim();
+        //return String.join(" ", words);
     }
 }
