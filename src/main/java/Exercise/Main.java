@@ -1,6 +1,7 @@
 package Exercise;
 
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,7 +25,8 @@ public class Main {
 //        System.out.println(Kata.highAndLow("1 2 -3 4 5"));
 //        System.out.println(Kata.findNeedle(haystack3));
 //        System.out.println(Solution.repeatStr(3, "Hello"));
-        System.out.println(Kata.squareSum(new int[] {1,2,2}));
+//        System.out.println(Kata.squareSum(new int[] {1,2,2}));
+        System.out.println(SmashWords.smash(new String[] { "Bilal", "Djaghout" }));
     }
 }
 
@@ -137,5 +139,17 @@ class Solution {
             result += string;
         }
         return result;
+    }
+}
+
+class SmashWords {
+
+    public static String smash(String... words) {
+        String str = " ";
+
+        for (int i = 0; i < words.length; i++) {
+            str += " " + words[i];
+        }
+        return str.trim();
     }
 }
