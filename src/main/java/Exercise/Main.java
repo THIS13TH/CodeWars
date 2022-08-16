@@ -6,14 +6,15 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        Sum s = new Sum();
-        Kata reversestring = new Kata();
-        StringToNumber stringToNumber = new StringToNumber();
-        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
-        Solution solution = new Solution();
-        GrassHopper grassHopper = new GrassHopper();
+//        Sum s = new Sum();
+//        Kata reversestring = new Kata();
+//        StringToNumber stringToNumber = new StringToNumber();
+//        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
+//        Solution solution = new Solution();
+//        GrassHopper grassHopper = new GrassHopper();
+          Sequence sequence = new Sequence();
 
-        Object[] haystack3 = {1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,"needle",1,2,3,4,5,5,6,5,4,32,3,45,54};
+//        Object[] haystack3 = {1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,"needle",1,2,3,4,5,5,6,5,4,32,3,45,54};
 
 //        System.out.println(s.GetSum(0, -1));
 //        System.out.println(s.GetSum(0, 1));
@@ -28,7 +29,11 @@ public class Main {
 //        System.out.println(Solution.repeatStr(3, "Hello"));
 //        System.out.println(Kata.squareSum(new int[] {1,2,2}));
 //        System.out.println(SmashWords.smash(new String[] { "Bilal", "Djaghout" }));
-        System.out.println(GrassHopper.summation(8));
+//        System.out.println(GrassHopper.summation(8));
+        int[] test = Sequence.reverse(5);
+        for (int i = 0; i < test.length; i++) {
+            System.out.println(test[i]);
+        }
     }
 }
 
@@ -156,7 +161,6 @@ class SmashWords {
         //return String.join(" ", words);
     }
 }
-
 class GrassHopper {
     //Grasshopper - Summation
     public static int summation(int n) {
@@ -166,4 +170,25 @@ class GrassHopper {
         }
         return result;
     }
+}
+
+class Sequence{
+    //Reversed sequence
+    public static int[] reverse(int n){
+        int[] result = new int[n];
+//        for (int i = 0; i <= n - 1 ; i++){
+//            result[i] = i + 1 ;
+//        }
+
+//        int[] reverseResult = new int[result.length];
+//        for (int i = 0; i < result.length; i++) {
+//            reverseResult[result.length - 1 -i] = result[i];
+//        }
+        for (int i = 0; i < n; i++) {
+            result[i] = n - i ;
+        }
+        return result;
+
+    }
+
 }
