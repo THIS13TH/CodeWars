@@ -7,13 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
 //        Sum s = new Sum();
-//        Kata reversestring = new Kata();
+        Kata reversestring = new Kata();
 //        StringToNumber stringToNumber = new StringToNumber();
 //        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
 //        Solution solution = new Solution();
 //        GrassHopper grassHopper = new GrassHopper();
 //          Sequence sequence = new Sequence();
-          OppositesAttract oppositesAttract = new OppositesAttract();
+//          OppositesAttract oppositesAttract = new OppositesAttract();
 
 
 //        Object[] haystack3 = {1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,"needle",1,2,3,4,5,5,6,5,4,32,3,45,54};
@@ -37,10 +37,11 @@ public class Main {
 //            System.out.println(test[i]);
 //        }
 
-        System.out.println(OppositesAttract.isLove(1, 4));
-        System.out.println(OppositesAttract.isLove(2, 2));
-        System.out.println(OppositesAttract.isLove(1, 1));
-        System.out.println(OppositesAttract.isLove(0, 1));
+//        System.out.println(OppositesAttract.isLove(1, 4));
+//        System.out.println(OppositesAttract.isLove(2, 2));
+//        System.out.println(OppositesAttract.isLove(1, 1));
+//        System.out.println(OppositesAttract.isLove(0, 1));
+        System.out.println(Kata.find_average(new int[]{1, 2, 3}));
     }
 }
 
@@ -124,6 +125,16 @@ class Kata {
         }
         return result;
     }
+    public static double find_average(int[] array){
+        double average = 0;
+        if(array.length == 0){
+            return 0;
+        }
+        for (int i = 0; i < array.length; i++) {
+            average += array[i] ;
+        }
+        return average/array.length;
+    }
 }
 
 class StringToNumber {
@@ -201,7 +212,6 @@ class Sequence{
 }
 
 class OppositesAttract {
-
     public static boolean isLove(final int flower1, final int flower2) {
         boolean isLove;
         if(flower2 % 2 == 1 && flower1 % 2 == 0 || flower1 % 2 == 1 && flower2 % 2 == 0){
