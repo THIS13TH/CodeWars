@@ -41,7 +41,9 @@ public class Main {
 //        System.out.println(OppositesAttract.isLove(2, 2));
 //        System.out.println(OppositesAttract.isLove(1, 1));
 //        System.out.println(OppositesAttract.isLove(0, 1));
-        System.out.println(Kata.find_average(new int[]{1, 2, 3}));
+//        System.out.println(Kata.find_average(new int[]{1, 2, 3}));
+        int[] input =  new int[] {-1,2,-3,4,-5};
+        System.out.println(Arrays.toString(Kata.invert(input)));
     }
 }
 
@@ -134,6 +136,15 @@ class Kata {
             average += array[i] ;
         }
         return average/array.length;
+    }
+    public static int[] invert(int[] array) {
+        if(array.length == 0){
+            return new int[]{0};
+        }
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[i] * -1;
+        }
+        return array;
     }
 }
 
