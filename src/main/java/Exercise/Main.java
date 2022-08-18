@@ -6,14 +6,15 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
+        MinMax minMax = new MinMax();
 //        Sum s = new Sum();
-        Kata reversestring = new Kata();
+//        Kata reversestring = new Kata();
 //        StringToNumber stringToNumber = new StringToNumber();
 //        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
 //        Solution solution = new Solution();
 //        GrassHopper grassHopper = new GrassHopper();
-//          Sequence sequence = new Sequence();
-//          OppositesAttract oppositesAttract = new OppositesAttract();
+//        Sequence sequence = new Sequence();
+//        OppositesAttract oppositesAttract = new OppositesAttract();
 
 
 //        Object[] haystack3 = {1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,"needle",1,2,3,4,5,5,6,5,4,32,3,45,54};
@@ -42,8 +43,11 @@ public class Main {
 //        System.out.println(OppositesAttract.isLove(1, 1));
 //        System.out.println(OppositesAttract.isLove(0, 1));
 //        System.out.println(Kata.find_average(new int[]{1, 2, 3}));
-        int[] input =  new int[] {-1,2,-3,4,-5};
-        System.out.println(Arrays.toString(Kata.invert(input)));
+        int[] test = MinMax.minMax(new int[]{2334454,5});
+
+        for (int i = 0; i < test.length; i++) {
+            System.out.println(test[i]);
+        }
     }
 }
 
@@ -96,49 +100,51 @@ class Kata {
         }
         int min = numArr[0];
         for (int i = 0; i < numArr.length; i++) {
-            if(min > numArr[i]){
+            if (min > numArr[i]) {
                 min = numArr[i];
             }
         }
 
         int max = numArr[0];
         for (int i = 0; i < numArr.length; i++) {
-            if(max < numArr[i]){
+            if (max < numArr[i]) {
                 max = numArr[i];
             }
         }
-        return String.valueOf(max)+ " " + String.valueOf(min);
+        return String.valueOf(max) + " " + String.valueOf(min);
     }
 
     public static String findNeedle(Object[] haystack) {
         int index = 0;
         for (int i = 0; i < haystack.length; i++) {
-            if(haystack[i] == "needle"){
+            if (haystack[i] == "needle") {
                 index = i;
             }
         }
         return "found the needle at position " + index;
     }
-    public static int squareSum(int[] n)
-    {
+
+    public static int squareSum(int[] n) {
         int result = 0;
         for (int i = 0; i < n.length; i++) {
             result += Math.pow(n[i], 2);
         }
         return result;
     }
-    public static double find_average(int[] array){
+
+    public static double find_average(int[] array) {
         double average = 0;
-        if(array.length == 0){
+        if (array.length == 0) {
             return 0;
         }
         for (int i = 0; i < array.length; i++) {
-            average += array[i] ;
+            average += array[i];
         }
-        return average/array.length;
+        return average / array.length;
     }
+
     public static int[] invert(int[] array) {
-        if(array.length == 0){
+        if (array.length == 0) {
             return new int[]{0};
         }
         for (int i = 0; i < array.length; i++) {
@@ -190,20 +196,21 @@ class SmashWords {
         //return String.join(" ", words);
     }
 }
+
 class GrassHopper {
     //Grasshopper - Summation
     public static int summation(int n) {
         int result = 0;
-        for (int i = 0; i <= n ; i++) {
+        for (int i = 0; i <= n; i++) {
             result += i;
         }
         return result;
     }
 }
 
-class Sequence{
+class Sequence {
     //Reversed sequence
-    public static int[] reverse(int n){
+    public static int[] reverse(int n) {
         int[] result = new int[n];
 //        for (int i = 0; i <= n - 1 ; i++){
 //            result[i] = i + 1 ;
@@ -214,7 +221,7 @@ class Sequence{
 //            reverseResult[result.length - 1 -i] = result[i];
 //        }
         for (int i = 0; i < n; i++) {
-            result[i] = n - i ;
+            result[i] = n - i;
         }
         return result;
 
@@ -225,13 +232,24 @@ class Sequence{
 class OppositesAttract {
     public static boolean isLove(final int flower1, final int flower2) {
         boolean isLove;
-        if(flower2 % 2 == 1 && flower1 % 2 == 0 || flower1 % 2 == 1 && flower2 % 2 == 0){
+        if (flower2 % 2 == 1 && flower1 % 2 == 0 || flower1 % 2 == 1 && flower2 % 2 == 0) {
             isLove = true;
-        }else {
+        } else {
             isLove = false;
         }
         return isLove;
     }
 
+}
 
+class MinMax {
+    public static int[] minMax(int[] arr) {
+        //The highest profit wins!
+        if (arr.length == 1) {
+            return new int[]{arr[0], arr[0]};
+        } else {
+            Arrays.sort(arr);
+        }
+        return new int[]{arr[0], arr[arr.length - 1]};
+    }
 }
