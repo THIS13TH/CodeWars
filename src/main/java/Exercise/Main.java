@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        MinMax minMax = new MinMax();
+//        MinMax minMax = new MinMax();
 //        Sum s = new Sum();
 //        Kata reversestring = new Kata();
 //        StringToNumber stringToNumber = new StringToNumber();
@@ -43,11 +43,13 @@ public class Main {
 //        System.out.println(OppositesAttract.isLove(1, 1));
 //        System.out.println(OppositesAttract.isLove(0, 1));
 //        System.out.println(Kata.find_average(new int[]{1, 2, 3}));
-        int[] test = MinMax.minMax(new int[]{2334454,5});
-
-        for (int i = 0; i < test.length; i++) {
-            System.out.println(test[i]);
-        }
+//        int[] test = MinMax.minMax(new int[]{2334454,5});
+//
+//        for (int i = 0; i < test.length; i++) {
+//            System.out.println(test[i]);
+//        }
+        Kata kata = new Kata();
+        System.out.println(Kata.countingSheep(3));
     }
 }
 
@@ -151,6 +153,16 @@ class Kata {
             array[i] = array[i] * -1;
         }
         return array;
+    }
+
+    public static String countingSheep(int num) {
+        //Add your code here
+        String res = "";
+        String sheep = "sheep...";
+        for (int i = 1; i <= num; i++) {
+            res += i + " " + sheep;
+        }
+        return res;
     }
 }
 
