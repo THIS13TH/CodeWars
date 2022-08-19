@@ -1,6 +1,5 @@
 package Exercise;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Main {
@@ -50,8 +49,10 @@ public class Main {
 //        }
 //        Kata kata = new Kata();
 //        System.out.println(Kata.countingSheep(3));
-        Cockroach cockroach = new Cockroach();
-        System.out.println(cockroach.cockroachSpeed(1.09));
+//        Cockroach cockroach = new Cockroach();
+//        System.out.println(cockroach.cockroachSpeed(1.09));
+        Accumul accumul = new Accumul();
+        System.out.println(Accumul.accum("ZpglnRxqenU"));
     }
 }
 
@@ -272,5 +273,17 @@ class Cockroach{
     //Beginner Series #4 Cockroach
     public int cockroachSpeed(double x){
         return (int) Math.floor(x * 27.7777777777778);
+    }
+}
+
+class Accumul {
+    //Mumbling
+    public static String accum(String s) {
+        String result = "";
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            result +=  '-' + String.valueOf(s.charAt(i)).toUpperCase() + String.valueOf(s.charAt(i)).repeat(i).toLowerCase();
+        }
+        return result.substring(1);
     }
 }
