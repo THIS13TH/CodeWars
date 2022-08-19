@@ -48,8 +48,10 @@ public class Main {
 //        for (int i = 0; i < test.length; i++) {
 //            System.out.println(test[i]);
 //        }
-        Kata kata = new Kata();
-        System.out.println(Kata.countingSheep(3));
+//        Kata kata = new Kata();
+//        System.out.println(Kata.countingSheep(3));
+        Cockroach cockroach = new Cockroach();
+        System.out.println(cockroach.cockroachSpeed(1.09));
     }
 }
 
@@ -263,5 +265,12 @@ class MinMax {
             Arrays.sort(arr);
         }
         return new int[]{arr[0], arr[arr.length - 1]};
+    }
+}
+
+class Cockroach{
+    //Beginner Series #4 Cockroach
+    public int cockroachSpeed(double x){
+        return (int) Math.floor(x * 27.7777777777778);
     }
 }
