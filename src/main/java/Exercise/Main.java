@@ -47,12 +47,13 @@ public class Main {
 //        for (int i = 0; i < test.length; i++) {
 //            System.out.println(test[i]);
 //        }
-//        Kata kata = new Kata();
+        Kata kata = new Kata();
 //        System.out.println(Kata.countingSheep(3));
 //        Cockroach cockroach = new Cockroach();
 //        System.out.println(cockroach.cockroachSpeed(1.09));
-        Accumul accumul = new Accumul();
-        System.out.println(Accumul.accum("ZpglnRxqenU"));
+//        Accumul accumul = new Accumul();
+//        System.out.println(Accumul.accum("ZpglnRxqenU"));
+        System.out.println(Kata.rentalCarCost(10));
     }
 }
 
@@ -166,6 +167,18 @@ class Kata {
             res += i + " " + sheep;
         }
         return res;
+    }
+
+    public static int rentalCarCost(int d) {
+        //Transportation on vacation
+        int result = 0;
+        for (int i = 0; i < d; i++) {
+            result += 40;
+        }
+        if(d >= 3 && d < 7){result -= 20;}
+        if(d >= 7){result -= 50;}
+        return result;
+        // return d < 7 ? d < 3 ? 40 * d : 40 * d - 20 : 40 * d - 50;
     }
 }
 
@@ -287,3 +300,4 @@ class Accumul {
         return result.substring(1);
     }
 }
+
