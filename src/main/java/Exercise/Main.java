@@ -207,6 +207,15 @@ class Kata {
         return x * -1;
     }
 
+    static String greet(String name, String owner) {
+        //Grasshopper - Personalized Message
+        if(name.equals(owner)){
+            return "Hello boss";
+        }else{
+            return "Hello guest";
+        }
+    }
+
 }
 
 class StringToNumber {
