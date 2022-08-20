@@ -54,7 +54,8 @@ public class Main {
 //        Accumul accumul = new Accumul();
 //        System.out.println(Accumul.accum("ZpglnRxqenU"));
 //        System.out.println(Kata.rentalCarCost(10));
-        System.out.println(kata.quarterOf(3));
+//        System.out.println(kata.quarterOf(3));
+        System.out.println(Kata.makeNegative(42));
     }
 }
 
@@ -196,10 +197,16 @@ class Kata {
 //            quarter = 4;
 //        }
 //        return quarter;
-
-
-
     }
+
+    public static int makeNegative(final int x) {
+        //Return Negative
+        if(x < 0){
+            return x;
+        }
+        return x * -1;
+    }
+
 }
 
 class StringToNumber {
