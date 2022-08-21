@@ -57,15 +57,17 @@ public class Main {
 //        System.out.println(Kata.rentalCarCost(10));
 //        System.out.println(kata.quarterOf(3));
 //        System.out.println(Kata.makeNegative(42));
-
-        Boolean[] array1 = {true,  true,  true,  false,
-                true,  true,  true,  true ,
-                true,  false, true,  false,
-                true,  false, false, true ,
-                true,  true,  true,  true ,
-                false, false, true,  true };
-        Counter counter = new Counter();
-        System.out.println(counter.countSheeps(array1));
+//
+//        Boolean[] array1 = {true,  true,  true,  false,
+//                true,  true,  true,  true ,
+//                true,  false, true,  false,
+//                true,  false, false, true ,
+//                true,  true,  true,  true ,
+//                false, false, true,  true };
+//        Counter counter = new Counter();
+//        System.out.println(counter.countSheeps(array1));
+        CharProblem charProblem = new CharProblem();
+        System.out.println(CharProblem.howOld("5 years old"));
     }
 }
 
@@ -359,6 +361,15 @@ class Counter {
             }
         }
         return sheeps;
+    }
+}
+
+class CharProblem {
+    public static int howOld(final String herOld) {
+        //Parse nice int from char problem
+        return Character.getNumericValue(herOld.charAt(0));
+        //return Integer.parseInt(herOld.substring(0, 1));
+
     }
 }
 
