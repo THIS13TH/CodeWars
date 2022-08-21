@@ -258,6 +258,11 @@ class Solution {
         }
         return result;
     }
+
+    static String removeExclamationMarks(String s) {
+        //Remove exclamation marks
+        return s.replace("!","");
+    }
 }
 
 class SmashWords {
