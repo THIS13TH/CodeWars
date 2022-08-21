@@ -11,7 +11,7 @@ public class Main {
 //        Kata reversestring = new Kata();
 //        StringToNumber stringToNumber = new StringToNumber();
 //        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
-//        Solution solution = new Solution();
+        Solution solution = new Solution();
 //        GrassHopper grassHopper = new GrassHopper();
 //        Sequence sequence = new Sequence();
 //        OppositesAttract oppositesAttract = new OppositesAttract();
@@ -66,8 +66,14 @@ public class Main {
 //                false, false, true,  true };
 //        Counter counter = new Counter();
 //        System.out.println(counter.countSheeps(array1));
-        CharProblem charProblem = new CharProblem();
-        System.out.println(CharProblem.howOld("5 years old"));
+//        CharProblem charProblem = new CharProblem();
+//        System.out.println(CharProblem.howOld("5 years old"));
+        int[] test = new int[] {1, 2, 3};
+        Maps maps = new Maps();
+        int[] result = Maps.map(test);
+        for (int i = 0; i < result.length; i++) {
+            System.out.println(result[i]);
+        }
     }
 }
 
@@ -262,7 +268,6 @@ class Solution {
         }
         return result;
     }
-
     static String removeExclamationMarks(String s) {
         //Remove exclamation marks
         return s.replace("!","");
@@ -382,3 +387,13 @@ class CharProblem {
     }
 }
 
+class Maps {
+    public static int[] map(int[] arr) {
+        //Beginner - Lost Without a Map
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[i] * 2;
+        }
+        return result;
+    }
+}
