@@ -1,5 +1,6 @@
 package Exercise;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Main {
@@ -47,7 +48,7 @@ public class Main {
 //        for (int i = 0; i < test.length; i++) {
 //            System.out.println(test[i]);
 //        }
-        Kata kata = new Kata();
+//                Kata kata = new Kata();
 //        System.out.println(Kata.countingSheep(3));
 //        Cockroach cockroach = new Cockroach();
 //        System.out.println(cockroach.cockroachSpeed(1.09));
@@ -55,7 +56,16 @@ public class Main {
 //        System.out.println(Accumul.accum("ZpglnRxqenU"));
 //        System.out.println(Kata.rentalCarCost(10));
 //        System.out.println(kata.quarterOf(3));
-        System.out.println(Kata.makeNegative(42));
+//        System.out.println(Kata.makeNegative(42));
+
+        Boolean[] array1 = {true,  true,  true,  false,
+                true,  true,  true,  true ,
+                true,  false, true,  false,
+                true,  false, false, true ,
+                true,  true,  true,  true ,
+                false, false, true,  true };
+        Counter counter = new Counter();
+        System.out.println(counter.countSheeps(array1));
     }
 }
 
@@ -334,6 +344,21 @@ class Accumul {
             result +=  '-' + String.valueOf(s.charAt(i)).toUpperCase() + String.valueOf(s.charAt(i)).repeat(i).toLowerCase();
         }
         return result.substring(1);
+    }
+}
+
+class Counter {
+    public int countSheeps(Boolean[] arrayOfSheeps) {
+        //Counting sheep
+        int sheeps = 0;
+        for (int i = 0; i < arrayOfSheeps.length; i++) {
+            if(arrayOfSheeps[i] == null){
+                sheeps += 0;
+            }else if(arrayOfSheeps[i] == true){
+                sheeps += 1;
+            }
+        }
+        return sheeps;
     }
 }
 
