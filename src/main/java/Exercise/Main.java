@@ -228,6 +228,10 @@ class Kata {
         }
     }
 
+    public static String noSpace(final String x) {
+        //Remove String Spaces
+        return x.replaceAll(" ","");
+    }
 }
 
 class StringToNumber {
