@@ -68,12 +68,12 @@ public class Main {
 //        System.out.println(counter.countSheeps(array1));
 //        CharProblem charProblem = new CharProblem();
 //        System.out.println(CharProblem.howOld("5 years old"));
-        int[] test = new int[] {1, 2, 3};
-        Maps maps = new Maps();
-        int[] result = Maps.map(test);
-        for (int i = 0; i < result.length; i++) {
-            System.out.println(result[i]);
-        }
+//        int[] test = new int[] {1, 2, 3};
+//        Maps maps = new Maps();
+//        int[] result = Maps.map(test);
+//        for (int i = 0; i < result.length; i++) {
+//            System.out.println(result[i]);
+//        }
     }
 }
 
@@ -272,6 +272,17 @@ class Solution {
         //Remove exclamation marks
         return s.replace("!","");
     }
+
+    public static boolean check(Object[] a, Object x) {
+        //You only need one - Beginner
+        for (int i = 0; i < a.length; i++) {
+            if(x == a[i]){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
 
 class SmashWords {
@@ -399,6 +410,5 @@ class Maps {
             arr[i] *= 2;
         }
         return arr;
-
     }
 }
