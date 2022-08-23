@@ -1,7 +1,8 @@
 package Exercise;
 
-import java.sql.SQLOutput;
+import java.io.Serializable;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -73,6 +74,9 @@ public class Main {
 //        int[] result = Maps.map(test);
 //        for (int i = 0; i < result.length; i++) {
 //            System.out.println(result[i]);
+        List<? extends Serializable> test = Arrays.asList("3", 6, 6, 0, "5", 8, 5, "6", 2, "0");
+        MixedSum mixedSum = new MixedSum();
+        System.out.println(mixedSum.sum(test));
 //        }
     }
 }
@@ -410,5 +414,17 @@ class Maps {
             arr[i] *= 2;
         }
         return arr;
+    }
+}
+
+class MixedSum {
+    //Sum Mixed Array
+    public int sum(List<?> mixed) {
+        Object[] arr = mixed.toArray();
+        int result = 0;
+        for (int i = 0; i < arr.length; i++) {
+            result+= Integer.parseInt(arr[i].toString());
+        }
+        return result;
     }
 }
