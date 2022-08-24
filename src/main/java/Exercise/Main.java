@@ -253,6 +253,11 @@ class Kata {
 
         return numbers[number];
     }
+
+    public static double getVolumeOfCuboid(final double length, final double width, final double height) {
+        //Volume of a Cuboid
+        return length * width * height;
+    }
 }
 
 class StringToNumber {
