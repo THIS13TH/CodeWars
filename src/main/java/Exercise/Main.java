@@ -12,7 +12,7 @@ public class Main {
 //        Kata reversestring = new Kata();
 //        StringToNumber stringToNumber = new StringToNumber();
 //        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
-        Solution solution = new Solution();
+//        Solution solution = new Solution();
 //        GrassHopper grassHopper = new GrassHopper();
 //        Sequence sequence = new Sequence();
 //        OppositesAttract oppositesAttract = new OppositesAttract();
@@ -74,10 +74,12 @@ public class Main {
 //        int[] result = Maps.map(test);
 //        for (int i = 0; i < result.length; i++) {
 //            System.out.println(result[i]);
-        List<? extends Serializable> test = Arrays.asList("3", 6, 6, 0, "5", 8, 5, "6", 2, "0");
-        MixedSum mixedSum = new MixedSum();
-        System.out.println(mixedSum.sum(test));
+//        List<? extends Serializable> test = Arrays.asList("3", 6, 6, 0, "5", 8, 5, "6", 2, "0");
+//        MixedSum mixedSum = new MixedSum();
+//        System.out.println(mixedSum.sum(test));
 //        }
+        TrafficLights trafficLights = new TrafficLights();
+        System.out.println(TrafficLights.updateLight("red"));
     }
 }
 
@@ -445,3 +447,21 @@ class MixedSum {
     }
 }
 
+class TrafficLights {
+
+    public static String updateLight(String current) {
+        //Thinkful - Logic Drills: Traffic light
+        String newLight = "";
+
+        if(current.equals("green")){
+            newLight = "yellow";
+        }else if(current.equals("red")){
+            newLight = "green";
+        }else if(current.equals("yellow")){
+            newLight = "red";
+        }
+
+        return newLight;
+    }
+
+}
