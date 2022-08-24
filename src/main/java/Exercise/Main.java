@@ -242,6 +242,17 @@ class Kata {
         //Remove String Spaces
         return x.replaceAll(" ","");
     }
+
+    public static String switchItUp(int number)
+    {
+        //Switch it Up!
+        String[] numbers =
+                {"Zero","One", "Two", "Three",
+                        "Four", "Five", "Six",
+                        "Seven", "Eight", "Nine"};
+
+        return numbers[number];
+    }
 }
 
 class StringToNumber {
@@ -428,3 +439,4 @@ class MixedSum {
         return result;
     }
 }
+
