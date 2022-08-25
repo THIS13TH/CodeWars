@@ -78,8 +78,12 @@ public class Main {
 //        MixedSum mixedSum = new MixedSum();
 //        System.out.println(mixedSum.sum(test));
 //        }
-        TrafficLights trafficLights = new TrafficLights();
-        System.out.println(TrafficLights.updateLight("red"));
+//        TrafficLights trafficLights = new TrafficLights();
+//        System.out.println(TrafficLights.updateLight("red"));
+//        BasicOperations basicOperations = new BasicOperations();
+//        System.out.println(BasicOperations.basicMath("+", 4, 7));
+        Correct correct = new Correct();
+        System.out.println(Correct.correct("R1CHARD P. FEYNMAN - 5TAT15T1CAL MECHAN1C5"));
     }
 }
 
@@ -446,7 +450,6 @@ class MixedSum {
         return result;
     }
 }
-
 class TrafficLights {
 
     public static String updateLight(String current) {
@@ -463,5 +466,33 @@ class TrafficLights {
 
         return newLight;
     }
+}
 
+class BasicOperations
+{
+    public static Integer basicMath(String op, int v1, int v2)
+    {
+        //Basic Mathematical Operations
+        if(op.equals("+")){
+            return v1 + v2;
+        }else if(op.equals("-")){
+            return v1 - v2;
+        }else if(op.equals("*")) {
+            return v1 * v2;
+        }else if(op.equals("/")) {
+            return v1 / v2;
+        }
+        return null;
+    }
+}
+
+class Correct {
+    //Correct the mistakes of the character recognition software
+    public static String correct(String string) {
+//        String str = string.replaceAll("5", "S");
+//        String str2 = str.replaceAll("1", "I");
+//        String str3 = str2.replaceAll("0", "O");
+//        return str3;
+        return string.replace("5","S").replace("0", "O").replace("1","I");
+    }
 }
