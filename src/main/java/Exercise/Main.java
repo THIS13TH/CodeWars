@@ -309,6 +309,14 @@ class Solution {
         return false;
     }
 
+    public static int areaOrPerimeter (int l, int w) {
+        //Area or Perimeter
+        if(l == w){
+            return l*l;
+        }else{
+            return (l+w) * 2;
+        }
+    }
 }
 
 class SmashWords {
