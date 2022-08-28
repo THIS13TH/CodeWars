@@ -82,8 +82,12 @@ public class Main {
 //        System.out.println(TrafficLights.updateLight("red"));
 //        BasicOperations basicOperations = new BasicOperations();
 //        System.out.println(BasicOperations.basicMath("+", 4, 7));
-        Correct correct = new Correct();
-        System.out.println(Correct.correct("R1CHARD P. FEYNMAN - 5TAT15T1CAL MECHAN1C5"));
+//        Correct correct = new Correct();
+//        System.out.println(Correct.correct("R1CHARD P. FEYNMAN - 5TAT15T1CAL MECHAN1C5"));
+        Sid sid = new Sid();
+        System.out.println(Sid.howMuchILoveYou(1));
+        System.out.println(Sid.howMuchILoveYou(2));
+        System.out.println(Sid.howMuchILoveYou(27));
     }
 }
 
@@ -502,5 +506,13 @@ class Correct {
 //        String str3 = str2.replaceAll("0", "O");
 //        return str3;
         return string.replace("5","S").replace("0", "O").replace("1","I");
+    }
+}
+
+class Sid {
+    public static String howMuchILoveYou(int nb_petals) {
+        //I love you, a little , a lot, passionately ... not at all
+        String[] arr = {"I love you","a little", "a lot", "passionately", "madly", "not at all"};
+        return arr[(nb_petals - 1) % 6];
     }
 }
