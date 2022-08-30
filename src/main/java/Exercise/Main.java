@@ -84,10 +84,13 @@ public class Main {
 //        System.out.println(BasicOperations.basicMath("+", 4, 7));
 //        Correct correct = new Correct();
 //        System.out.println(Correct.correct("R1CHARD P. FEYNMAN - 5TAT15T1CAL MECHAN1C5"));
-        Sid sid = new Sid();
-        System.out.println(Sid.howMuchILoveYou(1));
-        System.out.println(Sid.howMuchILoveYou(2));
-        System.out.println(Sid.howMuchILoveYou(27));
+//        Sid sid = new Sid();
+//        System.out.println(Sid.howMuchILoveYou(1));
+//        System.out.println(Sid.howMuchILoveYou(2));
+//        System.out.println(Sid.howMuchILoveYou(27));
+        SmallestIntegerFinder smallestIntegerFinder = new SmallestIntegerFinder();
+        int[] test = new int[]{78,56,232,12,11,43};
+        System.out.println(SmallestIntegerFinder.findSmallestInt(test));
     }
 }
 
@@ -534,4 +537,17 @@ class Positive{
         return sum;
     }
 
+}
+
+class SmallestIntegerFinder {
+    public static int findSmallestInt(int[] args) {
+        //Find the smallest integer in the array
+        int min = args[0];
+        for (int i = 0; i < args.length; i++) {
+            if (min > args[i]) {
+                min = args[i];
+            }
+        }
+        return min;
+    }
 }
