@@ -538,7 +538,6 @@ class Positive{
     }
 
 }
-
 class SmallestIntegerFinder {
     public static int findSmallestInt(int[] args) {
         //Find the smallest integer in the array
@@ -549,5 +548,16 @@ class SmallestIntegerFinder {
             }
         }
         return min;
+    }
+}
+
+class HelpAlex{
+    public static String hoopCount(int n){
+        //Keep up the hoop
+        if(n >= 10 ){
+            return "Great, now move on to tricks";
+        }else{
+            return "Keep at it until you get it";
+        }
     }
 }
