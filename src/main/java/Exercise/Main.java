@@ -271,6 +271,32 @@ class Kata {
         //Volume of a Cuboid
         return length * width * height;
     }
+
+    public int min(int[] list) {
+        //Find Maximum and Minimum Values of a List
+
+//        int min = list[0];
+//        for (int i = 0; i < list.length; i++) {
+//            if(min > list[i]){
+//                min = list[i];
+//            }
+//        }
+//        return min;
+        return Arrays.stream(list).min().getAsInt();
+    }
+
+    public int max(int[] list) {
+        //Find Maximum and Minimum Values of a List
+
+//        int max = list[0];
+//        for (int i = 0; i < list.length; i++) {
+//            if(max < list[i]){
+//                max = list[i];
+//            }
+//        }
+//        return max;
+        return Arrays.stream(list).max().getAsInt();
+    }
 }
 
 class StringToNumber {
