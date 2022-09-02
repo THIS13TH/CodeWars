@@ -88,9 +88,11 @@ public class Main {
 //        System.out.println(Sid.howMuchILoveYou(1));
 //        System.out.println(Sid.howMuchILoveYou(2));
 //        System.out.println(Sid.howMuchILoveYou(27));
-        SmallestIntegerFinder smallestIntegerFinder = new SmallestIntegerFinder();
-        int[] test = new int[]{78,56,232,12,11,43};
-        System.out.println(SmallestIntegerFinder.findSmallestInt(test));
+//        SmallestIntegerFinder smallestIntegerFinder = new SmallestIntegerFinder();
+//        int[] test = new int[]{78,56,232,12,11,43};
+//        System.out.println(SmallestIntegerFinder.findSmallestInt(test));
+        Calculate calculate = new Calculate();
+        System.out.println(Calculate.bmi(80, 1.80));
     }
 }
 
@@ -585,5 +587,22 @@ class HelpAlex{
         }else{
             return "Keep at it until you get it";
         }
+    }
+}
+
+class Calculate {
+    public static String bmi(double weight, double height) {
+        //Calculate BMI
+        double bmi =  weight / Math.pow(height, 2);
+        if(bmi <= 18.5){
+            return "Underweight";
+        }else if(bmi <= 25.0){
+            return "Normal";
+        }else if(bmi <= 30.0){
+            return "Overweight";
+        }else if(bmi > 30){
+            return "Obese";
+        }
+        return null;
     }
 }
