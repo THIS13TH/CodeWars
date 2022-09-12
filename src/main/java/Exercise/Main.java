@@ -91,8 +91,11 @@ public class Main {
 //        SmallestIntegerFinder smallestIntegerFinder = new SmallestIntegerFinder();
 //        int[] test = new int[]{78,56,232,12,11,43};
 //        System.out.println(SmallestIntegerFinder.findSmallestInt(test));
-        Calculate calculate = new Calculate();
-        System.out.println(Calculate.bmi(80, 1.80));
+//        Calculate calculate = new Calculate();
+//        System.out.println(Calculate.bmi(80, 1.80));
+        CodeWars codeWars = new CodeWars();
+        System.out.println(CodeWars.strCount("Hello", 'l'));
+        System.out.println(CodeWars.strCount("",'z'));
     }
 }
 
@@ -604,5 +607,22 @@ class Calculate {
             return "Obese";
         }
         return null;
+    }
+}
+
+class CodeWars {
+    public static int strCount(String str, char letter) {
+        //All Star Code Challenge #18
+        char[] array = str.toCharArray();
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] == letter){
+                count += 1;
+            }else if(array[i] == letter){
+                return 0;
+            }
+
+        }
+        return count;
     }
 }
