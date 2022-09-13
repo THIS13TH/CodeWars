@@ -1,6 +1,7 @@
 package Exercise;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -93,9 +94,11 @@ public class Main {
 //        System.out.println(SmallestIntegerFinder.findSmallestInt(test));
 //        Calculate calculate = new Calculate();
 //        System.out.println(Calculate.bmi(80, 1.80));
-        CodeWars codeWars = new CodeWars();
-        System.out.println(CodeWars.strCount("Hello", 'l'));
-        System.out.println(CodeWars.strCount("",'z'));
+//        CodeWars codeWars = new CodeWars();
+//        System.out.println(CodeWars.strCount("Hello", 'l'));
+//        System.out.println(CodeWars.strCount("",'z'));
+        Bio bio = new Bio();
+        System.out.println(bio.dnaToRna("TTTT"));
     }
 }
 
@@ -302,6 +305,7 @@ class Kata {
 //        return max;
         return Arrays.stream(list).max().getAsInt();
     }
+
 }
 
 class StringToNumber {
@@ -624,5 +628,13 @@ class CodeWars {
 
         }
         return count;
+    }
+}
+
+class Bio {
+    public String dnaToRna(String dna) {
+        //DNA to RNA Conversion
+        dna = dna.replace('T', 'U');
+        return dna;  // Do your magic!
     }
 }
