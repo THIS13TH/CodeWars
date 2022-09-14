@@ -97,8 +97,11 @@ public class Main {
 //        CodeWars codeWars = new CodeWars();
 //        System.out.println(CodeWars.strCount("Hello", 'l'));
 //        System.out.println(CodeWars.strCount("",'z'));
-        Bio bio = new Bio();
-        System.out.println(bio.dnaToRna("TTTT"));
+//
+//        Bio bio = new Bio();
+//        System.out.println(bio.dnaToRna("TTTT"));
+        RemoveChars removeChars = new RemoveChars();
+        System.out.println(RemoveChars.remove("eloquent"));
     }
 }
 
@@ -636,5 +639,12 @@ class Bio {
         //DNA to RNA Conversion
         dna = dna.replace('T', 'U');
         return dna;  // Do your magic!
+    }
+}
+
+class RemoveChars {
+    //Remove First and Last Character
+    public static String remove(String str) {
+        return str.substring(1, str.length() - 1);
     }
 }
