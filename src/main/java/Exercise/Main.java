@@ -362,6 +362,11 @@ class Solution {
             return (l+w) * 2;
         }
     }
+
+    public static String[] stringToArray(String s) {
+        //Convert a string to an array;
+        return s.split(" ");
+    }
 }
 
 class SmashWords {
