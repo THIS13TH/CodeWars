@@ -651,10 +651,16 @@ class Bio {
         return dna;  // Do your magic!
     }
 }
-
 class RemoveChars {
     //Remove First and Last Character
     public static String remove(String str) {
         return str.substring(1, str.length() - 1);
+    }
+}
+
+class EvenOrOdd {
+    public static String even_or_odd(int number) {
+        //Even or Odd
+        return number % 2 == 0 ? "Even" : "Odd";
     }
 }
