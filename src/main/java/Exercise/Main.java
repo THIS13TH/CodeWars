@@ -367,6 +367,11 @@ class Solution {
         //Convert a string to an array;
         return s.split(" ");
     }
+
+    public static int century(int number) {
+        //Century From Year
+        return (number + 99) / 100;
+    }
 }
 
 class SmashWords {
