@@ -664,3 +664,10 @@ class EvenOrOdd {
         return number % 2 == 0 ? "Even" : "Odd";
     }
 }
+
+class Ascii {
+    //get character from ASCII Value
+    public static char getChar(int c) {
+        return (char) c;
+    }
+}
