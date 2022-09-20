@@ -372,6 +372,14 @@ class Solution {
         //Century From Year
         return (number + 99) / 100;
     }
+
+
+    public static int addFive(int num) {
+        //Grasshopper - Basic Function Fixer
+        return num + 5;
+    }
+
+
 }
 
 class SmashWords {
@@ -671,3 +679,4 @@ class Ascii {
         return (char) c;
     }
 }
+
