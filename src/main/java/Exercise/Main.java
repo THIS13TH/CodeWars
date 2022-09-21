@@ -100,8 +100,8 @@ public class Main {
 //
 //        Bio bio = new Bio();
 //        System.out.println(bio.dnaToRna("TTTT"));
-        RemoveChars removeChars = new RemoveChars();
-        System.out.println(RemoveChars.remove("eloquent"));
+//        RemoveChars removeChars = new RemoveChars();
+//        System.out.println(RemoveChars.remove("eloquent"));
     }
 }
 
@@ -307,6 +307,27 @@ class Kata {
 //        }
 //        return max;
         return Arrays.stream(list).max().getAsInt();
+    }
+
+    public static int[] countPositivesSumNegatives(int[] input)
+    {
+        //Count of positives / sum of negatives
+        if(input == null || input.length == 0){
+            return new int[]{};
+        }
+        int contPostive = 0;
+        int sumNegative = 0;
+        for (int count : input) {
+            if(count > 0){
+                contPostive ++;
+            }
+        }
+        for (int negative : input) {
+            if(negative < 0){
+                sumNegative += negative;
+            }
+        }
+        return new int[]{contPostive, sumNegative};
     }
 
 }
