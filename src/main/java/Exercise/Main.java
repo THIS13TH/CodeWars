@@ -1,7 +1,5 @@
 package Exercise;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -701,3 +699,9 @@ class Ascii {
     }
 }
 
+class HelloWorld {
+    //Function 1 - hello world
+    public static String greet(){
+        return "hello world!";
+    }
+}
