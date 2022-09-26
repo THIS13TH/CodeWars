@@ -2,6 +2,7 @@ package Exercise;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
@@ -326,6 +327,24 @@ class Kata {
             }
         }
         return new int[]{contPostive, sumNegative};
+    }
+
+    public static int[] between(int a, int b) {
+        //What is between?
+        int length = 0;
+        for(int k = a; k <= b; k++){
+            length++;
+        }
+
+        int[] array = new int[length];
+        int first = a;
+
+        for(int i = 0; i < length; i++){
+            array[i] = first;
+            first++;
+
+        }
+        return array;
     }
 
 }
