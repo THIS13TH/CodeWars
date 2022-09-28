@@ -738,3 +738,10 @@ class Move {
         return position + (roll * 2);
     }
 }
+
+class Upper{
+    public static String MakeUpperCase(String str){
+        //MakeUpperCase
+        return str.toUpperCase();
+    }
+}
