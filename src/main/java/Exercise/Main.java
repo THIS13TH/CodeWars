@@ -2,7 +2,6 @@ package Exercise;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
@@ -101,6 +100,8 @@ public class Main {
 //        System.out.println(bio.dnaToRna("TTTT"));
 //        RemoveChars removeChars = new RemoveChars();
 //        System.out.println(RemoveChars.remove("eloquent"));
+        Kata kata = new Kata();
+        System.out.println(kata.multiTable(5));
     }
 }
 
@@ -222,15 +223,19 @@ class Kata {
         for (int i = 0; i < d; i++) {
             result += 40;
         }
-        if(d >= 3 && d < 7){result -= 20;}
-        if(d >= 7){result -= 50;}
+        if (d >= 3 && d < 7) {
+            result -= 20;
+        }
+        if (d >= 7) {
+            result -= 50;
+        }
         return result;
         // return d < 7 ? d < 3 ? 40 * d : 40 * d - 20 : 40 * d - 50;
     }
 
     public static int quarterOf(int month) {
         //Quarter of the year
-        return (month+2)/3;
+        return (month + 2) / 3;
 //        int quarter = 0;
 //        if (month >= 1 && month <= 3) {
 //            quarter = 1;
@@ -246,7 +251,7 @@ class Kata {
 
     public static int makeNegative(final int x) {
         //Return Negative
-        if(x < 0){
+        if (x < 0) {
             return x;
         }
         return x * -1;
@@ -254,23 +259,22 @@ class Kata {
 
     static String greet(String name, String owner) {
         //Grasshopper - Personalized Message
-        if(name.equals(owner)){
+        if (name.equals(owner)) {
             return "Hello boss";
-        }else{
+        } else {
             return "Hello guest";
         }
     }
 
     public static String noSpace(final String x) {
         //Remove String Spaces
-        return x.replaceAll(" ","");
+        return x.replaceAll(" ", "");
     }
 
-    public static String switchItUp(int number)
-    {
+    public static String switchItUp(int number) {
         //Switch it Up!
         String[] numbers =
-                {"Zero","One", "Two", "Three",
+                {"Zero", "One", "Two", "Three",
                         "Four", "Five", "Six",
                         "Seven", "Eight", "Nine"};
 
@@ -308,21 +312,20 @@ class Kata {
         return Arrays.stream(list).max().getAsInt();
     }
 
-    public static int[] countPositivesSumNegatives(int[] input)
-    {
+    public static int[] countPositivesSumNegatives(int[] input) {
         //Count of positives / sum of negatives
-        if(input == null || input.length == 0){
+        if (input == null || input.length == 0) {
             return new int[]{};
         }
         int contPostive = 0;
         int sumNegative = 0;
         for (int count : input) {
-            if(count > 0){
-                contPostive ++;
+            if (count > 0) {
+                contPostive++;
             }
         }
         for (int negative : input) {
-            if(negative < 0){
+            if (negative < 0) {
                 sumNegative += negative;
             }
         }
@@ -332,19 +335,33 @@ class Kata {
     public static int[] between(int a, int b) {
         //What is between?
         int length = 0;
-        for(int k = a; k <= b; k++){
+        for (int k = a; k <= b; k++) {
             length++;
         }
 
         int[] array = new int[length];
         int first = a;
 
-        for(int i = 0; i < length; i++){
+        for (int i = 0; i < length; i++) {
             array[i] = first;
             first++;
 
         }
         return array;
+    }
+
+    public static String multiTable(int num) {
+        String res = "";
+        for (int i = 1; i <= 10; i++) {
+            res += (i + " * " + num + " = " + num * i) ;
+            if(i < 10){
+                res +="\n";
+            }
+
+        }
+        return res;
+
+
     }
 
 }
@@ -377,27 +394,28 @@ class Solution {
         }
         return result;
     }
+
     static String removeExclamationMarks(String s) {
         //Remove exclamation marks
-        return s.replace("!","");
+        return s.replace("!", "");
     }
 
     public static boolean check(Object[] a, Object x) {
         //You only need one - Beginner
         for (int i = 0; i < a.length; i++) {
-            if(x == a[i]){
+            if (x == a[i]) {
                 return true;
             }
         }
         return false;
     }
 
-    public static int areaOrPerimeter (int l, int w) {
+    public static int areaOrPerimeter(int l, int w) {
         //Area or Perimeter
-        if(l == w){
-            return l*l;
-        }else{
-            return (l+w) * 2;
+        if (l == w) {
+            return l * l;
+        } else {
+            return (l + w) * 2;
         }
     }
 
@@ -490,9 +508,9 @@ class MinMax {
     }
 }
 
-class Cockroach{
+class Cockroach {
     //Beginner Series #4 Cockroach
-    public int cockroachSpeed(double x){
+    public int cockroachSpeed(double x) {
         return (int) Math.floor(x * 27.7777777777778);
     }
 }
@@ -503,7 +521,7 @@ class Accumul {
         String result = "";
         char[] chars = s.toCharArray();
         for (int i = 0; i < chars.length; i++) {
-            result +=  '-' + String.valueOf(s.charAt(i)).toUpperCase() + String.valueOf(s.charAt(i)).repeat(i).toLowerCase();
+            result += '-' + String.valueOf(s.charAt(i)).toUpperCase() + String.valueOf(s.charAt(i)).repeat(i).toLowerCase();
         }
         return result.substring(1);
     }
@@ -514,9 +532,9 @@ class Counter {
         //Counting sheep
         int sheeps = 0;
         for (int i = 0; i < arrayOfSheeps.length; i++) {
-            if(arrayOfSheeps[i] == null){
+            if (arrayOfSheeps[i] == null) {
                 sheeps += 0;
-            }else if(arrayOfSheeps[i] == true){
+            } else if (arrayOfSheeps[i] == true) {
                 sheeps += 1;
             }
         }
@@ -554,22 +572,23 @@ class MixedSum {
         Object[] arr = mixed.toArray();
         int result = 0;
         for (int i = 0; i < arr.length; i++) {
-            result+= Integer.parseInt(arr[i].toString());
+            result += Integer.parseInt(arr[i].toString());
         }
         return result;
     }
 }
+
 class TrafficLights {
 
     public static String updateLight(String current) {
         //Thinkful - Logic Drills: Traffic light
         String newLight = "";
 
-        if(current.equals("green")){
+        if (current.equals("green")) {
             newLight = "yellow";
-        }else if(current.equals("red")){
+        } else if (current.equals("red")) {
             newLight = "green";
-        }else if(current.equals("yellow")){
+        } else if (current.equals("yellow")) {
             newLight = "red";
         }
 
@@ -577,18 +596,16 @@ class TrafficLights {
     }
 }
 
-class BasicOperations
-{
-    public static Integer basicMath(String op, int v1, int v2)
-    {
+class BasicOperations {
+    public static Integer basicMath(String op, int v1, int v2) {
         //Basic Mathematical Operations
-        if(op.equals("+")){
+        if (op.equals("+")) {
             return v1 + v2;
-        }else if(op.equals("-")){
+        } else if (op.equals("-")) {
             return v1 - v2;
-        }else if(op.equals("*")) {
+        } else if (op.equals("*")) {
             return v1 * v2;
-        }else if(op.equals("/")) {
+        } else if (op.equals("/")) {
             return v1 / v2;
         }
         return null;
@@ -602,14 +619,14 @@ class Correct {
 //        String str2 = str.replaceAll("1", "I");
 //        String str3 = str2.replaceAll("0", "O");
 //        return str3;
-        return string.replace("5","S").replace("0", "O").replace("1","I");
+        return string.replace("5", "S").replace("0", "O").replace("1", "I");
     }
 }
 
 class Sid {
     public static String howMuchILoveYou(int nb_petals) {
         //I love you, a little , a lot, passionately ... not at all
-        String[] arr = {"I love you","a little", "a lot", "passionately", "madly", "not at all"};
+        String[] arr = {"I love you", "a little", "a lot", "passionately", "madly", "not at all"};
         return arr[(nb_petals - 1) % 6];
     }
 
@@ -619,12 +636,12 @@ class Sid {
     }
 }
 
-class Positive{
+class Positive {
     //Sum of positive
-    public static int sum(int[] arr){
+    public static int sum(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] > 0){
+            if (arr[i] > 0) {
                 sum += arr[i];
             }
         }
@@ -632,6 +649,7 @@ class Positive{
     }
 
 }
+
 class SmallestIntegerFinder {
     public static int findSmallestInt(int[] args) {
         //Find the smallest integer in the array
@@ -645,12 +663,12 @@ class SmallestIntegerFinder {
     }
 }
 
-class HelpAlex{
-    public static String hoopCount(int n){
+class HelpAlex {
+    public static String hoopCount(int n) {
         //Keep up the hoop
-        if(n >= 10 ){
+        if (n >= 10) {
             return "Great, now move on to tricks";
-        }else{
+        } else {
             return "Keep at it until you get it";
         }
     }
@@ -659,14 +677,14 @@ class HelpAlex{
 class Calculate {
     public static String bmi(double weight, double height) {
         //Calculate BMI
-        double bmi =  weight / Math.pow(height, 2);
-        if(bmi <= 18.5){
+        double bmi = weight / Math.pow(height, 2);
+        if (bmi <= 18.5) {
             return "Underweight";
-        }else if(bmi <= 25.0){
+        } else if (bmi <= 25.0) {
             return "Normal";
-        }else if(bmi <= 30.0){
+        } else if (bmi <= 30.0) {
             return "Overweight";
-        }else if(bmi > 30){
+        } else if (bmi > 30) {
             return "Obese";
         }
         return null;
@@ -679,9 +697,9 @@ class CodeWars {
         char[] array = str.toCharArray();
         int count = 0;
         for (int i = 0; i < array.length; i++) {
-            if(array[i] == letter){
+            if (array[i] == letter) {
                 count += 1;
-            }else if(array[i] == letter){
+            } else if (array[i] == letter) {
                 return 0;
             }
 
@@ -697,6 +715,7 @@ class Bio {
         return dna;  // Do your magic!
     }
 }
+
 class RemoveChars {
     //Remove First and Last Character
     public static String remove(String str) {
@@ -720,13 +739,13 @@ class Ascii {
 
 class HelloWorld {
     //Function 1 - hello world
-    public static String greet(){
+    public static String greet() {
         return "hello world!";
     }
 }
 
-class Converter{
-    public static int binToDecimal(String inp){
+class Converter {
+    public static int binToDecimal(String inp) {
         return Integer.parseInt(inp, 2);
 
     }
@@ -739,8 +758,8 @@ class Move {
     }
 }
 
-class Upper{
-    public static String MakeUpperCase(String str){
+class Upper {
+    public static String MakeUpperCase(String str) {
         //MakeUpperCase
         return str.toUpperCase();
     }
