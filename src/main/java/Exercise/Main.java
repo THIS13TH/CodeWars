@@ -353,17 +353,19 @@ class Kata {
     public static String multiTable(int num) {
         String res = "";
         for (int i = 1; i <= 10; i++) {
-            res += (i + " * " + num + " = " + num * i) ;
-            if(i < 10){
-                res +="\n";
+            res += (i + " * " + num + " = " + num * i);
+            if (i < 10) {
+                res += "\n";
             }
 
         }
         return res;
-
-
     }
 
+    public static int hexToDec(final String hexString) {
+        // Hex to Decimal
+        return Integer.parseInt(hexString, 16);
+    }
 }
 
 class StringToNumber {
@@ -764,3 +766,4 @@ class Upper {
         return str.toUpperCase();
     }
 }
+
