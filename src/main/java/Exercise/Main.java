@@ -361,10 +361,15 @@ class Kata {
         }
         return res;
     }
-
     public static int hexToDec(final String hexString) {
         // Hex to Decimal
         return Integer.parseInt(hexString, 16);
+    }
+
+    public static String greet(String name)
+    {
+        //Returning Strings
+        return String.format("Hello, %s how are you doing today?",name);
     }
 }
 
