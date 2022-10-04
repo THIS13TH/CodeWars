@@ -2,6 +2,9 @@ package Exercise;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.*;
+
+
 
 public class Main {
     public static void main(String[] args) {
@@ -776,5 +779,14 @@ class ThirdAngle {
     public static int otherAngle(int angle1, int angle2) {
         //Third Angle of a Triangle
         return 180 - (angle1 + angle2);
+    }
+}
+
+class SortAndStar {
+    //Sort and Star
+    public static String twoSort(String[] s) {
+        Arrays.sort(s);
+        return String.join("***", s[0].split(""));
+
     }
 }
