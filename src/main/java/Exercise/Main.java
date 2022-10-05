@@ -374,6 +374,15 @@ class Kata {
         //Returning Strings
         return String.format("Hello, %s how are you doing today?",name);
     }
+
+    public static String position(char alphabet)
+    {
+        //Find the position!
+        String line = "abcdefghijklmnopqrstuvwxyz";
+
+        int position = line.indexOf(String.valueOf(alphabet).toLowerCase())+1;
+        return "Position of alphabet: " + String.valueOf(position);
+    }
 }
 
 class StringToNumber {
@@ -790,3 +799,4 @@ class SortAndStar {
 
     }
 }
+
