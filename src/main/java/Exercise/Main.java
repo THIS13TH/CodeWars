@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 
-
 public class Main {
     public static void main(String[] args) {
 
@@ -103,7 +102,8 @@ public class Main {
 //        RemoveChars removeChars = new RemoveChars();
 //        System.out.println(RemoveChars.remove("eloquent"));
         Kata kata = new Kata();
-        System.out.println(kata.multiTable(5));
+//        System.out.println(kata.multiTable(5));
+        System.out.println(Kata.betterThanAverage(new int[] {100, 40, 34, 57, 29, 72, 57, 88}, 75));
     }
 }
 
@@ -363,24 +363,34 @@ class Kata {
         }
         return res;
     }
+
     public static int hexToDec(final String hexString) {
         // Hex to Decimal
         return Integer.parseInt(hexString, 16);
     }
 
-    public static String greet(String name)
-    {
+    public static String greet(String name) {
         //Returning Strings
-        return String.format("Hello, %s how are you doing today?",name);
+        return String.format("Hello, %s how are you doing today?", name);
     }
 
-    public static String position(char alphabet)
-    {
+    public static String position(char alphabet) {
         //Find the position!
         String line = "abcdefghijklmnopqrstuvwxyz";
 
-        int position = line.indexOf(String.valueOf(alphabet).toLowerCase())+1;
+        int position = line.indexOf(String.valueOf(alphabet).toLowerCase()) + 1;
         return "Position of alphabet: " + String.valueOf(position);
+    }
+
+    public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+        //How good are you really
+        int point = 0;
+        for (int i = 0; i < classPoints.length; i++) {
+            point += classPoints[i] ;
+        }
+        int res = point / classPoints.length;
+        return yourPoints > res;
+
     }
 }
 
@@ -802,7 +812,7 @@ class SortAndStar {
 class NoBoring {
     public static int noBoringZeros(int n) {
         //No zeros for heros
-        return n == 0 || n % 10 != 0 ? n : noBoringZeros(n/10);
+        return n == 0 || n % 10 != 0 ? n : noBoringZeros(n / 10);
 //        if (n == 0)
 //            return n;
 //
