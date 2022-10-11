@@ -105,7 +105,7 @@ public class Main {
 //        System.out.println(RemoveChars.remove("eloquent"));
         Kata kata = new Kata();
 //        System.out.println(kata.multiTable(5));
-        System.out.println(Kata.betterThanAverage(new int[] {100, 40, 34, 57, 29, 72, 57, 88}, 75));
+        System.out.println(Kata.betterThanAverage(new int[]{100, 40, 34, 57, 29, 72, 57, 88}, 75));
     }
 }
 
@@ -388,11 +388,19 @@ class Kata {
         //How good are you really
         int point = 0;
         for (int i = 0; i < classPoints.length; i++) {
-            point += classPoints[i] ;
+            point += classPoints[i];
         }
         int res = point / classPoints.length;
         return yourPoints > res;
+    }
 
+    public static int grow(int[] x){
+        //Beginner - Reduce but Grow
+        int res = 1;
+        for (int i: x) {
+            res *= i;
+        }
+        return res;
     }
 }
 
@@ -841,14 +849,14 @@ class FakeBinary {
 //        return new String(c);
 }
 
-class Minimum{
+class Minimum {
     //Form The Minimum
-    public static int minValue(int[] values){
+    public static int minValue(int[] values) {
         List<Integer> array = new ArrayList<>();
         for (int n : values) {
             array.add(n);
         }
-        var res = array.stream().distinct().sorted().map(x->String.valueOf(x));
+        var res = array.stream().distinct().sorted().map(x -> String.valueOf(x));
         return Integer.parseInt(res.collect(Collectors.joining()));
     }
 
