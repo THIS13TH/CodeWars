@@ -394,10 +394,10 @@ class Kata {
         return yourPoints > res;
     }
 
-    public static int grow(int[] x){
+    public static int grow(int[] x) {
         //Beginner - Reduce but Grow
         int res = 1;
-        for (int i: x) {
+        for (int i : x) {
             res *= i;
         }
         return res;
@@ -859,5 +859,15 @@ class Minimum {
         var res = array.stream().distinct().sorted().map(x -> String.valueOf(x));
         return Integer.parseInt(res.collect(Collectors.joining()));
     }
+}
 
+class FirstNonConsecutive {
+    //Find the first non-consecutive number
+    static Integer find(final int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i + 1] != array[i] + 1)
+                return array[i + 1];
+        }
+        return null;
+    }
 }
