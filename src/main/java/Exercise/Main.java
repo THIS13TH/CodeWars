@@ -871,3 +871,13 @@ class FirstNonConsecutive {
         return null;
     }
 }
+
+class Goals {
+    //Grasshopper - Messi goals function
+    public static int goals(int...array) {
+        return Arrays.stream(array).sum();
+    }
+//public static int goals(int laLigaGoals, int copaDelReyGoals, int championsLeagueGoals) {
+//       return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+//      }
+}
