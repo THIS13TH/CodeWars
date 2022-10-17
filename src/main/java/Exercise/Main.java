@@ -407,6 +407,12 @@ class Kata {
         //Surface Area and Volume of a Box
         return new int[] {2 * (w * h + h * d + d * w), w * h * d};
     }
+
+    public static int opposite(int number)
+            //Opposite number
+    {
+        return -number;
+    }
 }
 
 class StringToNumber {
