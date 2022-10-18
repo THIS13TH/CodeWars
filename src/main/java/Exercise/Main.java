@@ -413,6 +413,15 @@ class Kata {
     {
         return -number;
     }
+
+    public static int[] digitize(long n) {
+        // Convert number to reversed array of digits
+        return new StringBuilder().append(n)
+                .reverse()
+                .chars()
+                .map(Character::getNumericValue)
+                .toArray();
+    }
 }
 
 class StringToNumber {
