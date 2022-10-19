@@ -403,13 +403,13 @@ class Kata {
         return res;
     }
 
-    public static int[] getSize(int w,int h,int d) {
+    public static int[] getSize(int w, int h, int d) {
         //Surface Area and Volume of a Box
-        return new int[] {2 * (w * h + h * d + d * w), w * h * d};
+        return new int[]{2 * (w * h + h * d + d * w), w * h * d};
     }
 
     public static int opposite(int number)
-            //Opposite number
+    //Opposite number
     {
         return -number;
     }
@@ -421,6 +421,22 @@ class Kata {
                 .chars()
                 .map(Character::getNumericValue)
                 .toArray();
+    }
+
+    public static String rps(String p1, String p2) {
+        //Rock Paper Scissors!
+        if (p1 == p2) {
+            return "Draw!";
+        }
+        if (p1 == "rock" && p2 == "scissors") {
+            return "Player 1 won!";
+        } else if (p1 == "paper" && p2 == "rock") {
+            return "Player 1 won!";
+        } else if (p1 == "scissors" && p2 == "paper") {
+            return "Player 1 won!";
+        } else {
+            return "Player 2 won!";
+        }
     }
 }
 
@@ -894,7 +910,7 @@ class FirstNonConsecutive {
 
 class Goals {
     //Grasshopper - Messi goals function
-    public static int goals(int...array) {
+    public static int goals(int... array) {
         return Arrays.stream(array).sum();
     }
 //public static int goals(int laLigaGoals, int copaDelReyGoals, int championsLeagueGoals) {
@@ -913,9 +929,9 @@ class SumArray {
     }
 }
 
-class TwiceAsOld{
-        //Twice as old
-    public static int TwiceAsOld(int dadYears, int sonYears){
+class TwiceAsOld {
+    //Twice as old
+    public static int TwiceAsOld(int dadYears, int sonYears) {
         int twice = dadYears - sonYears * 2;
         return twice < 0 ? twice * (-1) : twice;
 
