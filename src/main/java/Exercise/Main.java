@@ -103,9 +103,13 @@ public class Main {
 //        System.out.println(bio.dnaToRna("TTTT"));
 //        RemoveChars removeChars = new RemoveChars();
 //        System.out.println(RemoveChars.remove("eloquent"));
-        Kata kata = new Kata();
+        //Kata kata = new Kata();
 //        System.out.println(kata.multiTable(5));
-        System.out.println(Kata.betterThanAverage(new int[]{100, 40, 34, 57, 29, 72, 57, 88}, 75));
+//System.out.println(Kata.betterThanAverage(new int[]{100, 40, 34, 57, 29, 72, 57, 88}, 75));
+
+        ArrayPrinter arrayPrinter = new ArrayPrinter();
+        Integer[] array=new Integer[]{2,4,5,2};
+        System.out.println(ArrayPrinter.printArray(array));;
     }
 }
 
@@ -939,9 +943,20 @@ class TwiceAsOld {
 }
 
 class XOR {
-        //Exclusive "or" (xor) Logical Operator
+    //Exclusive "or" (xor) Logical Operator
     public static boolean xor(boolean a, boolean b) {
         //your code here:
         return a != b;
+    }
+}
+
+class ArrayPrinter {
+    //Printing Array elements with Comma delimiters
+    public static String printArray(Object[] array) {
+        String[] str = new String[array.length];
+        for (int i = 0; i < array.length; i++) {
+            str[i] = String.valueOf(array[i]);
+        }
+        return String.join(",", str);
     }
 }
