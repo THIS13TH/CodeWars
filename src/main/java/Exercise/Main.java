@@ -106,10 +106,8 @@ public class Main {
         //Kata kata = new Kata();
 //        System.out.println(kata.multiTable(5));
 //System.out.println(Kata.betterThanAverage(new int[]{100, 40, 34, 57, 29, 72, 57, 88}, 75));
-
-        ArrayPrinter arrayPrinter = new ArrayPrinter();
-        Integer[] array=new Integer[]{2,4,5,2};
-        System.out.println(ArrayPrinter.printArray(array));;
+        Kata kata = new Kata();
+        System.out.println(Kata.countBy(1,10));
     }
 }
 
@@ -442,108 +440,117 @@ class Kata {
             return "Player 2 won!";
         }
     }
-}
 
-class StringToNumber {
-    //Convert a String to a Number!
-    public static int stringToNumber(String str) {
-        return Integer.parseInt(str);
-    }
-}
-
-class AbbreviateTwoWords {
-
-    public static String abbrevName(String name) {
-        String firstLetters = "";
-
-        name = name.replaceAll("[.]", ""); // Replace dots, etc (optional)
-        for (String s : name.split(" ")) {
-            firstLetters += s.charAt(0);
-        }
-        return firstLetters.substring(0, 1).toUpperCase() + "." + firstLetters.substring(1).toUpperCase();
-    }
-}
-
-class Solution {
-    public static String repeatStr(final int repeat, final String string) {
-        String result = "";
-        for (int i = 0; i < repeat; i++) {
-            result += string;
+    public static int[] countBy(int x, int n) {
+        //Count by X
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+            result[i] += x * (1 + i);
         }
         return result;
     }
+}
 
-    static String removeExclamationMarks(String s) {
-        //Remove exclamation marks
-        return s.replace("!", "");
+    class StringToNumber {
+        //Convert a String to a Number!
+        public static int stringToNumber(String str) {
+            return Integer.parseInt(str);
+        }
     }
 
-    public static boolean check(Object[] a, Object x) {
-        //You only need one - Beginner
-        for (int i = 0; i < a.length; i++) {
-            if (x == a[i]) {
-                return true;
+    class AbbreviateTwoWords {
+
+        public static String abbrevName(String name) {
+            String firstLetters = "";
+
+            name = name.replaceAll("[.]", ""); // Replace dots, etc (optional)
+            for (String s : name.split(" ")) {
+                firstLetters += s.charAt(0);
+            }
+            return firstLetters.substring(0, 1).toUpperCase() + "." + firstLetters.substring(1).toUpperCase();
+        }
+    }
+
+    class Solution {
+        public static String repeatStr(final int repeat, final String string) {
+            String result = "";
+            for (int i = 0; i < repeat; i++) {
+                result += string;
+            }
+            return result;
+        }
+
+        static String removeExclamationMarks(String s) {
+            //Remove exclamation marks
+            return s.replace("!", "");
+        }
+
+        public static boolean check(Object[] a, Object x) {
+            //You only need one - Beginner
+            for (int i = 0; i < a.length; i++) {
+                if (x == a[i]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static int areaOrPerimeter(int l, int w) {
+            //Area or Perimeter
+            if (l == w) {
+                return l * l;
+            } else {
+                return (l + w) * 2;
             }
         }
-        return false;
+
+        public static String[] stringToArray(String s) {
+            //Convert a string to an array;
+            return s.split(" ");
+        }
+
+        public static int century(int number) {
+            //Century From Year
+            return (number + 99) / 100;
+        }
+
+
+        public static int addFive(int num) {
+            //Grasshopper - Basic Function Fixer
+            return num + 5;
+        }
+
+
     }
 
-    public static int areaOrPerimeter(int l, int w) {
-        //Area or Perimeter
-        if (l == w) {
-            return l * l;
-        } else {
-            return (l + w) * 2;
+    class SmashWords {
+
+        public static String smash(String... words) {
+            String str = " ";
+
+            for (int i = 0; i < words.length; i++) {
+                str += " " + words[i];
+            }
+            return str.trim();
+            //return String.join(" ", words);
         }
     }
 
-    public static String[] stringToArray(String s) {
-        //Convert a string to an array;
-        return s.split(" ");
-    }
-
-    public static int century(int number) {
-        //Century From Year
-        return (number + 99) / 100;
-    }
-
-
-    public static int addFive(int num) {
-        //Grasshopper - Basic Function Fixer
-        return num + 5;
-    }
-
-
-}
-
-class SmashWords {
-
-    public static String smash(String... words) {
-        String str = " ";
-
-        for (int i = 0; i < words.length; i++) {
-            str += " " + words[i];
+    class GrassHopper {
+        //Grasshopper - Summation
+        public static int summation(int n) {
+            int result = 0;
+            for (int i = 0; i <= n; i++) {
+                result += i;
+            }
+            return result;
         }
-        return str.trim();
-        //return String.join(" ", words);
     }
-}
 
-class GrassHopper {
-    //Grasshopper - Summation
-    public static int summation(int n) {
-        int result = 0;
-        for (int i = 0; i <= n; i++) {
-            result += i;
-        }
-        return result;
-    }
-}
-
-class Sequence {
-    //Reversed sequence
-    public static int[] reverse(int n) {
-        int[] result = new int[n];
+    class Sequence {
+        //Reversed sequence
+        public static int[] reverse(int n) {
+            int[] result = new int[n];
 //        for (int i = 0; i <= n - 1 ; i++){
 //            result[i] = i + 1 ;
 //        }
@@ -552,317 +559,317 @@ class Sequence {
 //        for (int i = 0; i < result.length; i++) {
 //            reverseResult[result.length - 1 -i] = result[i];
 //        }
-        for (int i = 0; i < n; i++) {
-            result[i] = n - i;
-        }
-        return result;
-
-    }
-
-}
-
-class OppositesAttract {
-    public static boolean isLove(final int flower1, final int flower2) {
-        boolean isLove;
-        if (flower2 % 2 == 1 && flower1 % 2 == 0 || flower1 % 2 == 1 && flower2 % 2 == 0) {
-            isLove = true;
-        } else {
-            isLove = false;
-        }
-        return isLove;
-    }
-
-}
-
-class MinMax {
-    public static int[] minMax(int[] arr) {
-        //The highest profit wins!
-        if (arr.length == 1) {
-            return new int[]{arr[0], arr[0]};
-        } else {
-            Arrays.sort(arr);
-        }
-        return new int[]{arr[0], arr[arr.length - 1]};
-    }
-}
-
-class Cockroach {
-    //Beginner Series #4 Cockroach
-    public int cockroachSpeed(double x) {
-        return (int) Math.floor(x * 27.7777777777778);
-    }
-}
-
-class Accumul {
-    //Mumbling
-    public static String accum(String s) {
-        String result = "";
-        char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            result += '-' + String.valueOf(s.charAt(i)).toUpperCase() + String.valueOf(s.charAt(i)).repeat(i).toLowerCase();
-        }
-        return result.substring(1);
-    }
-}
-
-class Counter {
-    public int countSheeps(Boolean[] arrayOfSheeps) {
-        //Counting sheep
-        int sheeps = 0;
-        for (int i = 0; i < arrayOfSheeps.length; i++) {
-            if (arrayOfSheeps[i] == null) {
-                sheeps += 0;
-            } else if (arrayOfSheeps[i] == true) {
-                sheeps += 1;
+            for (int i = 0; i < n; i++) {
+                result[i] = n - i;
             }
+            return result;
+
         }
-        return sheeps;
-    }
-}
-
-class CharProblem {
-    public static int howOld(final String herOld) {
-        //Parse nice int from char problem
-        return Character.getNumericValue(herOld.charAt(0));
-        //return Integer.parseInt(herOld.substring(0, 1));
 
     }
-}
 
-class Maps {
-    public static int[] map(int[] arr) {
-        //Beginner - Lost Without a Map
+    class OppositesAttract {
+        public static boolean isLove(final int flower1, final int flower2) {
+            boolean isLove;
+            if (flower2 % 2 == 1 && flower1 % 2 == 0 || flower1 % 2 == 1 && flower2 % 2 == 0) {
+                isLove = true;
+            } else {
+                isLove = false;
+            }
+            return isLove;
+        }
+
+    }
+
+    class MinMax {
+        public static int[] minMax(int[] arr) {
+            //The highest profit wins!
+            if (arr.length == 1) {
+                return new int[]{arr[0], arr[0]};
+            } else {
+                Arrays.sort(arr);
+            }
+            return new int[]{arr[0], arr[arr.length - 1]};
+        }
+    }
+
+    class Cockroach {
+        //Beginner Series #4 Cockroach
+        public int cockroachSpeed(double x) {
+            return (int) Math.floor(x * 27.7777777777778);
+        }
+    }
+
+    class Accumul {
+        //Mumbling
+        public static String accum(String s) {
+            String result = "";
+            char[] chars = s.toCharArray();
+            for (int i = 0; i < chars.length; i++) {
+                result += '-' + String.valueOf(s.charAt(i)).toUpperCase() + String.valueOf(s.charAt(i)).repeat(i).toLowerCase();
+            }
+            return result.substring(1);
+        }
+    }
+
+    class Counter {
+        public int countSheeps(Boolean[] arrayOfSheeps) {
+            //Counting sheep
+            int sheeps = 0;
+            for (int i = 0; i < arrayOfSheeps.length; i++) {
+                if (arrayOfSheeps[i] == null) {
+                    sheeps += 0;
+                } else if (arrayOfSheeps[i] == true) {
+                    sheeps += 1;
+                }
+            }
+            return sheeps;
+        }
+    }
+
+    class CharProblem {
+        public static int howOld(final String herOld) {
+            //Parse nice int from char problem
+            return Character.getNumericValue(herOld.charAt(0));
+            //return Integer.parseInt(herOld.substring(0, 1));
+
+        }
+    }
+
+    class Maps {
+        public static int[] map(int[] arr) {
+            //Beginner - Lost Without a Map
 //        int[] result = new int[arr.length];
 //        for (int i = 0; i < arr.length; i++) {
 //            result[i] = arr[i] * 2;
 //        }
 //        return result;
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] *= 2;
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] *= 2;
+            }
+            return arr;
         }
-        return arr;
     }
-}
 
-class MixedSum {
-    //Sum Mixed Array
-    public int sum(List<?> mixed) {
-        Object[] arr = mixed.toArray();
-        int result = 0;
-        for (int i = 0; i < arr.length; i++) {
-            result += Integer.parseInt(arr[i].toString());
+    class MixedSum {
+        //Sum Mixed Array
+        public int sum(List<?> mixed) {
+            Object[] arr = mixed.toArray();
+            int result = 0;
+            for (int i = 0; i < arr.length; i++) {
+                result += Integer.parseInt(arr[i].toString());
+            }
+            return result;
         }
-        return result;
     }
-}
 
-class TrafficLights {
+    class TrafficLights {
 
-    public static String updateLight(String current) {
-        //Thinkful - Logic Drills: Traffic light
-        String newLight = "";
+        public static String updateLight(String current) {
+            //Thinkful - Logic Drills: Traffic light
+            String newLight = "";
 
-        if (current.equals("green")) {
-            newLight = "yellow";
-        } else if (current.equals("red")) {
-            newLight = "green";
-        } else if (current.equals("yellow")) {
-            newLight = "red";
+            if (current.equals("green")) {
+                newLight = "yellow";
+            } else if (current.equals("red")) {
+                newLight = "green";
+            } else if (current.equals("yellow")) {
+                newLight = "red";
+            }
+
+            return newLight;
         }
-
-        return newLight;
     }
-}
 
-class BasicOperations {
-    public static Integer basicMath(String op, int v1, int v2) {
-        //Basic Mathematical Operations
-        if (op.equals("+")) {
-            return v1 + v2;
-        } else if (op.equals("-")) {
-            return v1 - v2;
-        } else if (op.equals("*")) {
-            return v1 * v2;
-        } else if (op.equals("/")) {
-            return v1 / v2;
+    class BasicOperations {
+        public static Integer basicMath(String op, int v1, int v2) {
+            //Basic Mathematical Operations
+            if (op.equals("+")) {
+                return v1 + v2;
+            } else if (op.equals("-")) {
+                return v1 - v2;
+            } else if (op.equals("*")) {
+                return v1 * v2;
+            } else if (op.equals("/")) {
+                return v1 / v2;
+            }
+            return null;
         }
-        return null;
     }
-}
 
-class Correct {
-    //Correct the mistakes of the character recognition software
-    public static String correct(String string) {
+    class Correct {
+        //Correct the mistakes of the character recognition software
+        public static String correct(String string) {
 //        String str = string.replaceAll("5", "S");
 //        String str2 = str.replaceAll("1", "I");
 //        String str3 = str2.replaceAll("0", "O");
 //        return str3;
-        return string.replace("5", "S").replace("0", "O").replace("1", "I");
-    }
-}
-
-class Sid {
-    public static String howMuchILoveYou(int nb_petals) {
-        //I love you, a little , a lot, passionately ... not at all
-        String[] arr = {"I love you", "a little", "a lot", "passionately", "madly", "not at all"};
-        return arr[(nb_petals - 1) % 6];
+            return string.replace("5", "S").replace("0", "O").replace("1", "I");
+        }
     }
 
-    public static int simpleMultiplication(int n) {
-        //Simple multiplication
-        return n % 2 == 0 ? n * 8 : n * 9;
-    }
-}
+    class Sid {
+        public static String howMuchILoveYou(int nb_petals) {
+            //I love you, a little , a lot, passionately ... not at all
+            String[] arr = {"I love you", "a little", "a lot", "passionately", "madly", "not at all"};
+            return arr[(nb_petals - 1) % 6];
+        }
 
-class Positive {
-    //Sum of positive
-    public static int sum(int[] arr) {
-        int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) {
-                sum += arr[i];
+        public static int simpleMultiplication(int n) {
+            //Simple multiplication
+            return n % 2 == 0 ? n * 8 : n * 9;
+        }
+    }
+
+    class Positive {
+        //Sum of positive
+        public static int sum(int[] arr) {
+            int sum = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 0) {
+                    sum += arr[i];
+                }
+            }
+            return sum;
+        }
+
+    }
+
+    class SmallestIntegerFinder {
+        public static int findSmallestInt(int[] args) {
+            //Find the smallest integer in the array
+            int min = args[0];
+            for (int i = 0; i < args.length; i++) {
+                if (min > args[i]) {
+                    min = args[i];
+                }
+            }
+            return min;
+        }
+    }
+
+    class HelpAlex {
+        public static String hoopCount(int n) {
+            //Keep up the hoop
+            if (n >= 10) {
+                return "Great, now move on to tricks";
+            } else {
+                return "Keep at it until you get it";
             }
         }
-        return sum;
     }
 
-}
-
-class SmallestIntegerFinder {
-    public static int findSmallestInt(int[] args) {
-        //Find the smallest integer in the array
-        int min = args[0];
-        for (int i = 0; i < args.length; i++) {
-            if (min > args[i]) {
-                min = args[i];
+    class Calculate {
+        public static String bmi(double weight, double height) {
+            //Calculate BMI
+            double bmi = weight / Math.pow(height, 2);
+            if (bmi <= 18.5) {
+                return "Underweight";
+            } else if (bmi <= 25.0) {
+                return "Normal";
+            } else if (bmi <= 30.0) {
+                return "Overweight";
+            } else if (bmi > 30) {
+                return "Obese";
             }
-        }
-        return min;
-    }
-}
-
-class HelpAlex {
-    public static String hoopCount(int n) {
-        //Keep up the hoop
-        if (n >= 10) {
-            return "Great, now move on to tricks";
-        } else {
-            return "Keep at it until you get it";
+            return null;
         }
     }
-}
 
-class Calculate {
-    public static String bmi(double weight, double height) {
-        //Calculate BMI
-        double bmi = weight / Math.pow(height, 2);
-        if (bmi <= 18.5) {
-            return "Underweight";
-        } else if (bmi <= 25.0) {
-            return "Normal";
-        } else if (bmi <= 30.0) {
-            return "Overweight";
-        } else if (bmi > 30) {
-            return "Obese";
-        }
-        return null;
-    }
-}
+    class CodeWars {
+        public static int strCount(String str, char letter) {
+            //All Star Code Challenge #18
+            char[] array = str.toCharArray();
+            int count = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == letter) {
+                    count += 1;
+                } else if (array[i] == letter) {
+                    return 0;
+                }
 
-class CodeWars {
-    public static int strCount(String str, char letter) {
-        //All Star Code Challenge #18
-        char[] array = str.toCharArray();
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == letter) {
-                count += 1;
-            } else if (array[i] == letter) {
-                return 0;
             }
+            return count;
+        }
+    }
+
+    class Bio {
+        public String dnaToRna(String dna) {
+            //DNA to RNA Conversion
+            dna = dna.replace('T', 'U');
+            return dna;  // Do your magic!
+        }
+    }
+
+    class RemoveChars {
+        //Remove First and Last Character
+        public static String remove(String str) {
+            return str.substring(1, str.length() - 1);
+        }
+    }
+
+    class EvenOrOdd {
+        public static String even_or_odd(int number) {
+            //Even or Odd
+            return number % 2 == 0 ? "Even" : "Odd";
+        }
+    }
+
+    class Ascii {
+        //get character from ASCII Value
+        public static char getChar(int c) {
+            return (char) c;
+        }
+    }
+
+    class HelloWorld {
+        //Function 1 - hello world
+        public static String greet() {
+            return "hello world!";
+        }
+    }
+
+    class Converter {
+        public static int binToDecimal(String inp) {
+            return Integer.parseInt(inp, 2);
 
         }
-        return count;
     }
-}
 
-class Bio {
-    public String dnaToRna(String dna) {
-        //DNA to RNA Conversion
-        dna = dna.replace('T', 'U');
-        return dna;  // Do your magic!
+    class Move {
+        public static int move(int position, int roll) {
+            // Grasshopper - Terminal game move function
+            return position + (roll * 2);
+        }
     }
-}
 
-class RemoveChars {
-    //Remove First and Last Character
-    public static String remove(String str) {
-        return str.substring(1, str.length() - 1);
+    class Upper {
+        public static String MakeUpperCase(String str) {
+            //MakeUpperCase
+            return str.toUpperCase();
+        }
     }
-}
 
-class EvenOrOdd {
-    public static String even_or_odd(int number) {
-        //Even or Odd
-        return number % 2 == 0 ? "Even" : "Odd";
+    class ThirdAngle {
+        public static int otherAngle(int angle1, int angle2) {
+            //Third Angle of a Triangle
+            return 180 - (angle1 + angle2);
+        }
     }
-}
 
-class Ascii {
-    //get character from ASCII Value
-    public static char getChar(int c) {
-        return (char) c;
+    class SortAndStar {
+        //Sort and Star
+        public static String twoSort(String[] s) {
+            Arrays.sort(s);
+            return String.join("***", s[0].split(""));
+
+        }
     }
-}
 
-class HelloWorld {
-    //Function 1 - hello world
-    public static String greet() {
-        return "hello world!";
-    }
-}
-
-class Converter {
-    public static int binToDecimal(String inp) {
-        return Integer.parseInt(inp, 2);
-
-    }
-}
-
-class Move {
-    public static int move(int position, int roll) {
-        // Grasshopper - Terminal game move function
-        return position + (roll * 2);
-    }
-}
-
-class Upper {
-    public static String MakeUpperCase(String str) {
-        //MakeUpperCase
-        return str.toUpperCase();
-    }
-}
-
-class ThirdAngle {
-    public static int otherAngle(int angle1, int angle2) {
-        //Third Angle of a Triangle
-        return 180 - (angle1 + angle2);
-    }
-}
-
-class SortAndStar {
-    //Sort and Star
-    public static String twoSort(String[] s) {
-        Arrays.sort(s);
-        return String.join("***", s[0].split(""));
-
-    }
-}
-
-class NoBoring {
-    public static int noBoringZeros(int n) {
-        //No zeros for heros
-        return n == 0 || n % 10 != 0 ? n : noBoringZeros(n / 10);
+    class NoBoring {
+        public static int noBoringZeros(int n) {
+            //No zeros for heros
+            return n == 0 || n % 10 != 0 ? n : noBoringZeros(n / 10);
 //        if (n == 0)
 //            return n;
 //
@@ -870,14 +877,14 @@ class NoBoring {
 //            n /= 10;
 //
 //        return n;
+        }
     }
-}
 
-class FakeBinary {
-    //Fake Binary
-    public static String fakeBin(String numberString) {
-        return numberString.replaceAll("[0-4]", "0").replaceAll("[5-9]", "1");
-    }
+    class FakeBinary {
+        //Fake Binary
+        public static String fakeBin(String numberString) {
+            return numberString.replaceAll("[0-4]", "0").replaceAll("[5-9]", "1");
+        }
 //    char[] c = numberString.toCharArray();
 //        for (int i = 0; i < c.length; i++)
 //    {
@@ -887,76 +894,76 @@ class FakeBinary {
 //            c[i] = '1';
 //    }
 //        return new String(c);
-}
+    }
 
-class Minimum {
-    //Form The Minimum
-    public static int minValue(int[] values) {
-        List<Integer> array = new ArrayList<>();
-        for (int n : values) {
-            array.add(n);
+    class Minimum {
+        //Form The Minimum
+        public static int minValue(int[] values) {
+            List<Integer> array = new ArrayList<>();
+            for (int n : values) {
+                array.add(n);
+            }
+            var res = array.stream().distinct().sorted().map(x -> String.valueOf(x));
+            return Integer.parseInt(res.collect(Collectors.joining()));
         }
-        var res = array.stream().distinct().sorted().map(x -> String.valueOf(x));
-        return Integer.parseInt(res.collect(Collectors.joining()));
     }
-}
 
-class FirstNonConsecutive {
-    //Find the first non-consecutive number
-    static Integer find(final int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i + 1] != array[i] + 1)
-                return array[i + 1];
+    class FirstNonConsecutive {
+        //Find the first non-consecutive number
+        static Integer find(final int[] array) {
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i + 1] != array[i] + 1)
+                    return array[i + 1];
+            }
+            return null;
         }
-        return null;
     }
-}
 
-class Goals {
-    //Grasshopper - Messi goals function
-    public static int goals(int... array) {
-        return Arrays.stream(array).sum();
-    }
+    class Goals {
+        //Grasshopper - Messi goals function
+        public static int goals(int... array) {
+            return Arrays.stream(array).sum();
+        }
 //public static int goals(int laLigaGoals, int copaDelReyGoals, int championsLeagueGoals) {
 //       return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
 //      }
-}
+    }
 
-class SumArray {
-    //Sum Arrays
-    public static double sum(double[] numbers) {
-        double sum = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
+    class SumArray {
+        //Sum Arrays
+        public static double sum(double[] numbers) {
+            double sum = 0;
+            for (int i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            return sum;
         }
-        return sum;
     }
-}
 
-class TwiceAsOld {
-    //Twice as old
-    public static int TwiceAsOld(int dadYears, int sonYears) {
-        int twice = dadYears - sonYears * 2;
-        return twice < 0 ? twice * (-1) : twice;
+    class TwiceAsOld {
+        //Twice as old
+        public static int TwiceAsOld(int dadYears, int sonYears) {
+            int twice = dadYears - sonYears * 2;
+            return twice < 0 ? twice * (-1) : twice;
 
-    }
-}
-
-class XOR {
-    //Exclusive "or" (xor) Logical Operator
-    public static boolean xor(boolean a, boolean b) {
-        //your code here:
-        return a != b;
-    }
-}
-
-class ArrayPrinter {
-    //Printing Array elements with Comma delimiters
-    public static String printArray(Object[] array) {
-        String[] str = new String[array.length];
-        for (int i = 0; i < array.length; i++) {
-            str[i] = String.valueOf(array[i]);
         }
-        return String.join(",", str);
     }
-}
+
+    class XOR {
+        //Exclusive "or" (xor) Logical Operator
+        public static boolean xor(boolean a, boolean b) {
+            //your code here:
+            return a != b;
+        }
+    }
+
+    class ArrayPrinter {
+        //Printing Array elements with Comma delimiters
+        public static String printArray(Object[] array) {
+            String[] str = new String[array.length];
+            for (int i = 0; i < array.length; i++) {
+                str[i] = String.valueOf(array[i]);
+            }
+            return String.join(",", str);
+        }
+    }
