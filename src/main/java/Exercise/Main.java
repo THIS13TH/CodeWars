@@ -449,6 +449,20 @@ class Kata {
         }
         return result;
     }
+
+    public static long stairsIn20(int[][] stairs)
+    {
+        //How many stairs will Suzuki climb in 20 years?
+        long sum = 0;
+        long sum_20 = 0;
+        for (int[] day: stairs ) {
+            for (int num: day) {
+                sum = sum + num;
+            }
+        }
+        sum_20 = sum * 20;
+        return sum_20;
+    }
 }
 
     class StringToNumber {
