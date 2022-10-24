@@ -535,6 +535,7 @@ class Kata {
         }
 
 
+
     }
 
     class SmashWords {
@@ -981,3 +982,13 @@ class Kata {
             return String.join(",", str);
         }
     }
+
+class Goals2 {
+    //Grasshopper - Messi Goals
+    public static int laLigaGoals = 43;
+    public static int championsLeagueGoals = 10;
+    public static int copaDelReyGoals = 5;
+
+
+    public static int totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals;
+}
