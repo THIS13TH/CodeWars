@@ -463,6 +463,20 @@ class Kata {
         sum_20 = sum * 20;
         return sum_20;
     }
+
+    public static int sum(int[] numbers)
+    {
+        //Sum without highest and lowest number
+        if (numbers==null || numbers.length<3) return 0;
+
+        java.util.Arrays.sort(numbers);
+
+        int sum = 0;
+        for(int i=1;i<numbers.length-1;i++) {
+            sum += numbers[i];
+        }
+        return sum;
+    }
 }
 
     class StringToNumber {
@@ -989,6 +1003,6 @@ class Goals2 {
     public static int championsLeagueGoals = 10;
     public static int copaDelReyGoals = 5;
 
-
     public static int totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals;
 }
+
