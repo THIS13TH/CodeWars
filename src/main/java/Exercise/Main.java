@@ -477,6 +477,21 @@ class Kata {
         }
         return sum;
     }
+
+    public static long sumMul(int n, int m) {
+        //Sum of Multiples
+        int sum = 0;
+        if(n > 0 && m > 0) {
+            for (int i = n; i < m; i += n) {
+                if (i % n == 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
 }
 
 class StringToNumber {
