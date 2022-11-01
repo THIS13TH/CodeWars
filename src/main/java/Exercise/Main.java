@@ -481,7 +481,7 @@ class Kata {
     public static long sumMul(int n, int m) {
         //Sum of Multiples
         int sum = 0;
-        if(n > 0 && m > 0) {
+        if (n > 0 && m > 0) {
             for (int i = n; i < m; i += n) {
                 if (i % n == 0) {
                     sum += i;
@@ -491,6 +491,18 @@ class Kata {
         } else {
             throw new IllegalArgumentException();
         }
+    }
+
+    public static int[] pipeFix(int[] numbers) {
+        //Lario and Muigi Pipe Problem
+        int min = numbers[0];
+        int max = numbers[numbers.length - 1];
+        int size = max - min + 1;
+        int[] result = new int[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = i + min;
+        }
+        return result;
     }
 }
 
@@ -1020,8 +1032,8 @@ class Goals2 {
     public static int totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals;
 }
 
-class Hello{
-    public String sayHello(String [] name, String city, String state){
+class Hello {
+    public String sayHello(String[] name, String city, String state) {
         //Welcome to the City
         return String.format(
                 "Hello, %s! Welcome to %s, %s!",
@@ -1031,10 +1043,10 @@ class Hello{
     }
 }
 
-class KeepHydrated  {
+class KeepHydrated {
     //Keep Hydrated!
-    public int Liters(double time)  {
-        return  (int) (time / 2);
+    public int Liters(double time) {
+        return (int) (time / 2);
     }
 
 }
