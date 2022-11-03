@@ -1109,5 +1109,16 @@ class Vowels {
     public static int getCount(String str) {
         return str.replaceAll("(?i)[^aeiou]", "").length();
     }
+}
 
+class MonkeyCounter
+{
+    public static int[] monkeyCount(final int n){
+        //Count the Monkeys!
+        int[] arr = new int[n];
+        for (int i = 1; i < n; i++) {
+            arr[i] = i;
+        }
+        return arr;
+    }
 }
