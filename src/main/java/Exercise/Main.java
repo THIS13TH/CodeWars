@@ -504,6 +504,11 @@ class Kata {
         }
         return result;
     }
+
+    public static int toBinary(int n) {
+        //Convert to Binary
+        return Integer.parseInt(Integer.toBinaryString(n));
+    }
 }
 
 class StringToNumber {
@@ -1138,3 +1143,4 @@ class CodeWarsMath {
         return (int) Math.pow(Math.round(Math.sqrt(n)), 2);
     }
 }
+
