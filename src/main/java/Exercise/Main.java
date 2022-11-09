@@ -509,6 +509,11 @@ class Kata {
         //Convert to Binary
         return Integer.parseInt(Integer.toBinaryString(n));
     }
+
+    public static int oddCount(int n){
+        //Count Odd Numbers below n
+        return n / 2;
+    }
 }
 
 class StringToNumber {
@@ -1161,3 +1166,4 @@ class GhostCode{
         }
     }
 }
+
