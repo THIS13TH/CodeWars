@@ -514,6 +514,11 @@ class Kata {
         //Count Odd Numbers below n
         return n / 2;
     }
+
+    public static int nthPower(int[] array, int n) {
+        //N-th Power
+        return array.length - 1 < n ? -1 : (int) Math.pow(array[n], n);
+    }
 }
 
 class StringToNumber {
