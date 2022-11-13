@@ -519,6 +519,22 @@ class Kata {
         //N-th Power
         return array.length - 1 < n ? -1 : (int) Math.pow(array[n], n);
     }
+
+    public static int findLongest(final String str) {
+        //Squash the bugs (retired)
+        String[] spl = str.split(" ");
+        int longest = 0;
+        for (int i = 0; i < spl.length; i++) {
+            if (spl[i].length() > longest) {
+                longest = spl[i].length();
+            }
+
+        }
+        return longest;
+    }
+
+
+
 }
 
 class StringToNumber {
@@ -1172,3 +1188,18 @@ class GhostCode{
     }
 }
 
+class Swapper{
+    //Swap Values
+    public Object[] arguments;
+
+    public Swapper(final Object[] arguments){
+        this.arguments = arguments;
+    }
+
+    public void swapValues() {
+        Object[] args = new Object[]{arguments[0],arguments[1]};
+        Object temp = args[0];
+        arguments[0] = args[1];
+        arguments[1] = temp;
+    }
+}
