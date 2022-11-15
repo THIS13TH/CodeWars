@@ -533,7 +533,21 @@ class Kata {
         return longest;
     }
 
-
+    public static String datingRange(int age) {
+        //Age Range Compatibility Equation
+        if (age < 14) {
+            return String.format(
+                    "%d-%d",
+                    (int) (age - 0.10 * age),
+                    (int) (age + 0.10 * age)
+            );
+        }
+        return String.format(
+                "%s-%s",
+                age / 2 + 7,
+                (age - 7) * 2
+        );
+    }
 
 }
 
