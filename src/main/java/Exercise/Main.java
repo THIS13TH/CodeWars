@@ -1251,3 +1251,12 @@ class MyUtilities{
         return s.matches("^-?[0-9]{1,12}(?:\\.[0-9]{1,100})?$");
     }
 }
+
+class Alarm {
+
+    public static boolean setAlarm(boolean employed, boolean vacation) {
+        //L1: Set Alarm
+        return employed && !vacation;
+    }
+
+}
