@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static java.util.Arrays.sort;
 
@@ -549,6 +550,18 @@ class Kata {
         );
     }
 
+    public static String stringy(int size) {
+        //Stringy Strings
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < size; i++){
+            if (i % 2 ==0) {
+                builder.append(1);
+            } else {
+                builder.append(0);
+            }
+        }
+        return builder.toString();
+    }
 }
 
 class StringToNumber {
