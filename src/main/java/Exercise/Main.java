@@ -1266,10 +1266,16 @@ class MyUtilities{
 }
 
 class Alarm {
-
     public static boolean setAlarm(boolean employed, boolean vacation) {
         //L1: Set Alarm
         return employed && !vacation;
+    }
+}
+
+class SumArrayPlusArray {
+    //Array plus array
+    public static int arrayPlusArray(int[] arr1, int[] arr2) {
+        return Arrays.stream(arr1).sum() + Arrays.stream(arr2).sum();
     }
 
 }
