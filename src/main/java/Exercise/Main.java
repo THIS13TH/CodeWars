@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static java.util.Arrays.sort;
 
@@ -1294,4 +1293,25 @@ class Ghost {
         return colors[index];
     }
 
+}
+
+class EvenNumbers {
+    //Find numbers which are divisible by given number
+    public static int[] divisibleBy(int[] numbers, int divider) {
+        int count = 0;
+        for (int number : numbers){
+            if (number % divider == 0){
+                count ++;
+            }
+        }
+        int[] arr = new int[count];
+        int i = 0;
+        for (int number : numbers){
+            if (number % divider == 0){
+                arr[i] = number;
+                i++;
+            }
+        }
+        return arr;
+    }
 }
