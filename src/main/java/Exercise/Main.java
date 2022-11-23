@@ -561,6 +561,12 @@ class Kata {
         }
         return builder.toString();
     }
+
+    public static String shortcut(String input) {
+        //Vowel remover
+        return input.replaceAll("[AaEeIiOoUu]", "");
+
+    }
 }
 
 class StringToNumber {
