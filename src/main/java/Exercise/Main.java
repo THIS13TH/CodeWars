@@ -1345,3 +1345,12 @@ class Plural{
         return (f != 1 );
     }
 }
+
+class Dinglemouse {
+
+    public static String replaceDots(final String str) {
+        //FIXME: Replace all dots
+        return str.replaceAll("\\.", "-");
+    }
+
+}
