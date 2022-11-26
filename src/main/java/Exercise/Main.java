@@ -1349,7 +1349,7 @@ class Plural{
 class Dinglemouse {
 
     public static String replaceDots(final String str) {
-        //FIXME: Replace all dots
+        //Replace all dots
         return str.replaceAll("\\.", "-");
     }
 
