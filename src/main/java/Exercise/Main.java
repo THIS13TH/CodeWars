@@ -1385,3 +1385,10 @@ class WideMouthedFrog{
         return animal.equalsIgnoreCase("alligator") ? "small" : "wide";
     }
 }
+
+class GrassHopperDebugsayHello {
+    //Grasshopper - Debug sayHello
+    public static String sayHello(String name) {
+        return String.format("Hello, %s", name);
+    }
+}
