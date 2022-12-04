@@ -576,6 +576,19 @@ class Kata {
 
         return b1 == d1 && b2 == d2;
     }
+
+    public static String leo(final int oscar)
+    {
+        //Leonardo Dicaprio and Oscars
+        switch (oscar) {
+            case 86:
+                return "Not even for Wolf of wallstreet?!";
+            case 88:
+                return "Leo finally won the oscar! Leo is happy";
+            default:
+                return oscar < 88 ? "When will you give Leo an Oscar?" : "Leo got one already!";
+        }
+    }
 }
 
 class StringToNumber {
