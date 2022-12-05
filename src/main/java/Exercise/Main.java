@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static java.util.Arrays.sort;
 
@@ -1436,5 +1437,22 @@ class Greeter {
         return name.equals("Johnny")
                 ? "Hello, my love!"
                 : String.format("Hello, %s!", name);
+    }
+}
+
+class ZywOo {
+    //Multiple of index
+    public static int[] multipleOfIndex(int[] array) {
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] % i == 0) {
+                temp.add(array[i]);
+            }
+        }
+        int[] done = new int[temp.size()];
+        for (int i = 0; i < temp.size(); i++) {
+            done[i] = temp.get(i);
+        }
+        return done;
     }
 }
