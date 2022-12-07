@@ -590,6 +590,14 @@ class Kata {
                 return oscar < 88 ? "When will you give Leo an Oscar?" : "Leo got one already!";
         }
     }
+
+    public static String remove(String s, int n){
+        //Exclamation marks series #6: Remove n exclamation marks in the sentence from left to right
+        for(int i = 0; i < n;i++)
+            s = s.replaceFirst("!","");
+        return s;
+
+    }
 }
 
 class StringToNumber {
