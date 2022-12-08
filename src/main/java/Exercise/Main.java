@@ -1471,3 +1471,12 @@ class SimpleValidationOfUsernameWithRegex {
         return s.matches("[a-z0-9_]{4,16}");
     }
 }
+
+class Dinglemouse2 {
+    //Cat years, Dog years
+
+    public static int[] humanYearsCatYearsDogYears(final int humanYears) {
+        return new int[] {humanYears, humanYears > 1 ? 16 + 4 * humanYears : 15, humanYears > 1 ? 14 + 5 * humanYears : 15};
+    }
+
+}
