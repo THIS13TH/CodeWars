@@ -669,7 +669,10 @@ class Solution {
         return num + 5;
     }
 
-
+    public static String doubleChar(String s){
+        //Double Char
+        return s.replaceAll(".", "$0$0");
+    }
 }
 
 class SmashWords {
