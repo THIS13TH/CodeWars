@@ -1452,8 +1452,9 @@ class Greeter {
 }
 
 class ZywOo {
-    //Multiple of index
+
     public static int[] multipleOfIndex(int[] array) {
+        //Multiple of index
         ArrayList<Integer> temp = new ArrayList<Integer>();
         for (int i = 1; i < array.length; i++) {
             if (array[i] % i == 0) {
@@ -1465,6 +1466,15 @@ class ZywOo {
             done[i] = temp.get(i);
         }
         return done;
+    }
+
+    public static int sumOfDifferences(int[] arr) {
+        //Sum of differences in array
+        if (arr.length < 2) return 0;
+        int max = arr[0], min = max;
+        for (int a : arr) if (a > max) max = a;
+        else if (a < min) min = a;
+        return max - min;
     }
 }
 
@@ -1498,3 +1508,4 @@ class GrassHopperGradeBook {
         return s1 >= 90 ? 'A': s1 >= 80 ? 'B': s1 >= 70 ? 'C': s1 >= 60 ? 'D': 'F';
     }
 }
+
