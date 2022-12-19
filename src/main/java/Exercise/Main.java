@@ -598,6 +598,11 @@ class Kata {
         return s;
 
     }
+
+    public static int square(int n){
+        //Function 2 - squaring an argument
+        return (int) Math.pow(n,2);
+    }
 }
 
 class StringToNumber {
