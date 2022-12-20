@@ -114,6 +114,13 @@ public class Main {
     }
 }
 
+class Player {
+    final String name;
+
+    Player(String name) {
+        this.name = name;
+    }
+}
 
 class Sum {
     public int GetSum(int a, int b) {
@@ -602,6 +609,11 @@ class Kata {
     public static int square(int n){
         //Function 2 - squaring an argument
         return (int) Math.pow(n,2);
+    }
+
+    public static String duckDuckGoose(Player[] players, int goose) {
+        int result=goose % players.length;
+        return result == 0 ?  players[players.length - 1].name : players[result - 1].name;
     }
 }
 
