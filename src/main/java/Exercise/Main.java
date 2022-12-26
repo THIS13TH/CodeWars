@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static java.util.Arrays.sort;
 
@@ -518,7 +517,7 @@ class Kata {
         return Integer.parseInt(Integer.toBinaryString(n));
     }
 
-    public static int oddCount(int n){
+    public static int oddCount(int n) {
         //Count Odd Numbers below n
         return n / 2;
     }
@@ -560,8 +559,8 @@ class Kata {
     public static String stringy(int size) {
         //Stringy Strings
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < size; i++){
-            if (i % 2 ==0) {
+        for (int i = 0; i < size; i++) {
+            if (i % 2 == 0) {
                 builder.append(1);
             } else {
                 builder.append(0);
@@ -585,8 +584,7 @@ class Kata {
         return b1 == d1 && b2 == d2;
     }
 
-    public static String leo(final int oscar)
-    {
+    public static String leo(final int oscar) {
         //Leonardo Dicaprio and Oscars
         switch (oscar) {
             case 86:
@@ -598,22 +596,31 @@ class Kata {
         }
     }
 
-    public static String remove(String s, int n){
+    public static String remove(String s, int n) {
         //Exclamation marks series #6: Remove n exclamation marks in the sentence from left to right
-        for(int i = 0; i < n;i++)
-            s = s.replaceFirst("!","");
+        for (int i = 0; i < n; i++)
+            s = s.replaceFirst("!", "");
         return s;
 
     }
 
-    public static int square(int n){
+    public static int square(int n) {
         //Function 2 - squaring an argument
-        return (int) Math.pow(n,2);
+        return (int) Math.pow(n, 2);
     }
 
     public static String duckDuckGoose(Player[] players, int goose) {
-        int result=goose % players.length;
-        return result == 0 ?  players[players.length - 1].name : players[result - 1].name;
+        int result = goose % players.length;
+        return result == 0 ? players[players.length - 1].name : players[result - 1].name;
+    }
+
+    public static long[] powersOfTwo(int n) {
+        //Powers of 2
+        long[] numbers = new long[n + 1];
+        for (int i = 0; i <= n; i++) {
+            numbers[i] = (long) Math.pow(2, i);
+        }
+        return numbers;
     }
 }
 
@@ -686,7 +693,7 @@ class Solution {
         return num + 5;
     }
 
-    public static String doubleChar(String s){
+    public static String doubleChar(String s) {
         //Double Char
         return s.replaceAll(".", "$0$0");
     }
@@ -1225,9 +1232,8 @@ class Vowels {
     }
 }
 
-class MonkeyCounter
-{
-    public static int[] monkeyCount(final int n){
+class MonkeyCounter {
+    public static int[] monkeyCount(final int n) {
         //Count the Monkeys!
         int[] arr = new int[n];
         for (int i = 1; i < n; i++) {
@@ -1237,18 +1243,16 @@ class MonkeyCounter
     }
 }
 
-class YesOrNo
-{
+class YesOrNo {
     //Convert boolean values to strings 'Yes' or 'No'.
-    public static String boolToWord(boolean b)
-    {
+    public static String boolToWord(boolean b) {
         return b == true ? "Yes" : "No";
     }
 }
 
 class CodeWarsMath {
     //Find Nearest square number
-    public static int nearestSq(final int n){
+    public static int nearestSq(final int n) {
         return (int) Math.pow(Math.round(Math.sqrt(n)), 2);
     }
 }
@@ -1260,9 +1264,9 @@ class DivisibleNb {
     }
 }
 
-class GhostCode{
+class GhostCode {
     //Ghost code?!
-    public static String helloName(final String name){
+    public static String helloName(final String name) {
         if (name == null || name.equals("")) {
             return "Hello world!";
         } else {
@@ -1271,16 +1275,16 @@ class GhostCode{
     }
 }
 
-class Swapper{
+class Swapper {
     //Swap Values
     public Object[] arguments;
 
-    public Swapper(final Object[] arguments){
+    public Swapper(final Object[] arguments) {
         this.arguments = arguments;
     }
 
     public void swapValues() {
-        Object[] args = new Object[]{arguments[0],arguments[1]};
+        Object[] args = new Object[]{arguments[0], arguments[1]};
         Object temp = args[0];
         arguments[0] = args[1];
         arguments[1] = temp;
@@ -1312,10 +1316,9 @@ class NameMe {
     }
 }
 
-class MyUtilities{
+class MyUtilities {
 
-    public boolean isDigit(String s)
-    {
+    public boolean isDigit(String s) {
         //Is it a number?
         return s.matches("^-?[0-9]{1,12}(?:\\.[0-9]{1,100})?$");
     }
@@ -1356,15 +1359,15 @@ class EvenNumbers {
     //Find numbers which are divisible by given number
     public static int[] divisibleBy(int[] numbers, int divider) {
         int count = 0;
-        for (int number : numbers){
-            if (number % divider == 0){
-                count ++;
+        for (int number : numbers) {
+            if (number % divider == 0) {
+                count++;
             }
         }
         int[] arr = new int[count];
         int i = 0;
-        for (int number : numbers){
-            if (number % divider == 0){
+        for (int number : numbers) {
+            if (number % divider == 0) {
                 arr[i] = number;
                 i++;
             }
@@ -1375,16 +1378,16 @@ class EvenNumbers {
 
 class BooleanToString {
     //Convert a Boolean to a String
-    public static String convert(boolean b){
+    public static String convert(boolean b) {
         return b ? "true" : "false";
     }
 
 }
 
-class Plural{
+class Plural {
     public static boolean isPlural(float f) {
         //Plural
-        return (f != 1 );
+        return (f != 1);
     }
 }
 
@@ -1395,10 +1398,8 @@ class Dinglemouse {
     }
 }
 
-class Numbers
-{
-    public static double TwoDecimalPlaces(double number)
-    {
+class Numbers {
+    public static double TwoDecimalPlaces(double number) {
         //Formatting decimal places #0
         return Double.parseDouble(String.format("%.2f", number));
     }
@@ -1421,9 +1422,9 @@ class HowDoICompare {
     };
 }
 
-class WideMouthedFrog{
+class WideMouthedFrog {
     //The Wide-Mouthed frog!
-    public static String mouthSize(String animal){
+    public static String mouthSize(String animal) {
         return animal.equalsIgnoreCase("alligator") ? "small" : "wide";
     }
 }
@@ -1446,7 +1447,7 @@ class StringUtils {
     //altERnaTIng cAsE <=> ALTerNAtiNG CaSe
     public static String toAlternativeString(String string) {
         char[] arr = string.toCharArray();
-        for(int i = 0;i<arr.length;i++) {
+        for (int i = 0; i < arr.length; i++) {
             if (Character.isAlphabetic(arr[i])) {
                 if (Character.isUpperCase(arr[i])) {
                     arr[i] = Character.toLowerCase(arr[i]);
@@ -1489,8 +1490,9 @@ class ZywOo {
         //Sum of differences in array
         if (arr.length < 2) return 0;
         int max = arr[0], min = max;
-        for (int a : arr) if (a > max) max = a;
-        else if (a < min) min = a;
+        for (int a : arr)
+            if (a > max) max = a;
+            else if (a < min) min = a;
         return max - min;
     }
 
@@ -1504,10 +1506,10 @@ class ZywOo {
             }
         }
 
-        if (wolf == (array.length-1)) {
+        if (wolf == (array.length - 1)) {
             return "Pls go away and stop eating my sheep";
         } else {
-            return "Oi! Sheep number " + (array.length-wolf-1) + "! You are about to be eaten by a wolf!";
+            return "Oi! Sheep number " + (array.length - wolf - 1) + "! You are about to be eaten by a wolf!";
         }
 
     }
@@ -1524,7 +1526,7 @@ class Dinglemouse2 {
     //Cat years, Dog years
 
     public static int[] humanYearsCatYearsDogYears(final int humanYears) {
-        return new int[] {humanYears, humanYears > 1 ? 16 + 4 * humanYears : 15, humanYears > 1 ? 14 + 5 * humanYears : 15};
+        return new int[]{humanYears, humanYears > 1 ? 16 + 4 * humanYears : 15, humanYears > 1 ? 14 + 5 * humanYears : 15};
     }
 
 }
@@ -1539,8 +1541,8 @@ class Clock {
 class GrassHopperGradeBook {
     //Grasshopper - Grade book
     public static char getGrade(int s1, int s2, int s3) {
-        s1=(s1+s2+s3)/3;
-        return s1 >= 90 ? 'A': s1 >= 80 ? 'B': s1 >= 70 ? 'C': s1 >= 60 ? 'D': 'F';
+        s1 = (s1 + s2 + s3) / 3;
+        return s1 >= 90 ? 'A' : s1 >= 80 ? 'B' : s1 >= 70 ? 'C' : s1 >= 60 ? 'D' : 'F';
     }
 }
 
@@ -1548,18 +1550,18 @@ class TipCalculator {
     //Tip Calculator
     public static Integer calculateTip(double amount, String rating) {
         String rate = rating.toLowerCase();
-        System.out.println(rate+" "+amount);
-        switch(rate){
+        System.out.println(rate + " " + amount);
+        switch (rate) {
             case "terrible":
-                return (int) Math.ceil(amount*0/100);
+                return (int) Math.ceil(amount * 0 / 100);
             case "poor":
-                return (int) Math.ceil(amount*5/100);
+                return (int) Math.ceil(amount * 5 / 100);
             case "good":
-                return (int) Math.ceil(amount*10/100);
+                return (int) Math.ceil(amount * 10 / 100);
             case "great":
-                return (int) Math.ceil(amount*15/100);
+                return (int) Math.ceil(amount * 15 / 100);
             case "excellent":
-                return (int) Math.ceil(amount*20/100);
+                return (int) Math.ceil(amount * 20 / 100);
             default:
                 return null;
 
@@ -1570,22 +1572,22 @@ class TipCalculator {
 class Java {
     //You Can't Code Under Pressure #1
     public static int doubleInteger(int i) {
-        return i*2;
+        return i * 2;
     }
 }
 
 class Nessie {
     //A Strange Trip to the Market
-    public static boolean isLockNessMonster(String s){
+    public static boolean isLockNessMonster(String s) {
         return s.contains("tree fiddy") || s.contains("3.50");
     }
 }
 
-class Geometry{
+class Geometry {
     //Area of a Square
-    public static double squareArea(double A){
-        double l = (2*A)/Math.PI;
-        double x = l*l;
+    public static double squareArea(double A) {
+        double l = (2 * A) / Math.PI;
+        double x = l * l;
         double y = Math.round(x * 100) * 0.01d;
         return y;
     }
@@ -1604,14 +1606,14 @@ class AgeDiff {
 class TotalPoints {
     //Total amount of points
     public static int points(String[] games) {
-        int points= 0;
-        for(int i= 0 ;i < 10;i++){
-            if(games[i].charAt(0) > games[i].charAt(2)){
-                points=points + 3;
-            }else if(games[i].charAt(0) == games[i].charAt(2)){
-                points=points + 1;
-            }else{
-                points=points + 0;
+        int points = 0;
+        for (int i = 0; i < 10; i++) {
+            if (games[i].charAt(0) > games[i].charAt(2)) {
+                points = points + 3;
+            } else if (games[i].charAt(0) == games[i].charAt(2)) {
+                points = points + 1;
+            } else {
+                points = points + 0;
             }
         }
         return points;
@@ -1620,14 +1622,14 @@ class TotalPoints {
 
 class Sleigh {
     //Sleigh Authentication
-    public static Boolean authenticate(String name, String password){
+    public static Boolean authenticate(String name, String password) {
         return name.equals("Santa Claus") && password.equals("Ho Ho Ho!");
     }
 }
 
 class Bob {
     //Will there be enough space?
-    public static int enough(int cap, int on, int wait){
+    public static int enough(int cap, int on, int wait) {
         return Math.max(0, on + wait - cap);
     }
 }
