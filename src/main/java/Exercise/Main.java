@@ -1633,3 +1633,11 @@ class Bob {
         return Math.max(0, on + wait - cap);
     }
 }
+
+class Paper {
+    //Beginner Series #1 School Paperwork
+    public static int paperWork(int n, int m)
+    {
+        return n > 0 && m > 0 ? n * m : 0;
+    }
+}
