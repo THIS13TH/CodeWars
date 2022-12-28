@@ -1641,3 +1641,10 @@ class Paper {
         return n > 0 && m > 0 ? n * m : 0;
     }
 }
+
+class SaleHotdogs{
+    //Training JS #7: if..else and ternary operator
+    public static int saleHotdogs(final int n){
+        return n * (n < 5 ? 100 : n < 10 ? 95 : 90);
+    }
+}
