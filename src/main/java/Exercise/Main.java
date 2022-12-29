@@ -622,6 +622,10 @@ class Kata {
         }
         return numbers;
     }
+    public static String chromosomeCheck(String sperm) {
+        //Determine offspring sex based on genes XX and XY chromosomes
+        return "Congratulations! You're going to have a " + (sperm.contains("Y") ? "son." : "daughter.");
+    }
 }
 
 class StringToNumber {
