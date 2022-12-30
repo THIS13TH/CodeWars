@@ -701,6 +701,11 @@ class Solution {
         //Double Char
         return s.replaceAll(".", "$0$0");
     }
+
+    static String replace(final String s) {
+        //Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
+        return s.replaceAll("(?i)[aeiou]", "!");
+    }
 }
 
 class SmashWords {
