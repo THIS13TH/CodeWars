@@ -706,6 +706,20 @@ class Solution {
         //Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
         return s.replaceAll("(?i)[aeiou]", "!");
     }
+    public static int[] rowWeights (final int[] weights) {
+        //Row Weights
+        int firstTeam = 0;
+        int secondTeam = 0;
+        for (int i = 0; i < weights.length; i++) {
+            if(i % 2 == 0){
+                firstTeam += weights[i];
+            }else {
+                secondTeam += weights[i];
+            }
+        }
+        return new int[]{firstTeam, secondTeam};
+    }
+
 }
 
 class SmashWords {
