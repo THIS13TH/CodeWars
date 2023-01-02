@@ -626,6 +626,11 @@ class Kata {
         //Determine offspring sex based on genes XX and XY chromosomes
         return "Congratulations! You're going to have a " + (sperm.contains("Y") ? "son." : "daughter.");
     }
+
+    static int dutyFree(int normPrice, int discount, int hol) {
+        //Holiday VIII - Duty Free
+        return 100 * hol / (normPrice * discount);
+    }
 }
 
 class StringToNumber {
