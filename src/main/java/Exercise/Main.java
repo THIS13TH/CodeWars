@@ -11,105 +11,9 @@ import static java.util.Arrays.sort;
 public class Main {
     public static void main(String[] args) {
 
-//        MinMax minMax = new MinMax();
-//        Sum s = new Sum();
-//        Kata reversestring = new Kata();
-//        StringToNumber stringToNumber = new StringToNumber();
-//        AbbreviateTwoWords abbreviateTwoWords = new AbbreviateTwoWords();
-//        Solution solution = new Solution();
-//        GrassHopper grassHopper = new GrassHopper();
-//        Sequence sequence = new Sequence();
-//        OppositesAttract oppositesAttract = new OppositesAttract();
+    Solution test = new Solution();
+        System.out.println(test.largestPairSum(new int[]{10, 14, 2, 23, 19}));
 
-
-//        Object[] haystack3 = {1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,"needle",1,2,3,4,5,5,6,5,4,32,3,45,54};
-
-//        System.out.println(s.GetSum(0, -1));
-//        System.out.println(s.GetSum(0, 1));
-//        System.out.println(RowSumOddNumbers.rowSumOddNumbers(42));
-//
-//        System.out.println(Kata.solution("world"));
-//        System.out.println(StringToNumber.stringToNumber("1234"));
-//        System.out.println(Kata.numberToString(67));
-//        System.out.println(AbbreviateTwoWords.abbrevName("Sam Harris"));
-//        System.out.println(Kata.highAndLow("1 2 -3 4 5"));
-//        System.out.println(Kata.findNeedle(haystack3));
-//        System.out.println(Solution.repeatStr(3, "Hello"));
-//        System.out.println(Kata.squareSum(new int[] {1,2,2}));
-//        System.out.println(SmashWords.smash(new String[] { "Bilal", "Djaghout" }));
-//        System.out.println(GrassHopper.summation(8));
-//        int[] test = Sequence.reverse(5);
-//        for (int i = 0; i < test.length; i++) {
-//            System.out.println(test[i]);
-//        }
-
-//        System.out.println(OppositesAttract.isLove(1, 4));
-//        System.out.println(OppositesAttract.isLove(2, 2));
-//        System.out.println(OppositesAttract.isLove(1, 1));
-//        System.out.println(OppositesAttract.isLove(0, 1));
-//        System.out.println(Kata.find_average(new int[]{1, 2, 3}));
-//        int[] test = MinMax.minMax(new int[]{2334454,5});
-//
-//        for (int i = 0; i < test.length; i++) {
-//            System.out.println(test[i]);
-//        }
-//                Kata kata = new Kata();
-//        System.out.println(Kata.countingSheep(3));
-//        Cockroach cockroach = new Cockroach();
-//        System.out.println(cockroach.cockroachSpeed(1.09));
-//        Accumul accumul = new Accumul();
-//        System.out.println(Accumul.accum("ZpglnRxqenU"));
-//        System.out.println(Kata.rentalCarCost(10));
-//        System.out.println(kata.quarterOf(3));
-//        System.out.println(Kata.makeNegative(42));
-//
-//        Boolean[] array1 = {true,  true,  true,  false,
-//                true,  true,  true,  true ,
-//                true,  false, true,  false,
-//                true,  false, false, true ,
-//                true,  true,  true,  true ,
-//                false, false, true,  true };
-//        Counter counter = new Counter();
-//        System.out.println(counter.countSheeps(array1));
-//        CharProblem charProblem = new CharProblem();
-//        System.out.println(CharProblem.howOld("5 years old"));
-//        int[] test = new int[] {1, 2, 3};
-//        Maps maps = new Maps();
-//        int[] result = Maps.map(test);
-//        for (int i = 0; i < result.length; i++) {
-//            System.out.println(result[i]);
-//        List<? extends Serializable> test = Arrays.asList("3", 6, 6, 0, "5", 8, 5, "6", 2, "0");
-//        MixedSum mixedSum = new MixedSum();
-//        System.out.println(mixedSum.sum(test));
-//        }
-//        TrafficLights trafficLights = new TrafficLights();
-//        System.out.println(TrafficLights.updateLight("red"));
-//        BasicOperations basicOperations = new BasicOperations();
-//        System.out.println(BasicOperations.basicMath("+", 4, 7));
-//        Correct correct = new Correct();
-//        System.out.println(Correct.correct("R1CHARD P. FEYNMAN - 5TAT15T1CAL MECHAN1C5"));
-//        Sid sid = new Sid();
-//        System.out.println(Sid.howMuchILoveYou(1));
-//        System.out.println(Sid.howMuchILoveYou(2));
-//        System.out.println(Sid.howMuchILoveYou(27));
-//        SmallestIntegerFinder smallestIntegerFinder = new SmallestIntegerFinder();
-//        int[] test = new int[]{78,56,232,12,11,43};
-//        System.out.println(SmallestIntegerFinder.findSmallestInt(test));
-//        Calculate calculate = new Calculate();
-//        System.out.println(Calculate.bmi(80, 1.80));
-//        CodeWars codeWars = new CodeWars();
-//        System.out.println(CodeWars.strCount("Hello", 'l'));
-//        System.out.println(CodeWars.strCount("",'z'));
-//
-//        Bio bio = new Bio();
-//        System.out.println(bio.dnaToRna("TTTT"));
-//        RemoveChars removeChars = new RemoveChars();
-//        System.out.println(RemoveChars.remove("eloquent"));
-        //Kata kata = new Kata();
-//        System.out.println(kata.multiTable(5));
-//System.out.println(Kata.betterThanAverage(new int[]{100, 40, 34, 57, 29, 72, 57, 88}, 75));
-        Kata kata = new Kata();
-        System.out.println(Kata.countBy(1, 10));
     }
 }
 
@@ -711,20 +615,26 @@ class Solution {
         //Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
         return s.replaceAll("(?i)[aeiou]", "!");
     }
-    public static int[] rowWeights (final int[] weights) {
+
+    public static int[] rowWeights(final int[] weights) {
         //Row Weights
         int firstTeam = 0;
         int secondTeam = 0;
         for (int i = 0; i < weights.length; i++) {
-            if(i % 2 == 0){
+            if (i % 2 == 0) {
                 firstTeam += weights[i];
-            }else {
+            } else {
                 secondTeam += weights[i];
             }
         }
         return new int[]{firstTeam, secondTeam};
     }
 
+    public static int largestPairSum(int[] numbers) {
+        //Largest pair sum in array
+        Arrays.sort(numbers);
+        return numbers[numbers.length-1]+numbers[numbers.length-2];
+    }
 }
 
 class SmashWords {
