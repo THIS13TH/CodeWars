@@ -1586,3 +1586,11 @@ class SaleHotdogs{
         return n * (n < 5 ? 100 : n < 10 ? 95 : 90);
     }
 }
+
+class Factorial {
+    //Factorial
+    public static long factorial(int n) {
+        if (n <= 1) return 1;
+        else return n * factorial( n - 1);
+    }
+}
