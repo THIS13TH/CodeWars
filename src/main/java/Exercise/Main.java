@@ -15,8 +15,6 @@ public class Main {
         System.out.println(findOddCubes.cubeOdd(new int[]{-5, -5, 5, 5}));
 
 
-
-
     }
 }
 
@@ -529,6 +527,7 @@ class Kata {
         }
         return numbers;
     }
+
     public static String chromosomeCheck(String sperm) {
         //Determine offspring sex based on genes XX and XY chromosomes
         return "Congratulations! You're going to have a " + (sperm.contains("Y") ? "son." : "daughter.");
@@ -636,7 +635,31 @@ class Solution {
     public static int largestPairSum(int[] numbers) {
         //Largest pair sum in array
         Arrays.sort(numbers);
-        return numbers[numbers.length-1]+numbers[numbers.length-2];
+        return numbers[numbers.length - 1] + numbers[numbers.length - 2];
+    }
+
+    public static String solve(final String str) {
+        //Fix string case
+        int size = str.length();
+        int upCase = 0;
+        int lowCase = 0;
+        if (size < 0) {
+            return "";
+        }
+        for (int i = 0; i < size; i++) {
+            if (Character.isUpperCase(str.charAt(i))) {
+                upCase++;
+            } else {
+                lowCase++;
+            }
+        }
+        if (upCase < lowCase) {
+            return str.toLowerCase();
+        } else if (upCase > lowCase) {
+            return str.toUpperCase();
+        } else {
+            return str.toLowerCase();
+        }
     }
 }
 
@@ -1577,15 +1600,14 @@ class Bob {
 
 class Paper {
     //Beginner Series #1 School Paperwork
-    public static int paperWork(int n, int m)
-    {
+    public static int paperWork(int n, int m) {
         return n > 0 && m > 0 ? n * m : 0;
     }
 }
 
-class SaleHotdogs{
+class SaleHotdogs {
     //Training JS #7: if..else and ternary operator
-    public static int saleHotdogs(final int n){
+    public static int saleHotdogs(final int n) {
         return n * (n < 5 ? 100 : n < 10 ? 95 : 90);
     }
 }
@@ -1594,7 +1616,7 @@ class Factorial {
     //Factorial
     public static long factorial(int n) {
         if (n <= 1) return 1;
-        else return n * factorial( n - 1);
+        else return n * factorial(n - 1);
     }
 }
 
@@ -1603,8 +1625,8 @@ class FindOddCubes {
     public static int cubeOdd(int arr[]) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int)Math.pow(arr[i],3);
-            if(arr[i] % 2 != 0){
+            arr[i] = (int) Math.pow(arr[i], 3);
+            if (arr[i] % 2 != 0) {
                 sum += arr[i];
             }
         }
