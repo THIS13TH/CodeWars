@@ -11,8 +11,11 @@ import static java.util.Arrays.sort;
 public class Main {
     public static void main(String[] args) {
 
-    Solution test = new Solution();
-        System.out.println(test.largestPairSum(new int[]{10, 14, 2, 23, 19}));
+        FindOddCubes findOddCubes = new FindOddCubes();
+        System.out.println(findOddCubes.cubeOdd(new int[]{-5, -5, 5, 5}));
+
+
+
 
     }
 }
@@ -1592,5 +1595,19 @@ class Factorial {
     public static long factorial(int n) {
         if (n <= 1) return 1;
         else return n * factorial( n - 1);
+    }
+}
+
+class FindOddCubes {
+    //Sum of Odd Cubed Numbers
+    public static int cubeOdd(int arr[]) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int)Math.pow(arr[i],3);
+            if(arr[i] % 2 != 0){
+                sum += arr[i];
+            }
+        }
+        return sum;
     }
 }
