@@ -932,6 +932,11 @@ class CodeWars {
         }
         return count;
     }
+
+    public static long overTheRoad(long address, long n) {
+        //Over The Road
+        return (2 * n + 1) - address;
+    }
 }
 
 class Bio {
