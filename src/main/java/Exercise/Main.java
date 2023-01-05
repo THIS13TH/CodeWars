@@ -538,6 +538,11 @@ class Kata {
         //Holiday VIII - Duty Free
         return 100 * hol / (normPrice * discount);
     }
+
+    public static boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+        //Will you make it?
+        return distanceToPump <= mpg * fuelLeft;
+    }
 }
 
 class StringToNumber {
@@ -1675,3 +1680,4 @@ class NthSeries {
         return String.format("%.2f", result);
     }
 }
+
