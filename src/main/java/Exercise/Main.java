@@ -543,6 +543,11 @@ class Kata {
         //Will you make it?
         return distanceToPump <= mpg * fuelLeft;
     }
+
+    public static String binaryAddition(int a, int b){
+        //Binary Addition
+        return Integer.toBinaryString(a + b);
+    }
 }
 
 class StringToNumber {
