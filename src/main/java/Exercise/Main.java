@@ -580,6 +580,19 @@ class Kata {
         }
         return shortestWord;
     }
+
+    public static int maxDiff(int[] lst) {
+        //max diff - easy
+        int maximum = Arrays
+                .stream(lst)
+                .max()
+                .orElse(0);
+        int minimum = Arrays
+                .stream(lst)
+                .min()
+                .orElse(0);
+        return maximum - minimum;
+    }
 }
 
 class StringToNumber {
