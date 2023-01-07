@@ -568,6 +568,18 @@ class Kata {
         }
         return left > right ? "Left side wins!" : right > left ? "Right side wins!" : "Let's fight again!";
     }
+
+    public static int findShort(String s) {
+        //Shortest Word
+        String[] words = s.split(" ");
+        int shortestWord = 0;
+        for (String word : words) {
+            if (shortestWord == 0 || shortestWord > word.length()) {
+                shortestWord = word.length();
+            }
+        }
+        return shortestWord;
+    }
 }
 
 class StringToNumber {
