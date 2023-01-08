@@ -546,7 +546,7 @@ class Kata {
         return Integer.toBinaryString(a + b);
     }
 
-    public static String alphabetWar(String fight){
+    public static String alphabetWar(String fight) {
         //Alphabet war
         Map<Character, Integer> leftSide = new HashMap<>();
         leftSide.put('w', 4);
@@ -592,6 +592,21 @@ class Kata {
                 .min()
                 .orElse(0);
         return maximum - minimum;
+    }
+
+    public static final String generateShape(int n) {
+        //Build a square
+        String variable = "+";
+        var result = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            if (i == (n - 1)) {
+                result.append(variable.repeat(n));
+            } else {
+                result.append(variable.repeat(n));
+                result.append("\n");
+            }
+        }
+        return result.toString();
     }
 }
 
@@ -1769,7 +1784,7 @@ class MostDigits {
 
 class TwoToOne {
 
-    public static String longest (String s1, String s2) {
+    public static String longest(String s1, String s2) {
         //Two to One
         return (s1 + s2)
                 .chars()
@@ -1785,7 +1800,7 @@ class God {
     public static Human[] create() {
         Human Adam = new Man();
         Human Eve = new Woman();
-        return new Human[] { Adam, Eve };
+        return new Human[]{Adam, Eve};
     }
 }
 
@@ -1808,9 +1823,9 @@ class Banjo {
 
     public static String areYouPlayingBanjo(String name) {
         //Are You Playing Banjo?
-        if(name.charAt(0) == 'R' || name.charAt(0) == 'r'){
+        if (name.charAt(0) == 'R' || name.charAt(0) == 'r') {
             return name + " plays banjo";
-        }else{
+        } else {
             return name + " does not play banjo";
         }
 
