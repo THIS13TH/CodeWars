@@ -717,6 +717,11 @@ class Solution {
             return str.toLowerCase();
         }
     }
+
+    public static boolean validatePin(String pin) {
+        //Regex validate PIN code
+        return pin.matches("\\d{4}|\\d{6}");
+    }
 }
 
 class SmashWords {
