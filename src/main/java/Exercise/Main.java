@@ -608,6 +608,18 @@ class Kata {
         }
         return result.toString();
     }
+
+    public static int expressionsMatter(int a, int b, int c){
+        //Expressions Matter
+        int[] myArray = {a+b+c, a*b*c, a+b*c, a*b+c, (a+b)*c, a*(b+c)};
+        int max = 0;
+        for(int i = 0; i<myArray.length; i++ ){
+            if(myArray[i] > max ){
+                max = myArray[i];
+            }
+        }
+        return max;
+    }
 }
 
 class StringToNumber {
