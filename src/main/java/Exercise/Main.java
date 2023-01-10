@@ -749,6 +749,17 @@ class Solution {
         //Regex validate PIN code
         return pin.matches("\\d{4}|\\d{6}");
     }
+
+    public static int stray(int[] numbers) {
+        //Find the stray number
+        Arrays.sort(numbers);
+        int centralNumber = numbers[numbers.length / 2];
+        if (numbers[0] == centralNumber) {
+            return numbers[numbers.length - 1];
+        } else {
+            return numbers[0];
+        }
+    }
 }
 
 class SmashWords {
