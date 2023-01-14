@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.sort;
+import static java.util.stream.IntStream.of;
 
 
 public class Main {
@@ -619,6 +620,12 @@ class Kata {
             }
         }
         return max;
+    }
+
+    public static int nthSmallest(final int[] arr, final int n) {
+        //Nth Smallest Element (Array Series #4)
+        Arrays.sort(arr);
+        return arr[n - 1];
     }
 }
 
