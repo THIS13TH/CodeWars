@@ -4,14 +4,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.sort;
-import static java.util.stream.IntStream.of;
 
 
 public class Main {
     public static void main(String[] args) {
 
         Kata kata = new Kata();
-        System.out.println(kata.nthSmallest(new int[]{2,169,13,-5,0,-1}, 4));
+        System.out.println(kata.nthSmallest(new int[]{2, 169, 13, -5, 0, -1}, 4));
 
 
     }
@@ -610,12 +609,12 @@ class Kata {
         return result.toString();
     }
 
-    public static int expressionsMatter(int a, int b, int c){
+    public static int expressionsMatter(int a, int b, int c) {
         //Expressions Matter
-        int[] myArray = {a+b+c, a*b*c, a+b*c, a*b+c, (a+b)*c, a*(b+c)};
+        int[] myArray = {a + b + c, a * b * c, a + b * c, a * b + c, (a + b) * c, a * (b + c)};
         int max = 0;
-        for(int i = 0; i<myArray.length; i++ ){
-            if(myArray[i] > max ){
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] > max) {
                 max = myArray[i];
             }
         }
@@ -776,6 +775,27 @@ class Solution {
     static int closeCompare(double a, double b, double margin) {
         //Compare within margin
         return margin < Math.abs(a - b) ? Double.compare(a, b) : 0;
+    }
+
+    public static int[] solve(int[] arr) {
+        //Simple remove duplicates
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int temp = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    temp = j;
+                }
+            }
+            if (temp == i) {
+                arrayList.add(arr[i]);
+            }
+        }
+        int[] result = new int[arrayList.size()];
+        for (int i = 0; i < arrayList.size(); i++) {
+            result[i] = arrayList.get(i);
+        }
+        return result;
     }
 }
 
@@ -1875,15 +1895,15 @@ class Banjo {
 class EasyWallpaper {
     //Easy wallpaper
     public String wallpaper(double l, double w, double h) {
-        var ns = new String[] {
+        var ns = new String[]{
                 "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
                 "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
-        if (l * w * h == 0)  return ns[0];
+        if (l * w * h == 0) return ns[0];
         return ns[(int) Math.ceil((l + w) * h * 2.3 / 5.2)];
     }
 }
 
-class ArithmeticFunction{
+class ArithmeticFunction {
     //Make a function that does arithmetic!
     public static int arithmetic(int a, int b, String operator) {
         switch (operator) {
