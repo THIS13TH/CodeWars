@@ -10,8 +10,8 @@ import static java.util.stream.IntStream.of;
 public class Main {
     public static void main(String[] args) {
 
-        FindOddCubes findOddCubes = new FindOddCubes();
-        System.out.println(findOddCubes.cubeOdd(new int[]{-5, -5, 5, 5}));
+        Kata kata = new Kata();
+        System.out.println(kata.nthSmallest(new int[]{2,169,13,-5,0,-1}, 4));
 
 
     }
@@ -766,6 +766,16 @@ class Solution {
         } else {
             return numbers[0];
         }
+    }
+
+    static int closeCompare(double a, double b) {
+        //Compare within margin
+        return closeCompare(a, b, 0);
+    }
+
+    static int closeCompare(double a, double b, double margin) {
+        //Compare within margin
+        return margin < Math.abs(a - b) ? Double.compare(a, b) : 0;
     }
 }
 
