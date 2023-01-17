@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.sort;
+import static java.util.stream.IntStream.rangeClosed;
 
 
 public class Main {
@@ -1763,6 +1764,11 @@ class Factorial {
     public static long factorial(int n) {
         if (n <= 1) return 1;
         else return n * factorial(n - 1);
+    }
+
+    public int factorial7ku(int n) {
+        if(n < 0 || n > 12) throw new IllegalArgumentException();
+        return rangeClosed(2, n).reduce(1, (x, y) -> x * y);
     }
 }
 
