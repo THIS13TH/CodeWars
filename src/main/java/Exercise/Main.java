@@ -801,7 +801,18 @@ class Solution {
 
     public static int predictAge(int age1, int age2, int age3, int age4, int age5, int age6, int age7, int age8) {
         //Predict your age!
-        return (int)Math.sqrt(age1*age1+age2*age2+age3*age3+age4*age4+age5*age5+age6*age6+age7*age7+age8*age8)/2;
+        return (int) Math.sqrt(age1 * age1 + age2 * age2 + age3 * age3 + age4 * age4 + age5 * age5 + age6 * age6 + age7 * age7 + age8 * age8) / 2;
+    }
+
+    public static String isSortedAndHow(int[] array) {
+        //Sorted? yes? no? how?
+        if (array[0] < array[1] && array[0] < array[array.length -1]) {
+            return "yes, ascending";
+        } if (array[0] > array[1] && array[0] > array[array.length -1]) {
+            return "yes, descending";
+        }else  {
+            return "no";
+        }
     }
 }
 
@@ -1767,7 +1778,7 @@ class Factorial {
     }
 
     public int factorial7ku(int n) {
-        if(n < 0 || n > 12) throw new IllegalArgumentException();
+        if (n < 0 || n > 12) throw new IllegalArgumentException();
         return rangeClosed(2, n).reduce(1, (x, y) -> x * y);
     }
 }
@@ -1944,7 +1955,7 @@ class Evaporator {
         int result = 0;
         double percentage = 100;
         while (percentage > threshold) {
-            percentage -= percentage*(evap_per_day/100);
+            percentage -= percentage * (evap_per_day / 100);
             result++;
         }
 
@@ -1952,8 +1963,8 @@ class Evaporator {
     }
 }
 
-class GiftSorter{
-    public String sortGiftCode(String code){
+class GiftSorter {
+    public String sortGiftCode(String code) {
         //Sort the Gift Code
         char[] result = code.toCharArray();
         Arrays.sort(result);
