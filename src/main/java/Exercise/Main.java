@@ -814,6 +814,16 @@ class Solution {
             return "no";
         }
     }
+
+    public static int minSum(int[] passed) {
+        Arrays.sort(passed);
+
+        int min = 0;
+        for (int i = 0; i < passed.length / 2; i++) {
+            min += passed[i] * passed[passed.length - i - 1];
+        }
+        return min;
+    }
 }
 
 class SmashWords {
