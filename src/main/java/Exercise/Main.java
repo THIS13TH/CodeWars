@@ -816,6 +816,7 @@ class Solution {
     }
 
     public static int minSum(int[] passed) {
+        //Minimize Sum Of Array (Array Series #1)
         Arrays.sort(passed);
 
         int min = 0;
