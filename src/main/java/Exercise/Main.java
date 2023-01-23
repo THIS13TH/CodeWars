@@ -643,6 +643,11 @@ class Kata {
 
         return String.join(" ",array);
     }
+
+    public static boolean checkForFactor(int base, int factor) {
+        //Grasshopper - Check for factor
+        return base % factor == 0;
+    }
 }
 
 class StringToNumber {
