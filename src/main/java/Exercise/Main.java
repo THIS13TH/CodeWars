@@ -632,16 +632,16 @@ class Kata {
         //Reverse words
         String[] array = original.split(" ");
 
-        if(array.length == 0)
+        if (array.length == 0)
             return original;
 
         int i = 0;
-        for(String string : array){
+        for (String string : array) {
             array[i] = new StringBuilder(string).reverse().toString();
             i++;
         }
 
-        return String.join(" ",array);
+        return String.join(" ", array);
     }
 
     public static boolean checkForFactor(int base, int factor) {
@@ -827,11 +827,12 @@ class Solution {
 
     public static String isSortedAndHow(int[] array) {
         //Sorted? yes? no? how?
-        if (array[0] < array[1] && array[0] < array[array.length -1]) {
+        if (array[0] < array[1] && array[0] < array[array.length - 1]) {
             return "yes, ascending";
-        } if (array[0] > array[1] && array[0] > array[array.length -1]) {
+        }
+        if (array[0] > array[1] && array[0] > array[array.length - 1]) {
             return "yes, descending";
-        }else  {
+        } else {
             return "no";
         }
     }
@@ -2001,5 +2002,13 @@ class GiftSorter {
         char[] result = code.toCharArray();
         Arrays.sort(result);
         return new String(result);
+    }
+}
+
+class Printer {
+
+    public static String printerError(String s) {
+        //Printer Errors
+        return s.replaceAll("[a-m]", "").length() + "/" + s.length();
     }
 }
