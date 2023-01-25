@@ -2,6 +2,7 @@ package Exercise;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static java.util.Arrays.sort;
 import static java.util.stream.IntStream.rangeClosed;
@@ -2010,5 +2011,20 @@ class Printer {
     public static String printerError(String s) {
         //Printer Errors
         return s.replaceAll("[a-m]", "").length() + "/" + s.length();
+    }
+}
+
+class CountDig {
+
+    public static int nbDig(int n, int d) {
+        //Count the Digit
+        return (int) IntStream
+                .rangeClosed(0, n)
+                .map(i -> i * i)
+                .flatMap(i -> String.valueOf(i).chars())
+                .mapToObj(i -> (char)i)
+                .mapToInt(Character::getNumericValue)
+                .filter(i -> i == d)
+                .count();
     }
 }
