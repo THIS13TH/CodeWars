@@ -11,10 +11,8 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        Kata kata = new Kata();
-        System.out.println(kata.nthSmallest(new int[]{2, 169, 13, -5, 0, -1}, 4));
-
-
+        Spacify spacify = new Spacify();
+        System.out.println(Spacify.spacify("hello world"));
     }
 }
 
@@ -2049,5 +2047,19 @@ class BumpsTheRoad {
     public static String bumps(final String road) {
         //Bumps in the Road
         return road.replace("_", "").length() > 15 ? "Car Dead" : "Woohoo!";
+    }
+}
+
+class Spacify {
+    public static String spacify(String str){
+         //Spacify!
+//        String test = "";
+//        char[] result = str.toCharArray();
+//        for (int i = 0; i < result.length ; i++) {
+//            test += result[i];
+//            test += " ";
+//        }
+//        return test.trim();
+        return str.replaceAll("", " ").trim();
     }
 }
