@@ -5,14 +5,15 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.util.Arrays.sort;
+import static java.util.Arrays.stream;
 import static java.util.stream.IntStream.rangeClosed;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        Spacify spacify = new Spacify();
-        System.out.println(Spacify.spacify("hello world"));
+        CodeWars codeWars = new CodeWars();
+        System.out.println(codeWars.oddOrEven(new int[]{2, 5, 34, 6}));
     }
 }
 
@@ -214,7 +215,7 @@ class Kata {
 //            }
 //        }
 //        return min;
-        return Arrays.stream(list).min().getAsInt();
+        return stream(list).min().getAsInt();
     }
 
     public int max(int[] list) {
@@ -227,7 +228,7 @@ class Kata {
 //            }
 //        }
 //        return max;
-        return Arrays.stream(list).max().getAsInt();
+        return stream(list).max().getAsInt();
     }
 
     public static int[] countPositivesSumNegatives(int[] input) {
@@ -583,12 +584,10 @@ class Kata {
 
     public static int maxDiff(int[] lst) {
         //max diff - easy
-        int maximum = Arrays
-                .stream(lst)
+        int maximum = stream(lst)
                 .max()
                 .orElse(0);
-        int minimum = Arrays
-                .stream(lst)
+        int minimum = stream(lst)
                 .min()
                 .orElse(0);
         return maximum - minimum;
@@ -1121,6 +1120,20 @@ class CodeWars {
         //Over The Road
         return (2 * n + 1) - address;
     }
+
+    public static String oddOrEven (int[] array) {
+        //Odd or Even?
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            sum += array[i];
+//        }
+//        if(sum % 2 == 0){
+//            return "even";
+//        }else{
+//            return "odd";
+//        }
+        return stream(array).sum() % 2 == 0 ? "even" : "odd";
+    }
 }
 
 class Bio {
@@ -1252,7 +1265,7 @@ class FirstNonConsecutive {
 class Goals {
     //Grasshopper - Messi goals function
     public static int goals(int... array) {
-        return Arrays.stream(array).sum();
+        return stream(array).sum();
     }
 //public static int goals(int laLigaGoals, int copaDelReyGoals, int championsLeagueGoals) {
 //       return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
@@ -1488,7 +1501,7 @@ class Alarm {
 class SumArrayPlusArray {
     //Array plus array
     public static int arrayPlusArray(int[] arr1, int[] arr2) {
-        return Arrays.stream(arr1).sum() + Arrays.stream(arr2).sum();
+        return stream(arr1).sum() + stream(arr2).sum();
     }
 
 }
