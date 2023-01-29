@@ -12,10 +12,13 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        CodeWars codeWars = new CodeWars();
-        System.out.println(codeWars.oddOrEven(new int[]{2, 5, 34, 6}));
+        ZywOo zywOo = new ZywOo();
+        int[] test = ZywOo.take(new int[]{0, 1, 2, 3, 5, 8, 13, 65, 544, 543, 5345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23}, 0);
+
+
     }
 }
+
 
 class Player {
     final String name;
@@ -1121,7 +1124,7 @@ class CodeWars {
         return (2 * n + 1) - address;
     }
 
-    public static String oddOrEven (int[] array) {
+    public static String oddOrEven(int[] array) {
         //Odd or Even?
 //        int sum = 0;
 //        for (int i = 0; i < array.length; i++) {
@@ -1678,7 +1681,19 @@ class ZywOo {
         } else {
             return "Oi! Sheep number " + (array.length - wolf - 1) + "! You are about to be eaten by a wolf!";
         }
+    }
 
+    public static int[] take(int[] arr, int n) {
+        //Enumerable Magic #25 - Take the First N Elements
+        if(n > 0 && arr.length >= n){
+            int [] result = new int[n];
+            for (int i = 0; i < n; i++ ){
+                result[i] = arr[i];
+            }
+            return result;
+        }
+        if(n > 0 && arr.length < n) return arr;
+        return new int[0];
     }
 }
 
@@ -2064,8 +2079,8 @@ class BumpsTheRoad {
 }
 
 class Spacify {
-    public static String spacify(String str){
-         //Spacify!
+    public static String spacify(String str) {
+        //Spacify!
 //        String test = "";
 //        char[] result = str.toCharArray();
 //        for (int i = 0; i < result.length ; i++) {
