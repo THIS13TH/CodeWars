@@ -12,8 +12,8 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        ZywOo zywOo = new ZywOo();
-        int[] test = ZywOo.take(new int[]{0, 1, 2, 3, 5, 8, 13, 65, 544, 543, 5345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 345, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23}, 0);
+        SequenceSum sequenceSum = new SequenceSum();
+        sequenceSum.showSequence(6);
 
 
     }
@@ -2090,4 +2090,34 @@ class Spacify {
 //        return test.trim();
         return str.replaceAll("", " ").trim();
     }
+}
+
+class SequenceSum{
+
+    public static String showSequence(int value){
+        //Sum of numbers from 0 to N
+        if (value < 0) {
+            return value + "<0";
+        }
+
+        if (value == 0) {
+            return "0=0";
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i <= value; i++) {
+            result = result.append(i + "+");
+        }
+        result = result.deleteCharAt(result.length() - 1);
+
+        int total = (value * (value + 1) / 2);
+        result = result.append(" = " + total);
+
+        return result.toString();
+    }
+
+  /*public static void main(String args[]){
+    int param=Integer.ParseInt(args[0]);
+    SequenceSum.showSequence(param);
+  }*/
 }
