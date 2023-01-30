@@ -2093,7 +2093,6 @@ class Spacify {
 }
 
 class SequenceSum{
-
     public static String showSequence(int value){
         //Sum of numbers from 0 to N
         if (value < 0) {
@@ -2120,4 +2119,14 @@ class SequenceSum{
     int param=Integer.ParseInt(args[0]);
     SequenceSum.showSequence(param);
   }*/
+}
+
+class KataExampleTwist
+{
+    public static String[] kataExampleTwist() {
+        //Kata Example Twist
+        String[] websites =  new String[1000];
+        java.util.Arrays.fill(websites, "codewars");
+        return websites;
+    }
 }
