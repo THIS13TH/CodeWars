@@ -12,8 +12,8 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        SequenceSum sequenceSum = new SequenceSum();
-        sequenceSum.showSequence(6);
+        DecTools decTools = new DecTools();
+        System.out.println(DecTools.Digits(51l));
 
 
     }
@@ -2128,5 +2128,12 @@ class KataExampleTwist
         String[] websites =  new String[1000];
         java.util.Arrays.fill(websites, "codewars");
         return websites;
+    }
+}
+
+class DecTools {
+    //Number of Decimal Digits
+    public static int Digits(long n) {
+        return Long.toString(n).length();
     }
 }
