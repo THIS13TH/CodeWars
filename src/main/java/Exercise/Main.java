@@ -1685,14 +1685,14 @@ class ZywOo {
 
     public static int[] take(int[] arr, int n) {
         //Enumerable Magic #25 - Take the First N Elements
-        if(n > 0 && arr.length >= n){
-            int [] result = new int[n];
-            for (int i = 0; i < n; i++ ){
+        if (n > 0 && arr.length >= n) {
+            int[] result = new int[n];
+            for (int i = 0; i < n; i++) {
                 result[i] = arr[i];
             }
             return result;
         }
-        if(n > 0 && arr.length < n) return arr;
+        if (n > 0 && arr.length < n) return arr;
         return new int[0];
     }
 }
@@ -2092,8 +2092,8 @@ class Spacify {
     }
 }
 
-class SequenceSum{
-    public static String showSequence(int value){
+class SequenceSum {
+    public static String showSequence(int value) {
         //Sum of numbers from 0 to N
         if (value < 0) {
             return value + "<0";
@@ -2121,11 +2121,10 @@ class SequenceSum{
   }*/
 }
 
-class KataExampleTwist
-{
+class KataExampleTwist {
     public static String[] kataExampleTwist() {
         //Kata Example Twist
-        String[] websites =  new String[1000];
+        String[] websites = new String[1000];
         java.util.Arrays.fill(websites, "codewars");
         return websites;
     }
@@ -2135,5 +2134,15 @@ class DecTools {
     //Number of Decimal Digits
     public static int Digits(long n) {
         return Long.toString(n).length();
+    }
+}
+
+class RoundToTheNextMultipleOf5 {
+    public static int roundToNext5(int number) {
+        //Round up to the next multiple of 5
+        while (number % 5 != 0) {
+            number++;
+        }
+        return number;
     }
 }
