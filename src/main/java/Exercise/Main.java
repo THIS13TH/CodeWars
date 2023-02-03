@@ -848,6 +848,15 @@ class Solution {
         }
         return min;
     }
+
+    public static long sumCubes(long n){
+    //Sum of Cubes
+        long sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += (long)Math.pow(i, 3);
+        }
+        return sum;
+    }
 }
 
 class SmashWords {
