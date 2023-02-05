@@ -649,6 +649,11 @@ class Kata {
         //Grasshopper - Check for factor
         return base % factor == 0;
     }
+
+    public static String reverseLetter(final String str) {
+        //Simple Fun #176: Reverse Letter
+        return new StringBuilder(str.replaceAll("[^a-z]", "")).reverse().toString();
+    }
 }
 
 class StringToNumber {
