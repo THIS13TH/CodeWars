@@ -854,11 +854,11 @@ class Solution {
         return min;
     }
 
-    public static long sumCubes(long n){
-    //Sum of Cubes
+    public static long sumCubes(long n) {
+        //Sum of Cubes
         long sum = 0;
         for (int i = 1; i <= n; i++) {
-            sum += (long)Math.pow(i, 3);
+            sum += (long) Math.pow(i, 3);
         }
         return sum;
     }
@@ -2174,11 +2174,35 @@ class GpsSpeed {
     public static int gps(int s, double[] x) {
         //Speed Control
         int result = 0;
-        for ( int i=0; i<x.length-1; i++ ) {
-            int avrSpeed = (int) ( 3600 * ( x[i+1] - x[i] ) / s );
-            result = ( result < avrSpeed ) ? avrSpeed : result;
+        for (int i = 0; i < x.length - 1; i++) {
+            int avrSpeed = (int) (3600 * (x[i + 1] - x[i]) / s);
+            result = (result < avrSpeed) ? avrSpeed : result;
         }
 
         return result;
     }
+}
+
+class DescendingOrder {
+    public static int sortDesc(final int num) {
+        //Descending Order
+        String str = Integer.toString(num);
+        String[] numb = str.split("");
+        Integer numArr[] = new Integer[numb.length];
+
+        for (int i = 0; i < numb.length; i++) {
+            numArr[i] = Integer.parseInt(numb[i]);
+        }
+
+        Arrays.sort(numArr, Collections.reverseOrder());
+
+        int result = 0;
+
+        for (int i = numArr.length - 1, n = 0; i >= 0; --i, n++) {
+            int pos = (int) Math.pow(10, i);
+            result += numArr[n] * pos;
+        }
+        return result;
+    }
+
 }
