@@ -12,8 +12,8 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        DecTools decTools = new DecTools();
-        System.out.println(DecTools.Digits(51l));
+        DescendingOrder descendingOrder = new DescendingOrder();
+        DescendingOrder.sortDesc(123456789);
 
 
     }
@@ -1641,6 +1641,12 @@ class StringUtils {
             }
         }
         return new String(arr);
+    }
+
+
+    public static boolean isDigit(String s) {
+        //Regexp Basics - is it a digit?
+        return s.matches("[0-9]");
     }
 }
 
