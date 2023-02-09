@@ -12,8 +12,8 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        DescendingOrder descendingOrder = new DescendingOrder();
-        DescendingOrder.sortDesc(123456789);
+
+        System.out.println(LineNumbering.number(Arrays.asList("a", "b", "c")));
 
 
     }
@@ -2224,6 +2224,19 @@ class DescendingOrder {
         for (int i = numArr.length - 1, n = 0; i >= 0; --i, n++) {
             int pos = (int) Math.pow(10, i);
             result += numArr[n] * pos;
+        }
+        return result;
+    }
+
+}
+
+class LineNumbering {
+    static List<String> number(List<String> lines) {
+        //Testing 1-2-3
+        ArrayList<String> result = new ArrayList();
+        int i = 0;
+        for (String s : lines) {
+            result.add(++i + ": " + s);
         }
         return result;
     }
