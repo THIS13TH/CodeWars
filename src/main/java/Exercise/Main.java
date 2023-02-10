@@ -2242,3 +2242,14 @@ class LineNumbering {
     }
 
 }
+
+class BinaryArrayToNumber {
+    public static int ConvertBinaryArrayToInt(List<Integer> binary) {
+        //Ones and Zeros
+        String result = "";
+        for (int i = 0; i < binary.size(); i++) {
+            result += binary.get(i);
+        }
+        return Integer.parseInt(result, 2);
+    }
+}
