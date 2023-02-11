@@ -904,6 +904,17 @@ class Solution {
         }
         return new String[]{o, t};
     }
+
+    public static int maxTriSum (int[] numbers) {
+        //Maximum Triplet Sum (Array Series #7)
+        return IntStream.of(numbers)
+                .distinct()
+                .boxed()
+                .sorted(Collections.reverseOrder())
+                .limit(3)
+                .mapToInt(value -> value.intValue())
+                .sum();
+    }
 }
 
 class SmashWords {
