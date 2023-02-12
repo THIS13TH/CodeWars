@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println(Kata.alternateCase("abc"));
+        System.out.println(Solution.maxProduct(new int[]{10, 2, 3, 8, 1, 10, 4}, 2));
 
 
     }
@@ -906,7 +906,7 @@ class Solution {
         return new String[]{o, t};
     }
 
-    public static int maxTriSum (int[] numbers) {
+    public static int maxTriSum(int[] numbers) {
         //Maximum Triplet Sum (Array Series #7)
         return IntStream.of(numbers)
                 .distinct()
@@ -918,12 +918,24 @@ class Solution {
     }
 
 
-    public static boolean all(int[] list, IntPredicate predicate){
+    public static boolean all(int[] list, IntPredicate predicate) {
         //Enumerable Magic #1 - True for All?
         for (int i : list)
             if (!predicate.test(i))
                 return false;
         return true;
+    }
+
+    public static long maxProduct(int[] numbers, int sub_size) {
+        //Product Of Maximums Of Array (Array Series #2)
+        long result = 1;
+        Arrays.sort(numbers);
+
+        for (int i = 0; i < sub_size; i++) {
+            result *= numbers[(numbers.length - 1) - i];
+        }
+
+        return result;
     }
 
 }
@@ -2298,5 +2310,17 @@ class BinaryArrayToNumber {
             result += binary.get(i);
         }
         return Integer.parseInt(result, 2);
+    }
+}
+
+class OddEvenSort {
+    public static String sortMyString(String s) {
+        //Odd-Even String Sort
+        var first = new StringBuilder();
+        var second = new StringBuilder();
+        for (var i = 0; i < s.length(); i++) {
+            (i % 2 == 0 ? second : first).append(s.charAt(i));
+        }
+        return second.append(" ").append(first).toString();
     }
 }
