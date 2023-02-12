@@ -1,6 +1,7 @@
 package Exercise;
 
 import java.util.*;
+import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -915,6 +916,16 @@ class Solution {
                 .mapToInt(value -> value.intValue())
                 .sum();
     }
+
+
+    public static boolean all(int[] list, IntPredicate predicate){
+        //Enumerable Magic #1 - True for All?
+        for (int i : list)
+            if (!predicate.test(i))
+                return false;
+        return true;
+    }
+
 }
 
 class SmashWords {
