@@ -2328,15 +2328,16 @@ class OddEvenSort {
 class XO {
     public static boolean getXO(String str) {
         //Exes and Ohs
+        char[] charsArray = str.toLowerCase().toCharArray();
+
         int totalO = 0;
         int totalX = 0;
-        String words = str.toLowerCase();
 
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == 'o') {
+        for (int i = 0; i < charsArray.length; i++) {
+            if (charsArray[i] == 'o') {
                 totalO++;
             }
-            if (str.charAt(i) == 'x') {
+            if (charsArray[i] == 'x') {
                 totalX++;
             }
         }
