@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println(Solution.maxProduct(new int[]{10, 2, 3, 8, 1, 10, 4}, 2));
+        System.out.println(Solution.arrayLeaders(new int[]{16,17,4,3,5,2}));
 
 
     }
@@ -938,6 +938,17 @@ class Solution {
         return result;
     }
 
+    public static List arrayLeaders(int[] numbers) {
+        //Array Leaders (Array Series #3)
+        var arr = new ArrayList<Integer>();
+        int sum = 0;
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            if (numbers[i] > sum)
+                arr.add(0, numbers[i]);
+            sum += numbers[i];
+        }
+        return arr; // Do your magic!
+    }
 }
 
 class SmashWords {
