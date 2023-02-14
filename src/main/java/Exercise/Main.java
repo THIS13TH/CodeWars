@@ -14,7 +14,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println(Solution.arrayLeaders(new int[]{16,17,4,3,5,2}));
+        System.out.println(ArraysCodeWars.findSmallest(new int[]{1, 2, 3}, "index"));
+        System.out.println(ArraysCodeWars.findSmallest(new int[]{7, 12, 3, 2, 27}, "value"));
+        System.out.println(ArraysCodeWars.findSmallest(new int[]{7, 12, 3, 2, 27}, "index"));
 
 
     }
@@ -2359,5 +2361,25 @@ class XO {
             return false;
         }
 
+    }
+}
+
+class ArraysCodeWars {
+    public static int findSmallest(final int[] numbers, final String toReturn) {
+        //Smallest value of an array
+        int value = Integer.MAX_VALUE;
+        int index = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < value) {
+                index = i;
+                value = numbers[i];
+            }
+        }
+        if (toReturn.equals("value")) {
+            return value;
+        } else {
+            return index;
+        }
     }
 }
