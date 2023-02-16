@@ -1,6 +1,5 @@
 package Exercise;
 
-import lombok.AllArgsConstructor;
 
 import java.util.*;
 import java.util.function.IntPredicate;
@@ -14,11 +13,6 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-
-
-        System.out.println(ArraysCodeWars.findSmallest(new int[]{1, 2, 3}, "index"));
-        System.out.println(ArraysCodeWars.findSmallest(new int[]{7, 12, 3, 2, 27}, "value"));
-        System.out.println(ArraysCodeWars.findSmallest(new int[]{7, 12, 3, 2, 27}, "index"));
 
 
     }
@@ -2386,12 +2380,20 @@ class ArraysCodeWars {
     }
 }
 
-@AllArgsConstructor
+
 class Person {
     //The Office II - Boredom Score
     final String name;
     final String department;
+    final int happiness;
+
+    public Person(String name, String department, int happiness) {
+        this.name = name;
+        this.department = department;
+        this.happiness = happiness;
+    }
 }
+
 
 class TheOffice {
     public static String boredom(Person[] staff) {
@@ -2421,4 +2423,15 @@ class TheOffice {
             return "party time!!";
         }
     }
+
+    public static String outed(Person[] meet, String boss) {
+        //The Office I - Outed
+        double rating = 0;
+        for(Person a : meet) {
+            rating += a.happiness;
+            if(a.name.equals(boss)) rating += a.happiness;
+        }
+        return (rating/meet.length) <= 5 ? "Get Out Now!" : "Nice Work Champ!";
+    }
+
 }
