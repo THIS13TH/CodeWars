@@ -14,6 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println(JadenCase.toJadenCase("most trees are blue"));
 
     }
 }
@@ -2415,9 +2416,9 @@ class TheOffice {
                 .mapToInt(s -> teams.get(s.department))
                 .sum();
 
-        if(result <= 80) {
+        if (result <= 80) {
             return "kill me now";
-        } else if(result < 100) {
+        } else if (result < 100) {
             return "i can handle this";
         } else {
             return "party time!!";
@@ -2427,11 +2428,29 @@ class TheOffice {
     public static String outed(Person[] meet, String boss) {
         //The Office I - Outed
         double rating = 0;
-        for(Person a : meet) {
+        for (Person a : meet) {
             rating += a.happiness;
-            if(a.name.equals(boss)) rating += a.happiness;
+            if (a.name.equals(boss)) rating += a.happiness;
         }
-        return (rating/meet.length) <= 5 ? "Get Out Now!" : "Nice Work Champ!";
+        return (rating / meet.length) <= 5 ? "Get Out Now!" : "Nice Work Champ!";
     }
 
+}
+
+class JadenCase {
+
+    public static String toJadenCase(String phrase) {
+        //Jaden Casing Strings
+        if(phrase == null || phrase.equals("")){
+            return null;
+        }
+        String[] str = phrase.split(" ");
+        StringBuilder result = new StringBuilder();
+        for (String word : str) {
+            String first = word.substring(0, 1).toUpperCase();
+            String all = word.substring(1);
+            result.append(first).append(all).append(" ");
+        }
+        return result.toString().trim();
+    }
 }
