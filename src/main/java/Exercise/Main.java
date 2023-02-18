@@ -2441,7 +2441,7 @@ class JadenCase {
 
     public static String toJadenCase(String phrase) {
         //Jaden Casing Strings
-        if(phrase == null || phrase.equals("")){
+        if (phrase == null || phrase.equals("")) {
             return null;
         }
         String[] str = phrase.split(" ");
@@ -2452,5 +2452,12 @@ class JadenCase {
             result.append(first).append(all).append(" ");
         }
         return result.toString().trim();
+    }
+}
+
+class AngleSum {
+    public static int sumOfAngles(int n) {
+        //Sum of angles
+        return 180 * (n-2);
     }
 }
