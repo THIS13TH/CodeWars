@@ -948,6 +948,23 @@ class Solution {
         }
         return arr; // Do your magic!
     }
+
+    public static int[] solve(String[] arr){
+        //Alphabet symmetry
+        int[] numbers = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            String aux = arr[i].toLowerCase();
+            int cont = 0;
+            for (int j = 0; j < aux.length(); j++) {
+                if ((aux.charAt(j) - 97) == j) {
+                    cont++;
+                }
+            }
+            numbers[i] = cont;
+        }
+        return numbers;
+    }
 }
 
 class SmashWords {
