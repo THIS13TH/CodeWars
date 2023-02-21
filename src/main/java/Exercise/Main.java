@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(JadenCase.toJadenCase("most trees are blue"));
+        System.out.println(Kata.filterString("123"));
 
     }
 }
@@ -679,6 +679,19 @@ class Kata {
 
         return multi + "x^" + div;
     }
+
+    public static long filterString(final String value) {
+        //Filter the number
+        String result = "";
+        char[] arr = value.toCharArray();
+        for(char i : arr){
+            if(Character.isDigit(i)){
+                result += Character.getNumericValue(i);
+            }
+        }
+        return Long.parseLong(result);
+        //return Long.valueOf(value.replaceAll("\\D", ""));
+    }
 }
 
 class StringToNumber {
@@ -976,6 +989,8 @@ class Solution {
         }
         return String.valueOf(array);
     }
+
+
 }
 
 class SmashWords {
