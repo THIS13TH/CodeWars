@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.filterString("123"));
+        System.out.println(Solution.vaporcode("Lets go to the movies"));
 
     }
 }
@@ -684,8 +684,8 @@ class Kata {
         //Filter the number
         String result = "";
         char[] arr = value.toCharArray();
-        for(char i : arr){
-            if(Character.isDigit(i)){
+        for (char i : arr) {
+            if (Character.isDigit(i)) {
                 result += Character.getNumericValue(i);
             }
         }
@@ -990,7 +990,11 @@ class Solution {
         return String.valueOf(array);
     }
 
-
+    public static String vaporcode(String s) {
+        //V A P O R C O D E
+        s = s.replace(" ", "").replace("", "  ");
+        return s.toUpperCase().substring(2, s.length() - 2);
+    }
 }
 
 class SmashWords {
@@ -2559,7 +2563,7 @@ class StrongNumber {
             fact = 1;
             strong = Character.getNumericValue(factorial.charAt(i));
             for (int j = 1; j <= strong; j++) {
-                fact *=  j;
+                fact *= j;
             }
             sum += fact;
         }
