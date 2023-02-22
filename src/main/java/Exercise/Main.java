@@ -992,6 +992,7 @@ class Solution {
 
     public static String vaporcode(String s) {
         //V A P O R C O D E
+
         s = s.replace(" ", "").replace("", "  ");
         return s.toUpperCase().substring(2, s.length() - 2);
     }
