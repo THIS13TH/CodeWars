@@ -14,7 +14,10 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Solution.vaporcode("Lets go to the movies"));
+        int[] temp = Kata.Solve("Codewars@codewars123.com");
+        for (int i = 0; i <temp.length ; i++) {
+            System.out.print(temp[i]);
+        }
 
     }
 }
@@ -691,6 +694,26 @@ class Kata {
         }
         return Long.parseLong(result);
         //return Long.valueOf(value.replaceAll("\\D", ""));
+    }
+
+    public static int[] Solve(String word) {
+        //Simple string characters
+        int[] result = new int[4];
+
+        for (int i = 0; i < word.length(); i++) {
+            if(Character.isUpperCase(word.charAt(i))){
+                result[0]++;
+            }
+            else if(Character.isLowerCase(word.charAt(i))){
+                result[1]++;
+            }
+            else if(Character.isDigit(word.charAt(i))){
+                result[2]++;
+            }else{
+                result[3]++;
+            }
+        }
+        return result;
     }
 }
 
