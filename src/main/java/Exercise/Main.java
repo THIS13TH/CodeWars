@@ -715,6 +715,16 @@ class Kata {
         }
         return result;
     }
+
+    public static boolean smallEnough(int[] a, int limit) {
+        //Small enough? - Beginner
+        for(int i : a){
+            if(i > limit){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 class StringToNumber {
