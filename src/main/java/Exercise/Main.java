@@ -13,11 +13,7 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-
-        int[] temp = Kata.Solve("Codewars@codewars123.com");
-        for (int i = 0; i <temp.length ; i++) {
-            System.out.print(temp[i]);
-        }
+        System.out.println(Solution.explode("312"));
 
     }
 }
@@ -1028,6 +1024,18 @@ class Solution {
 
         s = s.replace(" ", "").replace("", "  ");
         return s.toUpperCase().substring(2, s.length() - 2);
+    }
+
+    public static String explode(String digits) {
+        //Digits explosion
+        String result = "";
+        for (int lenthg = 0; lenthg < digits.length(); lenthg++) {
+            int digit = Integer.parseInt(String.valueOf(digits.charAt(lenthg)));
+            for (int number = 1; number <= digit; number++) {
+                result += digits.charAt(lenthg);
+            }
+        }
+        return result;
     }
 }
 
