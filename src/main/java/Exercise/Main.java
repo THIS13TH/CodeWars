@@ -697,15 +697,13 @@ class Kata {
         int[] result = new int[4];
 
         for (int i = 0; i < word.length(); i++) {
-            if(Character.isUpperCase(word.charAt(i))){
+            if (Character.isUpperCase(word.charAt(i))) {
                 result[0]++;
-            }
-            else if(Character.isLowerCase(word.charAt(i))){
+            } else if (Character.isLowerCase(word.charAt(i))) {
                 result[1]++;
-            }
-            else if(Character.isDigit(word.charAt(i))){
+            } else if (Character.isDigit(word.charAt(i))) {
                 result[2]++;
-            }else{
+            } else {
                 result[3]++;
             }
         }
@@ -714,12 +712,26 @@ class Kata {
 
     public static boolean smallEnough(int[] a, int limit) {
         //Small enough? - Beginner
-        for(int i : a){
-            if(i > limit){
+        for (int i : a) {
+            if (i > limit) {
                 return false;
             }
         }
         return true;
+    }
+
+    public static String getMiddle(String word) {
+        //Get the Middle Character
+        int middle = word.length() / 2;
+        StringBuilder result = new StringBuilder();
+
+        if(word.length() % 2 == 0){
+            result.append(word.charAt(middle - 1));
+            result.append(word.charAt(middle));
+        }else{
+            result.append(word.charAt(middle));
+        }
+        return result.toString();
     }
 }
 
