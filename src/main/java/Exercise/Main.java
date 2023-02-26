@@ -13,7 +13,7 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Solution.explode("312"));
+        System.out.println(TheOffice.meeting(new char[] {'X', 'O', 'X'}));
 
     }
 }
@@ -2536,6 +2536,16 @@ class TheOffice {
         return (rating / meet.length) <= 5 ? "Get Out Now!" : "Nice Work Champ!";
     }
 
+    public static Object meeting(char[] x) {
+        //The Office IV - Find a Meeting Room
+        int emptyRoom = 0;
+        for (int i = 0; i < x.length; i++) {
+            if(x[i] == 'O'){
+                return emptyRoom = i;
+            }
+        }
+        return "None available!";
+    }
 }
 
 class JadenCase {
@@ -2632,3 +2642,4 @@ class timeConverter{
         return String.format("%d hour(s) and %d minute(s)", seconds / 3600, seconds % 3600 / 60);
     }
 }
+
