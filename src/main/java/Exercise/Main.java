@@ -725,15 +725,36 @@ class Kata {
         int middle = word.length() / 2;
         StringBuilder result = new StringBuilder();
 
-        if(word.length() % 2 == 0){
+        if (word.length() % 2 == 0) {
             result.append(word.charAt(middle - 1));
             result.append(word.charAt(middle));
-        }else{
+        } else {
             result.append(word.charAt(middle));
         }
         return result.toString();
     }
+
+    public static int[] flattenAndSort(int[][] array) {
+        //Flatten and sort an array
+        int length = 0;
+
+        for (int[] line : array)
+            length = length + line.length;
+
+        int[] out = new int[length];
+
+        int i = 0;
+        for (int[] line : array)
+            for (int cell : line) {
+                out[i] = cell;
+                i++;
+            }
+
+        Arrays.sort(out);
+        return out;
+    }
 }
+
 
 class StringToNumber {
     //Convert a String to a Number!
