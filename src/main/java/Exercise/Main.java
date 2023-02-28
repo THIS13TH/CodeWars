@@ -13,7 +13,8 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(TheOffice.meeting(new char[] {'X', 'O', 'X'}));
+        MaxProduct maxProduct = new MaxProduct();
+        System.out.println(maxProduct.adjacentElementsProduct(new int[] {-23, 4, -5, 99, -27, 329, -2, 7, -921}));
 
     }
 }
@@ -2561,7 +2562,7 @@ class TheOffice {
         //The Office IV - Find a Meeting Room
         int emptyRoom = 0;
         for (int i = 0; i < x.length; i++) {
-            if(x[i] == 'O'){
+            if (x[i] == 'O') {
                 return emptyRoom = i;
             }
         }
@@ -2657,10 +2658,22 @@ class StrongNumber {
     }
 }
 
-class timeConverter{
+class timeConverter {
     //All Star Code Challenge #22
-    public static String toTime(int seconds){
+    public static String toTime(int seconds) {
         return String.format("%d hour(s) and %d minute(s)", seconds / 3600, seconds % 3600 / 60);
     }
 }
 
+class MaxProduct {
+    public int adjacentElementsProduct(int[] array) {
+        //Maximum Product
+        int result = Integer.MIN_VALUE;
+        int temp = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            temp = array[i] * array[i + 1];
+            if (temp > result) result = temp;
+        }
+        return result;
+    }
+}
