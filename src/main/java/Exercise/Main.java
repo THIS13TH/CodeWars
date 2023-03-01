@@ -13,8 +13,8 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        MaxProduct maxProduct = new MaxProduct();
-        System.out.println(maxProduct.adjacentElementsProduct(new int[] {-23, 4, -5, 99, -27, 329, -2, 7, -921}));
+
+        System.out.println(Switch.switcheroo("bbbacccabbb"));
 
     }
 }
@@ -2675,5 +2675,22 @@ class MaxProduct {
             if (temp > result) result = temp;
         }
         return result;
+    }
+}
+
+class Switch {
+    public static String switcheroo(String x) {
+        //Switcheroo
+        var result = new StringBuilder();
+        for (int i = 0; i < x.length(); i++) {
+            if (x.charAt(i) == 'a') {
+                result.append("b");
+            } else if (x.charAt(i) == 'b') {
+                result.append("a");
+            } else {
+                result.append(x.charAt(i));
+            }
+        }
+        return result.toString();
     }
 }
