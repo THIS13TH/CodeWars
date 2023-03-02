@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Switch.switcheroo("bbbacccabbb"));
+        System.out.println(MaxRotate.maxRot(38458215));
 
     }
 }
@@ -2692,5 +2692,18 @@ class Switch {
             }
         }
         return result.toString();
+    }
+}
+
+class MaxRotate {
+    public static long maxRot (long n) {
+        //Rotate for a Max
+        String digits = "" + n;
+        long max = n;
+        for (int i = 1; i < digits.length(); i++) {
+            digits = digits.substring(0, i - 1) + digits.substring(i) + digits.charAt(i - 1);
+            max = Math.max(max, Long.parseLong(digits));
+        }
+        return max;
     }
 }
