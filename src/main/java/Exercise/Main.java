@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(MaxRotate.maxRot(38458215));
+        System.out.println(Solution.tidyNumber(1024));
 
     }
 }
@@ -1070,6 +1070,14 @@ class Solution {
             }
         }
         return result;
+    }
+
+    public static boolean tidyNumber(int number) {
+        //Tidy Number (Special Numbers Series #9)
+        String[] digits = ("" + number).split("");
+        java.util.Arrays.sort(digits);
+        return String.join("", digits).equals("" + number);
+
     }
 }
 
@@ -2696,7 +2704,7 @@ class Switch {
 }
 
 class MaxRotate {
-    public static long maxRot (long n) {
+    public static long maxRot(long n) {
         //Rotate for a Max
         String digits = "" + n;
         long max = n;
