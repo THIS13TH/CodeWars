@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(GreetMe.greet("riley"));
+        System.out.println(ReverseLonger.shorterReverseLonger("hello", "bau"));
 
     }
 }
@@ -2739,4 +2739,14 @@ class GreetMe {
         //Greet Me
         return "Hello " + name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase() + "!";
     }
+}
+
+class ReverseLonger {
+    public static String shorterReverseLonger(String a, String b) {
+        //shorter concat [reverse longer]
+        return a.length() >= b.length() ?
+                b + new StringBuilder(a).reverse() + b :
+                a + new StringBuilder(b).reverse() + a;
+    }
+
 }
