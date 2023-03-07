@@ -754,6 +754,11 @@ class Kata {
         Arrays.sort(out);
         return out;
     }
+
+    public static String swap(String st){
+        //Changing letters
+        return st.replace("a","A").replace("e","E").replace("i","I").replace("o","O").replace("u","U");
+    }
 }
 
 
