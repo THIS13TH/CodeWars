@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.stantonMeasure(new int[] {1, 4, 3, 2, 1, 2, 3, 2}));
+        System.out.println(Arrays.toString(Kata.incrementer(new int[]{4, 6, 7, 1, 3})));
 
     }
 }
@@ -755,9 +755,9 @@ class Kata {
         return out;
     }
 
-    public static String swap(String st){
+    public static String swap(String st) {
         //Changing letters
-        return st.replace("a","A").replace("e","E").replace("i","I").replace("o","O").replace("u","U");
+        return st.replace("a", "A").replace("e", "E").replace("i", "I").replace("o", "O").replace("u", "U");
     }
 
     public static int stantonMeasure(int[] arr) {
@@ -765,16 +765,27 @@ class Kata {
         int stanton = 0;
         int result = 0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] == 1){
+            if (arr[i] == 1) {
                 stanton++;
             }
         }
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] == stanton){
+            if (arr[i] == stanton) {
                 result++;
             }
         }
         return result;
+    }
+
+    public static int[] incrementer(int[] numbers) {
+        //Incrementer
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = (numbers[i] + i + 1) % 10;
+//            if(numbers[i] >= 10){
+//                numbers[i] = numbers[i] % 10;
+//            }
+        }
+        return numbers;
     }
 }
 
