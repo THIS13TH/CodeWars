@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(Kata.incrementer(new int[]{4, 6, 7, 1, 3})));
+        System.out.println(Solution.solve("xyab", "xzca"));
 
     }
 }
@@ -1113,7 +1113,15 @@ class Solution {
 
     }
 
+    public static String solve(String a, String b) {
+        //Unique string characters
+        StringBuilder tmp = new StringBuilder();
+        for (String s : a.split("")) if (!b.contains(s)) tmp.append(s);
+        for (String s : b.split("")) if (!a.contains(s)) tmp.append(s);
+        return tmp.toString();
 
+
+    }
 }
 
 class SmashWords {
