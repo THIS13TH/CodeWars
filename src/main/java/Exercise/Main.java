@@ -1,6 +1,7 @@
 package Exercise;
 
 
+import java.sql.SQLOutput;
 import java.util.*;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
@@ -14,7 +15,10 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Solution.solve("xyab", "xzca"));
+        System.out.println(Kata.vowel2Index("this is my string"));
+
+
+
 
     }
 }
@@ -786,6 +790,35 @@ class Kata {
 //            }
         }
         return numbers;
+    }
+
+    public static String vowel2Index(String s) {
+        //The old switcheroo
+//        String result = "";
+//        String[] temp = s.split("");
+//        for (int i = 0; i < temp.length; i++) {
+//            if(temp[i].equals("a")){
+//                temp[i] = String.valueOf(i + 1);
+//            }else if(temp[i].equals("e")){
+//                temp[i] = String.valueOf(i + 1);
+//            }else if(temp[i].equals("i")){
+//                temp[i] = String.valueOf(i + 1);
+//            }else if(temp[i].equals("o")){
+//                temp[i] = String.valueOf(i + 1);
+//            }else if(temp[i].equals("i")){
+//                temp[i] = String.valueOf(i + 1);
+//            }
+//        }
+//        for (int i = 0; i < temp.length; i++) {
+//            result += temp[i];
+//        }
+//        return result;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if ("aeiouAEIOU".indexOf(s.charAt(i)) == -1) result.append(s.charAt(i));
+            else result.append(i + 1);
+        }
+        return result.toString();
     }
 }
 
