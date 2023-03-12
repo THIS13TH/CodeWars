@@ -1,7 +1,6 @@
 package Exercise;
 
 
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
@@ -15,11 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Solution.checkThreeAndTwo(new char[] { 'a', 'a', 'b', 'b', 'b' }));
-        System.out.println(Solution.checkThreeAndTwo(new char[] {  'a', 'c', 'a', 'c', 'b' }));
-        System.out.println(Solution.checkThreeAndTwo(new char[] { 'a', 'a', 'a', 'a', 'a' }));
-
-
+        System.out.println(Kata.stringMerge("person", "here", 'e'));
 
 
     }
@@ -822,6 +817,11 @@ class Kata {
         }
         return result.toString();
     }
+
+    public static String stringMerge(String s1, String s2, char letter) {
+        //String Merge!
+        return s1.substring(0, s1.indexOf(letter)) + s2.substring(s2.indexOf(letter));
+    }
 }
 
 
@@ -1162,21 +1162,21 @@ class Solution {
         int countB = 0;
         int countC = 0;
         for (int i = 0; i < chars.length; i++) {
-            if(chars[i] == 'a'){
+            if (chars[i] == 'a') {
                 countA++;
             } else if (chars[i] == 'b') {
                 countB++;
-            }else if (chars[i] == 'c') {
+            } else if (chars[i] == 'c') {
                 countC++;
             }
         }
-        if(countA == 3 && (countB == 2 || countC == 2)){
+        if (countA == 3 && (countB == 2 || countC == 2)) {
             return true;
         } else if (countB == 3 && (countA == 2 || countC == 2)) {
             return true;
         } else if (countC == 3 && (countA == 2 || countB == 2)) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
