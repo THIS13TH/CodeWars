@@ -15,7 +15,9 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.vowel2Index("this is my string"));
+        System.out.println(Solution.checkThreeAndTwo(new char[] { 'a', 'a', 'b', 'b', 'b' }));
+        System.out.println(Solution.checkThreeAndTwo(new char[] {  'a', 'c', 'a', 'c', 'b' }));
+        System.out.println(Solution.checkThreeAndTwo(new char[] { 'a', 'a', 'a', 'a', 'a' }));
 
 
 
@@ -1152,8 +1154,31 @@ class Solution {
         for (String s : a.split("")) if (!b.contains(s)) tmp.append(s);
         for (String s : b.split("")) if (!a.contains(s)) tmp.append(s);
         return tmp.toString();
+    }
 
-
+    public static boolean checkThreeAndTwo(char[] chars) {
+        //Check three and two
+        int countA = 0;
+        int countB = 0;
+        int countC = 0;
+        for (int i = 0; i < chars.length; i++) {
+            if(chars[i] == 'a'){
+                countA++;
+            } else if (chars[i] == 'b') {
+                countB++;
+            }else if (chars[i] == 'c') {
+                countC++;
+            }
+        }
+        if(countA == 3 && (countB == 2 || countC == 2)){
+            return true;
+        } else if (countB == 3 && (countA == 2 || countC == 2)) {
+            return true;
+        } else if (countC == 3 && (countA == 2 || countB == 2)) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
