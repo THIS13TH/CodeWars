@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.stringMerge("person", "here", 'e'));
+        System.out.println(Kata.unluckyDays(2015));
 
 
     }
@@ -821,6 +821,19 @@ class Kata {
     public static String stringMerge(String s1, String s2, char letter) {
         //String Merge!
         return s1.substring(0, s1.indexOf(letter)) + s2.substring(s2.indexOf(letter));
+    }
+
+    public static int unluckyDays(int year) {
+        //Unlucky Days
+        Calendar calendar = Calendar.getInstance();
+        int count = 0;
+        for (int i = 0; i < 12; i++) {
+            calendar.set(year, i, 13);
+            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
+                count++;
+            }
+        }
+        return count;
     }
 }
 
