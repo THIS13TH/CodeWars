@@ -2860,5 +2860,11 @@ class ReverseLonger {
                 b + new StringBuilder(a).reverse() + b :
                 a + new StringBuilder(b).reverse() + a;
     }
+}
 
+class Arguments {
+    public static int countArgs(Object... args) {
+        //How many arguments
+        return args.length;
+    }
 }
