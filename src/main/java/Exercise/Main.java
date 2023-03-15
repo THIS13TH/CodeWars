@@ -835,6 +835,22 @@ class Kata {
         }
         return count;
     }
+    static String toLeetSpeak(final String speak) {
+        //ToLeetSpeak
+        return speak
+                .replaceAll("A", "@")
+                .replaceAll("B", "8")
+                .replaceAll("C", "(")
+                .replaceAll("E", "3")
+                .replaceAll("G", "6")
+                .replaceAll("H", "#")
+                .replaceAll("I", "!")
+                .replaceAll("L", "1")
+                .replaceAll("O", "0")
+                .replaceAll("S", "\\$")
+                .replaceAll("T", "7")
+                .replaceAll("Z", "2");
+    }
 }
 
 
