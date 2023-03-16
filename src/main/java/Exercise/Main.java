@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.unluckyDays(2015));
+        System.out.println(Solution.solvee(new int[]{1, 2, 5, 8, -4, -3, 7, 6, 5}));
 
 
     }
@@ -835,6 +835,7 @@ class Kata {
         }
         return count;
     }
+
     static String toLeetSpeak(final String speak) {
         //ToLeetSpeak
         return speak
@@ -1208,6 +1209,20 @@ class Solution {
         } else {
             return false;
         }
+    }
+
+    public static int solvee(int[] arr) {
+        //Simple consecutive pairs
+        int count = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int temp = arr[i];
+            if (i % 2 == 0) {
+                if (arr[i + 1] - temp == 1 || temp - arr[i + 1] == 1) {
+                    count++;
+                }
+            }
+        }
+        return count;
     }
 }
 
@@ -2886,7 +2901,7 @@ class Arguments {
 }
 
 class Money {
-    public static int calculateYears(double principal, double interest,  double tax, double desired) {
+    public static int calculateYears(double principal, double interest, double tax, double desired) {
         //Money, Money, Money
         int years = 0;
         while (principal < desired) {
