@@ -14,7 +14,10 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Solution.solvee(new int[]{1, 2, 5, 8, -4, -3, 7, 6, 5}));
+        long[] temp = Solution.productArray(new int[]{1,5,2});
+        for (int i = 0; i < temp.length; i++) {
+            System.out.println(temp[i]);
+        }
 
 
     }
@@ -1223,6 +1226,21 @@ class Solution {
             }
         }
         return count;
+    }
+
+    public static long[] productArray(int[] numbers) {
+        //Product Array (Array Series #5)
+        long[] result = new long[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            long number = 1;
+            for (int j = 0; j < numbers.length; j++) {
+                if(i != j){
+                    number *= numbers[j];
+                }
+            }
+            result[i] = number;
+        }
+         return result;
     }
 }
 
