@@ -855,6 +855,13 @@ class Kata {
                 .replaceAll("T", "7")
                 .replaceAll("Z", "2");
     }
+
+
+    public static boolean validSpacing(String s) {
+        //Valid Spacing
+        return s.trim().replace("  ", "").equals(s);
+    }
+
 }
 
 
