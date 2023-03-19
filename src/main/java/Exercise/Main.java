@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        long[] temp = Solution.productArray(new int[]{1,5,2});
+        long[] temp = Solution.productArray(new int[]{1, 5, 2});
         for (int i = 0; i < temp.length; i++) {
             System.out.println(temp[i]);
         }
@@ -1241,13 +1241,13 @@ class Solution {
         for (int i = 0; i < numbers.length; i++) {
             long number = 1;
             for (int j = 0; j < numbers.length; j++) {
-                if(i != j){
+                if (i != j) {
                     number *= numbers[j];
                 }
             }
             result[i] = number;
         }
-         return result;
+        return result;
     }
 }
 
@@ -2936,5 +2936,19 @@ class Money {
             years++;
         }
         return years;
+    }
+}
+
+class Backronym {
+    private static Map<String, String> dictionary = new HashMap<>() {{
+        put("P", "perfect");
+    }};
+    public static String makeBackronym(String acronym) {
+        //makeBackronym
+        String answer = "";
+        for (int i = 0; i < acronym.length(); i++) {
+            answer += dictionary.get(acronym.substring(i, i + 1).toUpperCase()) + " ";
+        }
+        return answer.trim();
     }
 }
