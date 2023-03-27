@@ -1249,6 +1249,11 @@ class Solution {
         }
         return result;
     }
+
+    static String insertDash(int num) {
+        //Insert dashes
+        return Integer.toString(num).replaceAll("[13579](?=[13579])", "$0-");
+    }
 }
 
 class SmashWords {
@@ -2952,3 +2957,4 @@ class Backronym {
         return answer.trim();
     }
 }
+
