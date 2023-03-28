@@ -1254,6 +1254,11 @@ class Solution {
         //Insert dashes
         return Integer.toString(num).replaceAll("[13579](?=[13579])", "$0-");
     }
+
+    public static void main(String[] args) {
+        //Classic Hello World
+        System.out.println("Hello World!");
+    }
 }
 
 class SmashWords {
