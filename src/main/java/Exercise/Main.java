@@ -1984,6 +1984,11 @@ class Numbers {
         //Formatting decimal places #0
         return Double.parseDouble(String.format("%.2f", number));
     }
+
+    public static double twoDecimalPlaces(double number) {
+        //Formatting decimal places #1
+        return (int) (number * 100) / 100.00;
+    }
 }
 
 class HowDoICompare {
@@ -2962,4 +2967,3 @@ class Backronym {
         return answer.trim();
     }
 }
-
