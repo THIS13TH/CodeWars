@@ -14,10 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        long[] temp = Solution.productArray(new int[]{1, 5, 2});
-        for (int i = 0; i < temp.length; i++) {
-            System.out.println(temp[i]);
-        }
+        System.out.println(Drinkin.hydrate("2 shots and 1 glass of wine"));
 
 
     }
@@ -2958,6 +2955,7 @@ class Backronym {
     private static Map<String, String> dictionary = new HashMap<>() {{
         put("P", "perfect");
     }};
+
     public static String makeBackronym(String acronym) {
         //makeBackronym
         String answer = "";
@@ -2965,5 +2963,22 @@ class Backronym {
             answer += dictionary.get(acronym.substring(i, i + 1).toUpperCase()) + " ";
         }
         return answer.trim();
+    }
+}
+
+class Drinkin {
+    public static String hydrate(String drinkString) {
+        //Responsible Drinking
+        int count = 0;
+        String[] drink = drinkString.split(" ");
+        for(String str : drink){
+            try {
+                count += Integer.parseInt(str);
+            } catch(NumberFormatException e){
+
+            }
+
+        }
+        return String.format("%d glass%s of water", count, count > 1 ? "es" : "");
     }
 }
