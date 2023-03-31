@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Drinkin.hydrate("2 shots and 1 glass of wine"));
+        System.out.println(Kata.lastSurvivor("abc",  new int[]{1, 1}));
 
 
     }
@@ -853,12 +853,19 @@ class Kata {
                 .replaceAll("Z", "2");
     }
 
-
     public static boolean validSpacing(String s) {
         //Valid Spacing
         return s.trim().replace("  ", "").equals(s);
     }
 
+    public static String lastSurvivor(String letters, int[] coords) {
+        //Last Survivor
+        StringBuilder result = new StringBuilder(letters);
+        for (int i = 0; i < coords.length; i++) {
+            result.deleteCharAt(coords[i]);
+        }
+        return result.toString();
+    }
 }
 
 
