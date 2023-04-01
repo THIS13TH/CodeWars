@@ -14,7 +14,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.lastSurvivor("abc",  new int[]{1, 1}));
+        System.out.println(isogram.isIsogram("moose"));
 
 
     }
@@ -2987,5 +2987,16 @@ class Drinkin {
 
         }
         return String.format("%d glass%s of water", count, count > 1 ? "es" : "");
+    }
+}
+
+class isogram {
+    public static boolean  isIsogram(String str) {
+        //Isograms
+        str = str.toLowerCase();
+        for (int i = 0; i < str.length(); i++)
+            if (str.substring(i + 1).contains(str.charAt(i) + ""))
+                return false;
+        return true;
     }
 }
