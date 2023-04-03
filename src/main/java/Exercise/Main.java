@@ -14,9 +14,13 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(isogram.isIsogram("moose"));
-
-
+        System.out.println(StringUtils.isLetter(""));
+        System.out.println(StringUtils.isLetter("a"));
+        System.out.println(StringUtils.isLetter("X"));
+        System.out.println(StringUtils.isLetter("7"));
+        System.out.println(StringUtils.isLetter("*"));
+        System.out.println(StringUtils.isLetter("ab"));
+        System.out.println(StringUtils.isLetter("a\n"));
     }
 }
 
@@ -2053,6 +2057,11 @@ class StringUtils {
     public static boolean isDigit(String s) {
         //Regexp Basics - is it a digit?
         return s.matches("[0-9]");
+    }
+
+    public static boolean isLetter(String s) {
+        //Regexp Basics - is it a letter?
+        return s.matches("[a-zA-Z]");
     }
 }
 
