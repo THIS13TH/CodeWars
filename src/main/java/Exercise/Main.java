@@ -14,13 +14,8 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(StringUtils.isLetter(""));
-        System.out.println(StringUtils.isLetter("a"));
-        System.out.println(StringUtils.isLetter("X"));
-        System.out.println(StringUtils.isLetter("7"));
-        System.out.println(StringUtils.isLetter("*"));
-        System.out.println(StringUtils.isLetter("ab"));
-        System.out.println(StringUtils.isLetter("a\n"));
+        System.out.println(Kata.longestWord("red blue grey"));
+
     }
 }
 
@@ -869,6 +864,24 @@ class Kata {
             result.deleteCharAt(coords[i]);
         }
         return result.toString();
+    }
+
+    public static String longestWord(String wordString) {
+        //Inspiring Strings
+        String[] str = wordString.split(" ");
+        String result = "";
+        int max = 0;
+        for (int i = 0; i < str.length; i++) {
+            if (str[i].length() > max) {
+                max = str[i].length();
+                result = str[i];
+            } else if (max == str[i].length()) {
+                result = str[i];
+
+            }
+        }
+        return result;
+
     }
 }
 
@@ -2987,10 +3000,10 @@ class Drinkin {
         //Responsible Drinking
         int count = 0;
         String[] drink = drinkString.split(" ");
-        for(String str : drink){
+        for (String str : drink) {
             try {
                 count += Integer.parseInt(str);
-            } catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
 
             }
 
@@ -3000,7 +3013,7 @@ class Drinkin {
 }
 
 class isogram {
-    public static boolean  isIsogram(String str) {
+    public static boolean isIsogram(String str) {
         //Isograms
         str = str.toLowerCase();
         for (int i = 0; i < str.length(); i++)
@@ -3019,6 +3032,7 @@ class Ship {
         this.draft = draft;
         this.crew = crew;
     }
+
     boolean isWorthIt() {
         return draft - 1.5 * crew > 20;
     }
