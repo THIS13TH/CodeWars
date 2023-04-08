@@ -3048,25 +3048,29 @@ class Ship {
     }
 }
 
-class SortArray{
+class SortArray {
     //Sort arrays - 1
-    public static int[] sortArray(int[] names){
+    public static int[] sortArray(int[] names) {
         Arrays.sort(names);
         return names;
     }
-    public static long[] sortArray(long[] names){
+
+    public static long[] sortArray(long[] names) {
         Arrays.sort(names);
         return names;
     }
-    public static double[] sortArray(double[] names){
+
+    public static double[] sortArray(double[] names) {
         Arrays.sort(names);
         return names;
     }
-    public static float[] sortArray(float[] names){
+
+    public static float[] sortArray(float[] names) {
         Arrays.sort(names);
         return names;
     }
-    public static <T> T[] sortArray(T[] names){
+
+    public static <T> T[] sortArray(T[] names) {
         Arrays.sort(names);
         return names;
     }
@@ -3080,5 +3084,17 @@ class Progression {
             sb.append(first + step * i).append(", ");
         }
         return sb.delete(sb.length() - 2, sb.length()).toString();
+    }
+}
+
+class WilsonPrime {
+    public static boolean am_i_wilson(double n) {
+        //Wilson primes
+        double mod = n * n;
+        double fact = 1;
+        for (int i = 2; i < n; i++) {
+            fact = (fact * i) % mod;
+        }
+        return fact + 1 == mod;
     }
 }
