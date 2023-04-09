@@ -14,7 +14,13 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.longestWord("red blue grey"));
+        System.out.println(Kata.compare("AD", "BC"));
+        System.out.println(Kata.compare("AD", "DD"));
+        System.out.println(Kata.compare("gf", "FG"));
+        System.out.println(Kata.compare("zz1", ""));
+        System.out.println(Kata.compare("ZzZz", "ffPFF"));
+        System.out.println(Kata.compare("kl", "lz"));
+        System.out.println(Kata.compare(null, ""));
 
     }
 }
@@ -892,6 +898,36 @@ class Kata {
             }
         }
         return test.length() == original.length();
+    }
+
+    public static boolean compare(String s1, String s2) {
+        //Compare Strings by Sum of Chars
+        int result = 0;
+        int result2 = 0;
+        if(s1 == null){
+            s1 = "";
+        }
+
+        if(s2 == null){
+            s2 = "";
+        }
+
+        char[] tmp = s1.toUpperCase().toCharArray();
+        char[] tmp2 = s2.toUpperCase().toCharArray();
+        for (int i = 0; i < tmp.length; i++) {
+            result += tmp[i];
+            if (tmp[i] < 65) {
+                result = 0;
+            }
+        }
+        for (int i = 0; i < tmp2.length; i++) {
+            result2 += tmp2[i];
+            if (tmp2[i] < 65) {
+                result2 = 0;
+            }
+        }
+
+        return result == result2;
     }
 }
 
