@@ -3,6 +3,7 @@ package Exercise;
 
 import java.util.*;
 import java.util.function.IntPredicate;
+import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -928,6 +929,10 @@ class Kata {
         }
 
         return result == result2;
+    }
+    public static IntUnaryOperator add(int n) {
+        //Functional Addition
+        return result -> result + n;
     }
 }
 
