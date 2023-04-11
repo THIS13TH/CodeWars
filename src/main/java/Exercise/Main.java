@@ -7,6 +7,8 @@ import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static java.lang.Integer.parseInt;
+import static java.lang.Integer.toBinaryString;
 import static java.util.Arrays.sort;
 import static java.util.Arrays.stream;
 import static java.util.stream.IntStream.rangeClosed;
@@ -79,7 +81,7 @@ class Kata {
         int numArr[] = new int[strArr.length];
 
         for (int i = 0; i < strArr.length; i++) {
-            numArr[i] = Integer.parseInt(strArr[i]);
+            numArr[i] = parseInt(strArr[i]);
         }
         int min = numArr[0];
         for (int i = 0; i < numArr.length; i++) {
@@ -293,7 +295,7 @@ class Kata {
 
     public static int hexToDec(final String hexString) {
         // Hex to Decimal
-        return Integer.parseInt(hexString, 16);
+        return parseInt(hexString, 16);
     }
 
     public static String greet(String name) {
@@ -428,7 +430,7 @@ class Kata {
 
     public static int toBinary(int n) {
         //Convert to Binary
-        return Integer.parseInt(Integer.toBinaryString(n));
+        return parseInt(toBinaryString(n));
     }
 
     public static int oddCount(int n) {
@@ -554,7 +556,7 @@ class Kata {
 
     public static String binaryAddition(int a, int b) {
         //Binary Addition
-        return Integer.toBinaryString(a + b);
+        return toBinaryString(a + b);
     }
 
     public static String alphabetWar(String fight) {
@@ -940,7 +942,7 @@ class Kata {
 class StringToNumber {
     //Convert a String to a Number!
     public static int stringToNumber(String str) {
-        return Integer.parseInt(str);
+        return parseInt(str);
     }
 }
 
@@ -1244,7 +1246,7 @@ class Solution {
         //Digits explosion
         String result = "";
         for (int lenthg = 0; lenthg < digits.length(); lenthg++) {
-            int digit = Integer.parseInt(String.valueOf(digits.charAt(lenthg)));
+            int digit = parseInt(String.valueOf(digits.charAt(lenthg)));
             for (int number = 1; number <= digit; number++) {
                 result += digits.charAt(lenthg);
             }
@@ -1467,7 +1469,7 @@ class MixedSum {
         Object[] arr = mixed.toArray();
         int result = 0;
         for (int i = 0; i < arr.length; i++) {
-            result += Integer.parseInt(arr[i].toString());
+            result += parseInt(arr[i].toString());
         }
         return result;
     }
@@ -1660,7 +1662,7 @@ class HelloWorld {
 
 class Converter {
     public static int binToDecimal(String inp) {
-        return Integer.parseInt(inp, 2);
+        return parseInt(inp, 2);
 
     }
 }
@@ -1733,7 +1735,7 @@ class Minimum {
             array.add(n);
         }
         var res = array.stream().distinct().sorted().map(x -> String.valueOf(x));
-        return Integer.parseInt(res.collect(Collectors.joining()));
+        return parseInt(res.collect(Collectors.joining()));
     }
 }
 
@@ -2676,7 +2678,7 @@ class DescendingOrder {
         Integer numArr[] = new Integer[numb.length];
 
         for (int i = 0; i < numb.length; i++) {
-            numArr[i] = Integer.parseInt(numb[i]);
+            numArr[i] = parseInt(numb[i]);
         }
 
         Arrays.sort(numArr, Collections.reverseOrder());
@@ -2712,7 +2714,7 @@ class BinaryArrayToNumber {
         for (int i = 0; i < binary.size(); i++) {
             result += binary.get(i);
         }
-        return Integer.parseInt(result, 2);
+        return parseInt(result, 2);
     }
 }
 
@@ -3053,7 +3055,7 @@ class Drinkin {
         String[] drink = drinkString.split(" ");
         for (String str : drink) {
             try {
-                count += Integer.parseInt(str);
+                count += parseInt(str);
             } catch (NumberFormatException e) {
 
             }
@@ -3137,5 +3139,12 @@ class WilsonPrime {
             fact = (fact * i) % mod;
         }
         return fact + 1 == mod;
+    }
+}
+
+class BitsOfInteger{
+    public static int reverse_bits(int n){
+        //Reverse the bits in an integer
+        return parseInt(new StringBuilder(toBinaryString(n)).reverse() + "", 2);
     }
 }
