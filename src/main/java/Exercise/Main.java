@@ -17,13 +17,8 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.compare("AD", "BC"));
-        System.out.println(Kata.compare("AD", "DD"));
-        System.out.println(Kata.compare("gf", "FG"));
-        System.out.println(Kata.compare("zz1", ""));
-        System.out.println(Kata.compare("ZzZz", "ffPFF"));
-        System.out.println(Kata.compare("kl", "lz"));
-        System.out.println(Kata.compare(null, ""));
+        System.out.println(Kata.minimumSteps(new int[]{819,98,69,28,75,45,17,98,67}, 464));
+
 
     }
 }
@@ -907,11 +902,11 @@ class Kata {
         //Compare Strings by Sum of Chars
         int result = 0;
         int result2 = 0;
-        if(s1 == null){
+        if (s1 == null) {
             s1 = "";
         }
 
-        if(s2 == null){
+        if (s2 == null) {
             s2 = "";
         }
 
@@ -932,9 +927,27 @@ class Kata {
 
         return result == result2;
     }
+
     public static IntUnaryOperator add(int n) {
         //Functional Addition
         return result -> result + n;
+    }
+
+    public static int minimumSteps(int[] numbers, int k) {
+        //Minimum Steps (Array Series #6)
+        Arrays.sort(numbers);
+        int count = 0;
+        int sum = numbers[0];
+
+        for (int i = 1; i < numbers.length; i++) {
+            if(sum >= k) {
+                break;
+            }
+            sum += numbers[i];
+            count++;
+
+        }
+        return count;
     }
 }
 
@@ -3142,8 +3155,8 @@ class WilsonPrime {
     }
 }
 
-class BitsOfInteger{
-    public static int reverse_bits(int n){
+class BitsOfInteger {
+    public static int reverse_bits(int n) {
         //Reverse the bits in an integer
         return parseInt(new StringBuilder(toBinaryString(n)).reverse() + "", 2);
     }
