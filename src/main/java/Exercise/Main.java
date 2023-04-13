@@ -17,7 +17,7 @@ import static java.util.stream.IntStream.rangeClosed;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(Kata.minimumSteps(new int[]{819,98,69,28,75,45,17,98,67}, 464));
+        System.out.println(Solution.maxGap(new int[]{13, 10, 2, 9, 5}));
 
 
     }
@@ -940,7 +940,7 @@ class Kata {
         int sum = numbers[0];
 
         for (int i = 1; i < numbers.length; i++) {
-            if(sum >= k) {
+            if (sum >= k) {
                 break;
             }
             sum += numbers[i];
@@ -1345,6 +1345,22 @@ class Solution {
     public static void main(String[] args) {
         //Classic Hello World
         System.out.println("Hello World!");
+    }
+
+    public static int maxGap(int[] numbers) {
+        //Maximum Gap (Array Series #4)
+        Arrays.sort(numbers);
+        int result = 0;
+        for (int i = 0; i < numbers.length - 1; i++) {
+            int diff = numbers[i] - numbers[i + 1];
+            if (diff < 0) {
+                diff *= -1;
+            }
+            if (diff > result) {
+                result = diff;
+            }
+        }
+        return result;
     }
 }
 
