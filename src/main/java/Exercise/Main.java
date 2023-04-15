@@ -16,8 +16,12 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<int[]> list = new ArrayList<int[]>();
+        list.add(new int[] {10,0});
+        list.add(new int[] {3,5});
+        list.add(new int[] {2,5});
 
-        System.out.println(Solution.maxGap(new int[]{13, 10, 2, 9, 5}));
+        System.out.println(Metro.countPassengers(list));
 
 
     }
@@ -3190,5 +3194,17 @@ class NewAverage {
             throw new IllegalArgumentException();
         }
         return answer;
+    }
+}
+
+class Metro {
+    public static int countPassengers(ArrayList<int[]> stops) {
+        //Number of People in the Bus
+        int result = 0;
+        for (int i = 0; i < stops.size(); i++) {
+            result += stops.get(i)[0];
+            result -= stops.get(i)[1];
+        }
+        return result;
     }
 }
