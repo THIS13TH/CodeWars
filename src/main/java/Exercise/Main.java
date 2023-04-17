@@ -1,11 +1,11 @@
 package Exercise;
 
-
 import java.util.*;
 import java.util.function.IntPredicate;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static java.lang.Integer.parseInt;
 import static java.lang.Integer.toBinaryString;
@@ -3208,3 +3208,13 @@ class Metro {
         return result;
     }
 }
+
+class DoubleSort {
+    public static Object[] dbSort(Object[] a){
+        //Double Sort
+        var numbers = Stream.of(a).filter(Integer.class::isInstance).sorted();
+        var strings = Stream.of(a).filter(String.class::isInstance).sorted();
+        return Stream.concat(numbers, strings).toArray();
+    }
+}
+
