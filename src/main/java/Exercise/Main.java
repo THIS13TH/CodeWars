@@ -16,12 +16,7 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<int[]> list = new ArrayList<int[]>();
-        list.add(new int[] {10,0});
-        list.add(new int[] {3,5});
-        list.add(new int[] {2,5});
-
-        System.out.println(Metro.countPassengers(list));
+        System.out.println(Kata.mostFrequentItemCount(new int[]{3, -1, -1}));
 
 
     }
@@ -950,6 +945,21 @@ class Kata {
             sum += numbers[i];
             count++;
 
+        }
+        return count;
+    }
+
+    public static int mostFrequentItemCount(int[] collection) {
+        //Find Count of Most Frequent Item in an Array
+        int count = 0;
+        for (int i = 0; i < collection.length; i++) {
+            int tmp = 0;
+            for (int number : collection) {
+                if (number == collection[i]) tmp++;
+            }
+            if (tmp > count) {
+                count = tmp;
+            }
         }
         return count;
     }
@@ -3210,7 +3220,7 @@ class Metro {
 }
 
 class DoubleSort {
-    public static Object[] dbSort(Object[] a){
+    public static Object[] dbSort(Object[] a) {
         //Double Sort
         var numbers = Stream.of(a).filter(Integer.class::isInstance).sorted();
         var strings = Stream.of(a).filter(String.class::isInstance).sorted();
