@@ -963,6 +963,17 @@ class Kata {
         }
         return count;
     }
+
+    public static boolean validateHello(String greetings) {
+        //Did she say hallo?
+        String[] hello = {"hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"};
+        for (int i = 0; i < hello.length; i++) {
+            if(greetings.toLowerCase().contains(hello[i])){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 
