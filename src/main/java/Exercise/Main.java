@@ -974,6 +974,11 @@ class Kata {
         }
         return false;
     }
+
+    public static int[] mergeArrays(int[] first, int[] second) {
+        //Merging sorted integer arrays (without duplicates)
+        return IntStream.concat(IntStream.of(first),IntStream.of(second)).distinct().sorted().toArray();
+    }
 }
 
 
