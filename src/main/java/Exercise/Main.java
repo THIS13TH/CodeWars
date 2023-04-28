@@ -11,6 +11,7 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Integer.toBinaryString;
 import static java.util.Arrays.sort;
 import static java.util.Arrays.stream;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.rangeClosed;
 
 
@@ -3277,5 +3278,14 @@ class BingoOrNot {
             }
         }
         return LOSE;
+    }
+}
+
+class sorter {
+    public static List<String> sort(List<String> textbooks) {
+        //Sort My Textbooks
+        return textbooks.stream()
+                .sorted(String.CASE_INSENSITIVE_ORDER)
+                .collect(toList());
     }
 }
