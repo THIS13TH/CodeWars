@@ -1393,6 +1393,11 @@ class Solution {
         }
         return result;
     }
+
+    public static int solve7(String s){
+        //Longest vowel chain
+        return Arrays.stream(s.split("[^aeiou]")).mapToInt(i -> i.length()).max().getAsInt();
+    }
 }
 
 class SmashWords {
