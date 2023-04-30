@@ -17,7 +17,7 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Kata.mostFrequentItemCount(new int[]{3, -1, -1}));
+        System.out.println(Kata.removeEveryOther(new Object[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
 
 
     }
@@ -969,7 +969,7 @@ class Kata {
         //Did she say hallo?
         String[] hello = {"hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"};
         for (int i = 0; i < hello.length; i++) {
-            if(greetings.toLowerCase().contains(hello[i])){
+            if (greetings.toLowerCase().contains(hello[i])) {
                 return true;
             }
         }
@@ -978,7 +978,18 @@ class Kata {
 
     public static int[] mergeArrays(int[] first, int[] second) {
         //Merging sorted integer arrays (without duplicates)
-        return IntStream.concat(IntStream.of(first),IntStream.of(second)).distinct().sorted().toArray();
+        return IntStream.concat(IntStream.of(first), IntStream.of(second)).distinct().sorted().toArray();
+    }
+
+    public static Object[] removeEveryOther(Object[] arr) {
+        //Removing Elements
+        List<Object> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 == 0) {
+                list.add(arr[i]);
+            }
+        }
+        return list.toArray();
     }
 }
 
@@ -1394,7 +1405,7 @@ class Solution {
         return result;
     }
 
-    public static int solve7(String s){
+    public static int solve7(String s) {
         //Longest vowel chain
         return Arrays.stream(s.split("[^aeiou]")).mapToInt(i -> i.length()).max().getAsInt();
     }
@@ -3271,13 +3282,14 @@ class Movie {
 class BingoOrNot {
     private static final String WIN = "WIN";
     private static final String LOSE = "LOSE";
-    public static String bingo(int[] numberArray){
+
+    public static String bingo(int[] numberArray) {
         //Bingo ( Or Not )
         int[] bingo = {2, 9, 14, 7, 15};
 
         for (int i = 0; i < bingo.length; i++) {
             for (int j = 0; j < numberArray.length; j++) {
-                if(bingo[i] == numberArray[j]){
+                if (bingo[i] == numberArray[j]) {
                     return WIN;
                 }
             }
