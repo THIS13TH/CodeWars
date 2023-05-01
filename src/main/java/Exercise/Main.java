@@ -17,7 +17,12 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Kata.removeEveryOther(new Object[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
+        System.out.println(StringUtils.isVowel(""));
+        System.out.println(StringUtils.isVowel("a"));
+        System.out.println(StringUtils.isVowel("E"));
+        System.out.println(StringUtils.isVowel("ou"));
+        System.out.println(StringUtils.isVowel("z"));
+        System.out.println(StringUtils.isVowel("lol"));
 
 
     }
@@ -2204,6 +2209,11 @@ class StringUtils {
     public static boolean isLetter(String s) {
         //Regexp Basics - is it a letter?
         return s.matches("[a-zA-Z]");
+    }
+
+    public static boolean isVowel(String s) {
+        //Regexp Basics - is it a vowel?
+        return s.matches("[aeiouAEIOU]");
     }
 }
 
