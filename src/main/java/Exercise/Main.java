@@ -17,13 +17,7 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(StringUtils.isVowel(""));
-        System.out.println(StringUtils.isVowel("a"));
-        System.out.println(StringUtils.isVowel("E"));
-        System.out.println(StringUtils.isVowel("ou"));
-        System.out.println(StringUtils.isVowel("z"));
-        System.out.println(StringUtils.isVowel("lol"));
-
+        System.out.println( Kata.findScreenHeight(1600,"4:3"));
 
     }
 }
@@ -995,6 +989,13 @@ class Kata {
             }
         }
         return list.toArray();
+    }
+
+    public static String findScreenHeight(int width, String ratio) {
+        //Find Screen Size
+        String[] r = ratio.split(":");
+        int height = width * Integer.valueOf(r[1]) / Integer.valueOf(r[0]);
+        return width + "x" + height;
     }
 }
 
