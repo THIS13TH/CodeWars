@@ -17,7 +17,7 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println( Kata.findScreenHeight(1600,"4:3"));
+        System.out.println(Kata.consecutive(new int[]{4, 8, 6}));
 
     }
 }
@@ -996,6 +996,16 @@ class Kata {
         String[] r = ratio.split(":");
         int height = width * Integer.valueOf(r[1]) / Integer.valueOf(r[0]);
         return width + "x" + height;
+    }
+
+    public static int consecutive(final int[] arr) {
+        //How many consecutive numbers are needed?
+        Arrays.sort(arr);
+        int result = 0;
+        for (int i = 1; i < arr.length; i++) {
+            result += (arr[i] - arr[i - 1]) - 1;
+        }
+        return result;
     }
 }
 
