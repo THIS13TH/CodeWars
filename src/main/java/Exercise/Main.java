@@ -1,5 +1,6 @@
 package Exercise;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.function.IntPredicate;
 import java.util.function.IntUnaryOperator;
@@ -3325,5 +3326,12 @@ class sorter {
         return textbooks.stream()
                 .sorted(String.CASE_INSENSITIVE_ORDER)
                 .collect(toList());
+    }
+}
+
+class PeriodTime {
+    public static boolean periodIsLate(LocalDate last, LocalDate today, int cycleLength) {
+        //Is your period late?
+        return today.minusDays(cycleLength).isAfter(last);
     }
 }
