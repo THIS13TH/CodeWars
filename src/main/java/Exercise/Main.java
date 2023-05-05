@@ -18,7 +18,7 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Kata.consecutive(new int[]{4, 8, 6}));
+        System.out.println(Kata.broken("100010"));
 
     }
 }
@@ -1007,6 +1007,21 @@ class Kata {
             result += (arr[i] - arr[i - 1]) - 1;
         }
         return result;
+    }
+
+    public static String broken(final String x) {
+        //The Office III - Broken Photocopier
+        return x.replace("0"," ").replace("1","0").replace(" ","1");
+
+//        char[] result = x.toCharArray();
+//        for (int i = 0; i < result.length; i++) {
+//            if(result[i] == '1'){
+//                result[i] = '0';
+//            }else {
+//                result[i] = '1';
+//            }
+//        }
+//        return String.valueOf(result);
     }
 }
 
