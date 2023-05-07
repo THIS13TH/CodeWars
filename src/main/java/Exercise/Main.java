@@ -18,7 +18,9 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Kata.broken("100010"));
+        System.out.println(Generator.nickname("Jimmy"));
+        System.out.println(Generator.nickname("Sam"));
+        System.out.println(Generator.nickname("Jeannie"));
 
     }
 }
@@ -3368,5 +3370,18 @@ class HappyYear {
             four = year % 10;
         }
         return year;
+    }
+}
+
+class Generator {
+    public static String nickname(String name) {
+        //Nickname Generator
+        final String AEIOU = "aeiou";
+
+        if (name.length() < 4) {
+            return "Error: Name too short";
+        }
+        return AEIOU.indexOf(name.charAt(2)) != -1 ?
+                name.substring(0, 4) : name.substring(0, 3);
     }
 }
