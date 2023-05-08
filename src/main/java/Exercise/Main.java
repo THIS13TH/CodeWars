@@ -1025,6 +1025,10 @@ class Kata {
 //        }
 //        return String.valueOf(result);
     }
+    public static Integer prevMultOfThree(Integer n){
+        //Previous multiple of three
+        return n % 3 == 0 ? n : n > 10 ? prevMultOfThree(n / 10) : null;
+    }
 }
 
 
