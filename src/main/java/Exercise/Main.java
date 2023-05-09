@@ -18,9 +18,8 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Generator.nickname("Jimmy"));
-        System.out.println(Generator.nickname("Sam"));
-        System.out.println(Generator.nickname("Jeannie"));
+        System.out.println(InParts.splitInParts("HelloKata", 3));
+
 
     }
 }
@@ -1025,7 +1024,8 @@ class Kata {
 //        }
 //        return String.valueOf(result);
     }
-    public static Integer prevMultOfThree(Integer n){
+
+    public static Integer prevMultOfThree(Integer n) {
         //Previous multiple of three
         return n % 3 == 0 ? n : n > 10 ? prevMultOfThree(n / 10) : null;
     }
@@ -3387,5 +3387,22 @@ class Generator {
         }
         return AEIOU.indexOf(name.charAt(2)) != -1 ?
                 name.substring(0, 4) : name.substring(0, 3);
+    }
+}
+
+class InParts {
+    public static String splitInParts(String s, int partLength) {
+        //Split In Parts
+        int count = 0;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            result.append(s.charAt(i));
+            count++;
+            if (count == partLength) {
+                result.append(" ");
+                count = 0;
+            }
+        }
+        return result.toString().trim();
     }
 }
