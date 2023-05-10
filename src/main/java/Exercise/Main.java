@@ -1736,6 +1736,11 @@ class CodeWars {
 //        }
         return stream(array).sum() % 2 == 0 ? "even" : "odd";
     }
+
+    public static String fireFight(String s) {
+        //Holiday III - Fire on the boat
+        return s.replaceAll("Fire", "~~");
+    }
 }
 
 class Bio {
