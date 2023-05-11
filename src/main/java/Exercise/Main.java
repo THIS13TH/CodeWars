@@ -1447,6 +1447,11 @@ class Solution {
         //Longest vowel chain
         return Arrays.stream(s.split("[^aeiou]")).mapToInt(i -> i.length()).max().getAsInt();
     }
+
+    public static boolean hero(int bullets, int dragons) {
+        //Is he gonna survive?
+        return  bullets / 2 >= dragons;
+    }
 }
 
 class SmashWords {
