@@ -18,7 +18,11 @@ import static java.util.stream.IntStream.rangeClosed;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(InParts.splitInParts("HelloKata", 3));
+        System.out.println((Solution.solve(new int[]{15, 11, 10, 7, 12})));
+        int[] tmp = Solution.solveee(new int[]{15, 11, 10, 7, 12});
+        for (int i = 0; i < tmp.length; i++) {
+            System.out.println(tmp[i]);
+        }
 
 
     }
@@ -1450,7 +1454,28 @@ class Solution {
 
     public static boolean hero(int bullets, int dragons) {
         //Is he gonna survive?
-        return  bullets / 2 >= dragons;
+        return bullets / 2 >= dragons;
+    }
+
+    public static int[] solveee(int[] arr) {
+        //Max-min arrays
+        int[] result = new int[arr.length];
+        Arrays.sort(arr);
+        int min = 0;
+        int max = arr.length - 1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 == 0) {
+                result[i] = arr[max];
+                max--;
+            } else {
+                result[i] = arr[min];
+                min++;
+            }
+        }
+        return result;
+
+
     }
 }
 
