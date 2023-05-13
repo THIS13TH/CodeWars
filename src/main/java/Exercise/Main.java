@@ -1474,8 +1474,11 @@ class Solution {
             }
         }
         return result;
+    }
 
-
+    static String shortenToDate(String longDate) {
+        //Remove the time
+        return longDate.substring(0, longDate.indexOf(','));
     }
 }
 
